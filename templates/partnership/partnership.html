@@ -1,0 +1,300 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Revendeur / Partenaire" %}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        {% include 'includes/breadcrumbs.html' with breadcrumbs=breadcrumbs %}
+        <h1>{% trans "Devenez Revendeur ou Partenaire" %}</h1>
+        <p class="text-muted mb-0">{% trans "Rejoignez le réseau MEDICENTERS PERFORMANCE et développez votre activité" %}</p>
+    </div>
+</section>
+
+<!-- Hero Intro -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center fade-in-up">
+                <p class="lead">{% trans "MEDICENTERS PERFORMANCE recherche des partenaires et revendeurs agréés pour distribuer ses produits et services d'aménagement médical à travers le Maroc et l'Afrique. Que vous soyez distributeur, architecte d'intérieur, ou professionnel du secteur médical, nous avons un programme de partenariat adapté à votre profil." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="section section-alt" id="avantages">
+    <div class="container">
+        <div class="section-heading fade-in-up">
+            <div class="overline">
+                <span class="hex-accent"></span>
+                {% trans "Pourquoi nous rejoindre" %}
+            </div>
+            <h2>{% trans "Avantages du Partenariat" %}</h2>
+            <p>{% trans "Des avantages concrets pour développer votre activité avec nous" %}</p>
+        </div>
+
+        <div class="hex-divider fade-in-up">
+            <span class="hex-line"></span>
+            <span class="hex-dot"></span>
+            <span class="hex-line"></span>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card fade-in-up">
+                <div class="benefit-icon">
+                    <i class="bi bi-percent"></i>
+                </div>
+                <h3>{% trans "Tarifs Préférentiels" %}</h3>
+                <p>{% trans "Bénéficiez de remises exclusives sur l'ensemble de notre catalogue de produits et services." %}</p>
+            </div>
+            <div class="benefit-card fade-in-up">
+                <div class="benefit-icon">
+                    <i class="bi bi-mortarboard"></i>
+                </div>
+                <h3>{% trans "Formation & Support" %}</h3>
+                <p>{% trans "Accédez à des formations techniques et commerciales pour maîtriser nos solutions." %}</p>
+            </div>
+            <div class="benefit-card fade-in-up">
+                <div class="benefit-icon">
+                    <i class="bi bi-megaphone"></i>
+                </div>
+                <h3>{% trans "Support Marketing" %}</h3>
+                <p>{% trans "Profitez de supports de communication, catalogues et outils de vente personnalisés." %}</p>
+            </div>
+            <div class="benefit-card fade-in-up">
+                <div class="benefit-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <h3>{% trans "Exclusivité Territoriale" %}</h3>
+                <p>{% trans "Possibilité d'exclusivité géographique pour protéger votre zone de distribution." %}</p>
+            </div>
+            <div class="benefit-card fade-in-up">
+                <div class="benefit-icon">
+                    <i class="bi bi-tools"></i>
+                </div>
+                <h3>{% trans "Assistance Technique" %}</h3>
+                <p>{% trans "Support technique dédié pour l'installation, la maintenance et le service après-vente." %}</p>
+            </div>
+            <div class="benefit-card fade-in-up">
+                <div class="benefit-icon">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <h3>{% trans "Croissance Partagée" %}</h3>
+                <p>{% trans "Un marché en pleine expansion avec des marges attractives et un potentiel de croissance élevé." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partnership Process -->
+<section class="section" id="processus">
+    <div class="container">
+        <div class="section-heading fade-in-up">
+            <div class="overline">
+                <span class="hex-accent"></span>
+                {% trans "Comment ça marche" %}
+            </div>
+            <h2>{% trans "Processus de Partenariat" %}</h2>
+            <p>{% trans "Un parcours simple et structuré pour devenir partenaire" %}</p>
+        </div>
+
+        <div class="hex-divider fade-in-up">
+            <span class="hex-line"></span>
+            <span class="hex-dot"></span>
+            <span class="hex-line"></span>
+        </div>
+
+        <div class="process-steps">
+            <div class="process-step fade-in-up">
+                <div class="process-step-number">1</div>
+                <div class="process-step-content">
+                    <h3>{% trans "Candidature" %}</h3>
+                    <p>{% trans "Remplissez le formulaire ci-dessous avec les informations de votre entreprise et votre projet de partenariat." %}</p>
+                </div>
+            </div>
+            <div class="process-step fade-in-up">
+                <div class="process-step-number">2</div>
+                <div class="process-step-content">
+                    <h3>{% trans "Évaluation" %}</h3>
+                    <p>{% trans "Notre équipe commerciale étudie votre candidature et vous contacte sous 48 heures pour un échange personnalisé." %}</p>
+                </div>
+            </div>
+            <div class="process-step fade-in-up">
+                <div class="process-step-number">3</div>
+                <div class="process-step-content">
+                    <h3>{% trans "Convention" %}</h3>
+                    <p>{% trans "Nous définissons ensemble les termes du partenariat : tarifs, territoire, objectifs et conditions de collaboration." %}</p>
+                </div>
+            </div>
+            <div class="process-step fade-in-up">
+                <div class="process-step-number">4</div>
+                <div class="process-step-content">
+                    <h3>{% trans "Lancement" %}</h3>
+                    <p>{% trans "Formation initiale, accès au catalogue et outils commerciaux. Vous êtes prêt à représenter MEDICENTERS PERFORMANCE !" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- B2B Form Section -->
+<section class="section section-alt" id="formulaire">
+    <div class="container">
+        <div class="section-heading fade-in-up">
+            <div class="overline">
+                <span class="hex-accent"></span>
+                {% trans "Rejoignez-nous" %}
+            </div>
+            <h2>{% trans "Formulaire de Candidature" %}</h2>
+            <p>{% trans "Remplissez ce formulaire et notre équipe vous contactera rapidement" %}</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10 fade-in-up">
+                <div class="partnership-form-card">
+
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {% for error in form.non_field_errors %}
+                        <p class="mb-0">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+
+                        <!-- Honeypot -->
+                        {{ form.website_url }}
+
+                        <!-- Company Information -->
+                        <h4 class="form-section-title">
+                            <i class="bi bi-building me-2"></i>{% trans "Informations Entreprise" %}
+                        </h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label for="{{ form.company_name.id_for_label }}" class="form-label">{% trans "Nom de l'entreprise" %} *</label>
+                                {{ form.company_name }}
+                                {% if form.company_name.errors %}<div class="text-danger small mt-1">{{ form.company_name.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.contact_person.id_for_label }}" class="form-label">{% trans "Personne de contact" %} *</label>
+                                {{ form.contact_person }}
+                                {% if form.contact_person.errors %}<div class="text-danger small mt-1">{{ form.contact_person.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.position.id_for_label }}" class="form-label">{% trans "Poste" %}</label>
+                                {{ form.position }}
+                                {% if form.position.errors %}<div class="text-danger small mt-1">{{ form.position.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.email.id_for_label }}" class="form-label">{% trans "Email" %} *</label>
+                                {{ form.email }}
+                                {% if form.email.errors %}<div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.phone.id_for_label }}" class="form-label">{% trans "Téléphone" %} *</label>
+                                {{ form.phone }}
+                                {% if form.phone.errors %}<div class="text-danger small mt-1">{{ form.phone.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.company_website.id_for_label }}" class="form-label">{% trans "Site web" %}</label>
+                                {{ form.company_website }}
+                                {% if form.company_website.errors %}<div class="text-danger small mt-1">{{ form.company_website.errors.0 }}</div>{% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <h4 class="form-section-title">
+                            <i class="bi bi-geo-alt me-2"></i>{% trans "Localisation" %}
+                        </h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label for="{{ form.country.id_for_label }}" class="form-label">{% trans "Pays" %}</label>
+                                {{ form.country }}
+                                {% if form.country.errors %}<div class="text-danger small mt-1">{{ form.country.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.city.id_for_label }}" class="form-label">{% trans "Ville" %}</label>
+                                {{ form.city }}
+                                {% if form.city.errors %}<div class="text-danger small mt-1">{{ form.city.errors.0 }}</div>{% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Business Details -->
+                        <h4 class="form-section-title">
+                            <i class="bi bi-briefcase me-2"></i>{% trans "Détails de l'Activité" %}
+                        </h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <label for="{{ form.activity_sector.id_for_label }}" class="form-label">{% trans "Secteur d'activité" %}</label>
+                                {{ form.activity_sector }}
+                                {% if form.activity_sector.errors %}<div class="text-danger small mt-1">{{ form.activity_sector.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="col-md-4">
+                                <label for="{{ form.years_in_business.id_for_label }}" class="form-label">{% trans "Années d'activité" %}</label>
+                                {{ form.years_in_business }}
+                                {% if form.years_in_business.errors %}<div class="text-danger small mt-1">{{ form.years_in_business.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="col-md-4">
+                                <label for="{{ form.num_employees.id_for_label }}" class="form-label">{% trans "Nombre d'employés" %}</label>
+                                {{ form.num_employees }}
+                                {% if form.num_employees.errors %}<div class="text-danger small mt-1">{{ form.num_employees.errors.0 }}</div>{% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Interest & Message -->
+                        <h4 class="form-section-title">
+                            <i class="bi bi-chat-square-text me-2"></i>{% trans "Votre Projet" %}
+                        </h4>
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <label for="{{ form.products_of_interest.id_for_label }}" class="form-label">{% trans "Produits/Services d'intérêt" %}</label>
+                                {{ form.products_of_interest }}
+                                {% if form.products_of_interest.errors %}<div class="text-danger small mt-1">{{ form.products_of_interest.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="col-12">
+                                <label for="{{ form.message.id_for_label }}" class="form-label">{% trans "Message" %} *</label>
+                                {{ form.message }}
+                                {% if form.message.errors %}<div class="text-danger small mt-1">{{ form.message.errors.0 }}</div>{% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Math Captcha -->
+                        <div class="mb-4">
+                            {{ form.captcha_a }}
+                            {{ form.captcha_b }}
+                            <div class="captcha-group">
+                                <span class="captcha-question">{{ form.captcha_question }}</span>
+                                {{ form.captcha_answer }}
+                            </div>
+                            <small class="text-muted d-block mt-1">{% trans "Veuillez entrer la bonne réponse. Ce champ sert uniquement à prévenir le spam." %}</small>
+                            {% if form.captcha_answer.errors %}<div class="text-danger small mt-1">{{ form.captcha_answer.errors.0 }}</div>{% endif %}
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-send me-2"></i>{% trans "Envoyer la candidature" %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+    <div class="container text-center fade-in-up">
+        <h2>{% trans "Des questions sur le partenariat ?" %}</h2>
+        <p class="cta-subtitle">{% trans "Notre équipe est disponible pour répondre à toutes vos interrogations." %}</p>
+        <a href="{% url 'contact:contact' %}" class="btn btn-cta-primary btn-lg">
+            <i class="bi bi-telephone me-2"></i>{% trans "Contactez-nous" %}
+        </a>
+    </div>
+</section>
+{% endblock %}

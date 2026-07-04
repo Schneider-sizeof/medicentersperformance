@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "À Propos" %}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        {% include 'includes/breadcrumbs.html' with breadcrumbs=breadcrumbs %}
+        <h1>{% trans "À Propos de MEDICENTERS PERFORMANCE" %}</h1>
+        <p class="text-muted mb-0">{% trans "Votre partenaire de confiance pour l'aménagement d'espaces médicaux" %}</p>
+    </div>
+</section>
+
+<!-- Company Story -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 fade-in-left">
+                <div class="about-image-wrapper">
+                    <div class="about-placeholder">
+                        <i class="bi bi-building display-1 text-muted"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 fade-in-right">
+                <h2 class="mb-4">{% trans "Qui sommes-nous ?" %}</h2>
+                <p>{% trans "MEDICENTERS PERFORMANCE est une entreprise spécialisée dans l'aménagement d'intérieur et le consulting pour les espaces médicaux professionnels, basée à Tanger, au Maroc." %}</p>
+                <p>{% trans "Notre mission est d'accompagner les professionnels de santé — cliniques, cabinets médicaux, laboratoires, pharmacies et centres de radiologie — dans la transformation de leurs espaces de travail en environnements fonctionnels, esthétiques et conformes aux normes en vigueur." %}</p>
+                <p>{% trans "De la conception à la réalisation, nous proposons des solutions clé en main qui couvrent l'agencement mobilier, l'architecture d'intérieur, la signalétique, la sécurité, les équipements et le consulting en gestion de cabinet." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Notre Mission" %}</h2>
+            <p>{% trans "Transformer les espaces médicaux en environnements d'excellence" %}</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-8 text-center fade-in-up">
+                <p class="lead">{% trans "Nous croyons que l'environnement physique d'un espace de santé a un impact direct sur la qualité des soins, le confort des patients et la productivité des équipes médicales." %}</p>
+                <p>{% trans "C'est pourquoi nous mettons notre expertise au service de chaque projet, en combinant design fonctionnel, matériaux de qualité et accompagnement personnalisé pour créer des espaces médicaux qui inspirent confiance et professionnalisme." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values -->
+<section class="section">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Nos Valeurs" %}</h2>
+            <p>{% trans "Les piliers qui guident chacun de nos projets" %}</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                    <h3>{% trans "Qualité" %}</h3>
+                    <p>{% trans "Des matériaux sélectionnés avec soin et une exécution irréprochable pour chaque projet d'aménagement." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3>{% trans "Fiabilité" %}</h3>
+                    <p>{% trans "Le respect des délais et des engagements pris, pour une relation de confiance durable avec nos clients." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon">
+                        <i class="bi bi-key"></i>
+                    </div>
+                    <h3>{% trans "Expertise Clé en Main" %}</h3>
+                    <p>{% trans "Un seul interlocuteur pour l'ensemble de votre projet, de la conception à la livraison finale." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon">
+                        <i class="bi bi-handshake"></i>
+                    </div>
+                    <h3>{% trans "Partenariat Médical" %}</h3>
+                    <p>{% trans "Une compréhension profonde des besoins spécifiques des professionnels de santé et de leurs patients." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Timeline -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Comment nous travaillons" %}</h2>
+            <p>{% trans "Un processus structuré pour garantir la réussite de votre projet" %}</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="process-timeline">
+                    <div class="process-step fade-in-up">
+                        <div class="process-step-number">1</div>
+                        <div class="process-step-content">
+                            <h3>{% trans "Consultation & Analyse" %}</h3>
+                            <p>{% trans "Nous commençons par une analyse approfondie de vos besoins, de votre espace existant et de vos objectifs. Cette étape nous permet de comprendre vos attentes et de définir le cadre du projet." %}</p>
+                        </div>
+                    </div>
+                    <div class="process-step fade-in-up">
+                        <div class="process-step-number">2</div>
+                        <div class="process-step-content">
+                            <h3>{% trans "Conception & Design" %}</h3>
+                            <p>{% trans "Notre équipe élabore des plans d'aménagement sur mesure, en intégrant les contraintes techniques, les normes médicales et vos préférences esthétiques." %}</p>
+                        </div>
+                    </div>
+                    <div class="process-step fade-in-up">
+                        <div class="process-step-number">3</div>
+                        <div class="process-step-content">
+                            <h3>{% trans "Réalisation & Aménagement" %}</h3>
+                            <p>{% trans "Nous coordonnons l'ensemble des travaux d'aménagement : mobilier, cloisons, revêtements, signalétique et équipements, dans le respect des délais convenus." %}</p>
+                        </div>
+                    </div>
+                    <div class="process-step fade-in-up">
+                        <div class="process-step-number">4</div>
+                        <div class="process-step-content">
+                            <h3>{% trans "Suivi & Service après-vente" %}</h3>
+                            <p>{% trans "Notre engagement ne s'arrête pas à la livraison. Nous assurons un suivi continu et un service après-vente réactif pour garantir votre entière satisfaction." %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Signals -->
+<section class="section">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-4 fade-in-up">
+                <div class="trust-signal">
+                    <i class="bi bi-building display-4 text-primary mb-3"></i>
+                    <h3>{% trans "Des dizaines de projets" %}</h3>
+                    <p class="text-muted">{% trans "réalisés pour des professionnels de santé au Maroc" %}</p>
+                </div>
+            </div>
+            <div class="col-md-4 fade-in-up">
+                <div class="trust-signal">
+                    <i class="bi bi-people display-4 text-primary mb-3"></i>
+                    <h3>{% trans "5 types de clients" %}</h3>
+                    <p class="text-muted">{% trans "cliniques, cabinets, laboratoires, pharmacies, centres de radiologie" %}</p>
+                </div>
+            </div>
+            <div class="col-md-4 fade-in-up">
+                <div class="trust-signal">
+                    <i class="bi bi-geo-alt display-4 text-primary mb-3"></i>
+                    <h3>{% trans "Basé à Tanger" %}</h3>
+                    <p class="text-muted">{% trans "au cœur du Maroc, au service de tout le territoire" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Band -->
+<section class="cta-band">
+    <div class="container text-center fade-in-up">
+        <h2>{% trans "Vous avez un projet d'aménagement médical ?" %}</h2>
+        <p class="cta-subtitle">{% trans "Parlons-en ensemble et construisons la solution adaptée à vos besoins." %}</p>
+        <a href="{% url 'contact:contact' %}" class="btn btn-cta-primary btn-lg">
+            <i class="bi bi-envelope-paper me-2"></i>{% trans "Contactez-nous" %}
+        </a>
+    </div>
+</section>
+{% endblock %}

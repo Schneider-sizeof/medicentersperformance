@@ -1,0 +1,111 @@
+{% load static i18n %}
+<footer class="site-footer">
+    <div class="footer-hex-decoration"></div>
+    <div class="container position-relative">
+        <div class="row g-4 g-lg-5">
+            <!-- Column 1: Brand -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-brand mb-3">
+                    <img src="{% static 'images/logo.png' %}" alt="MEDICENTERS PERFORMANCE" class="footer-logo">
+                </div>
+                <p class="footer-tagline">
+                    {% trans "Spécialiste de l'aménagement d'intérieur et du consulting pour les espaces médicaux professionnels à Tanger, Maroc." %}
+                </p>
+                <div class="footer-social mt-3">
+                    {% if company.facebook_url %}<a href="{{ company.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>{% endif %}
+                    {% if company.instagram_url %}<a href="{{ company.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>{% endif %}
+                    {% if company.linkedin_url %}<a href="{{ company.linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>{% endif %}
+                    {% if company.youtube_url %}<a href="{{ company.youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>{% endif %}
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="col-lg-2 col-md-6">
+                <h4 class="footer-heading">{% trans "Liens rapides" %}</h4>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="{% url 'core:home' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Accueil" %}</a></li>
+                    <li><a href="{% url 'core:about' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "À Propos" %}</a></li>
+                    <li><a href="{% url 'services:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Produits & Services" %}</a></li>
+                    <li><a href="{% url 'blog:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Blog" %}</a></li>
+                    <li><a href="{% url 'recruitment:careers' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Recrutement" %}</a></li>
+                    <li><a href="{% url 'partnership:partnership' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Revendeur / Partenaire" %}</a></li>
+                    <li><a href="{% url 'contact:contact' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Contact" %}</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="col-lg-3 col-md-6">
+                <h4 class="footer-heading">{% trans "Nos Services" %}</h4>
+                <ul class="list-unstyled footer-links">
+                    {% for service in footer_services %}
+                    <li><a href="{% url 'services:list' %}#service-{{ service.slug }}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{{ service.title }}</a></li>
+                    {% empty %}
+                    <li><span class="text-muted">{% trans "Aucun service disponible." %}</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div class="col-lg-4 col-md-6">
+                <h4 class="footer-heading">{% trans "Contactez-nous" %}</h4>
+                <ul class="list-unstyled">
+                    {% if company.phone %}
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div>
+                            <span class="footer-contact-label">{% trans "Téléphone" %}</span>
+                            <a href="tel:{{ company.phone|cut:' ' }}" class="footer-contact-value">{{ company.phone }}</a>
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% if company.email %}
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div>
+                            <span class="footer-contact-label">{% trans "Email" %}</span>
+                            <a href="mailto:{{ company.email }}" class="footer-contact-value">{{ company.email }}</a>
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% if company.address %}
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div>
+                            <span class="footer-contact-label">{% trans "Adresse" %}</span>
+                            <span class="footer-contact-value">{{ company.address }}</span>
+                        </div>
+                    </li>
+                    {% endif %}
+                    <li class="footer-contact-item">
+                        <div class="footer-contact-icon"><i class="bi bi-clock-fill"></i></div>
+                        <div>
+                            <span class="footer-contact-label">{% trans "Horaires" %}</span>
+                            <span class="footer-contact-value">
+                                {% if company.hours_weekday %}{{ company.hours_weekday }}{% endif %}<br>
+                                {% if company.hours_saturday %}{{ company.hours_saturday }}{% endif %}
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">
+                        &copy; {% now "Y" %} MEDICENTERS PERFORMANCE. {% trans "Tous droits réservés." %}
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <a href="{% url 'core:about' %}" class="footer-bottom-link">{% trans "À Propos" %}</a>
+                    <span class="footer-bottom-divider">|</span>
+                    <a href="{% url 'contact:contact' %}" class="footer-bottom-link">{% trans "Contact" %}</a>
+                    <span class="footer-bottom-divider">|</span>
+                    <a href="/sitemap.xml" class="footer-bottom-link">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,748 @@
+# Arabic translations for MEDICENTERS PERFORMANCE
+# Copyright (C) 2026 MEDICENTERS PERFORMANCE
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: medicenters 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-04 00:00+0000\n"
+"PO-Revision-Date: 2026-07-04 00:00+0000\n"
+"Last-Translator: MEDICENTERS PERFORMANCE\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+msgid "Accueil"
+msgstr "الرئيسية"
+
+msgid "Adresse"
+msgstr "العنوان"
+
+msgid "Aménagement & Agencement"
+msgstr "التجهيز والتأثيث"
+
+msgid "Aménagement d'espaces médicaux à Tanger"
+msgstr "تجهيز الفضاءات الطبية في طنجة"
+
+msgid "Aménagement d'intérieur, agencement mobilier, communication et consulting — des solutions clé en main pour les professionnels de santé à Tanger et au Maroc."
+msgstr "تصميم داخلي، تأثيث، تواصل واستشارات — حلول متكاملة للمهنيين الصحيين في طنجة والمغرب."
+
+msgid "Analogie & Audit"
+msgstr "التحليل والتدقيق"
+
+msgid "Années d'activité"
+msgstr "سنوات النشاط"
+
+msgid "Architecture & Décoration"
+msgstr "الهندسة المعمارية والديكور"
+
+msgid "Assistance Technique"
+msgstr "المساعدة التقنية"
+
+msgid "Aucun article n'a encore été publié."
+msgstr "لم يتم نشر أي مقال بعد."
+
+msgid "Avantages du Partenariat"
+msgstr "مزايا الشراكة"
+
+msgid "Blog"
+msgstr "المدونة"
+
+msgid "Cabinets médicaux"
+msgstr "العيادات الطبية"
+
+msgid "Candidature"
+msgstr "التقديم"
+
+msgid "Candidature envoyée"
+msgstr "تم إرسال التقديم"
+
+msgid "Candidature envoyée avec succès !"
+msgstr "تم إرسال التقديم بنجاح!"
+
+msgid "Centres de radiologie"
+msgstr "مراكز الأشعة"
+
+msgid "Cliniques & Hôpitaux"
+msgstr "العيادات والمستشفيات"
+
+msgid "Comment ça marche"
+msgstr "كيف يعمل"
+
+msgid "Conception & Planification"
+msgstr "التصميم والتخطيط"
+
+msgid "Consulting & Performance"
+msgstr "الاستشارات والأداء"
+
+msgid "Contact"
+msgstr "اتصل بنا"
+
+msgid "Contactez-nous"
+msgstr "اتصلوا بنا"
+
+msgid "Contactez-nous pour une consultation gratuite et un devis personnalisé."
+msgstr "تواصلوا معنا للحصول على استشارة مجانية وعرض سعر مخصص."
+
+msgid "Convention"
+msgstr "الاتفاقية"
+
+msgid "Croissance Partagée"
+msgstr "نمو مشترك"
+
+msgid "CV"
+msgstr "السيرة الذاتية"
+
+msgid "Date de publication"
+msgstr "تاريخ النشر"
+
+msgid "Demander un devis"
+msgstr "طلب عرض سعر"
+
+msgid "Des avantages concrets pour développer votre activité avec nous"
+msgstr "مزايا ملموسة لتطوير نشاطك معنا"
+
+msgid "Des questions sur le partenariat ?"
+msgstr "هل لديك أسئلة حول الشراكة؟"
+
+msgid "Des solutions complètes et sur mesure pour l'aménagement de vos espaces médicaux"
+msgstr "حلول شاملة ومخصصة لتجهيز فضاءاتكم الطبية"
+
+msgid "Des solutions complètes pour chaque aspect de votre espace médical professionnel"
+msgstr "حلول شاملة لكل جانب من جوانب فضائكم الطبي المهني"
+
+msgid "Des prestations sur mesure pour concevoir et optimiser vos espaces médicaux"
+msgstr "خدمات مخصصة لتصميم وتحسين فضاءاتكم الطبية"
+
+msgid "Devenez Revendeur ou Partenaire"
+msgstr "كن موزعاً أو شريكاً"
+
+msgid "Discutons de votre projet d'aménagement médical"
+msgstr "لنناقش مشروع تجهيزكم الطبي"
+
+msgid "Découvrez nos postes ouverts et trouvez celui qui vous correspond"
+msgstr "اكتشفوا وظائفنا المفتوحة وجدوا ما يناسبكم"
+
+msgid "Découvrez quelques-uns de nos projets d'aménagement médical"
+msgstr "اكتشفوا بعض مشاريعنا في تجهيز الفضاءات الطبية"
+
+msgid "Découvrir nos services"
+msgstr "اكتشفوا خدماتنا"
+
+msgid "Détails de l'Activité"
+msgstr "تفاصيل النشاط"
+
+msgid "Développez vos compétences dans un environnement stimulant avec de réelles perspectives."
+msgstr "طوّر مهاراتك في بيئة محفزة مع آفاق مهنية حقيقية."
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "En savoir plus"
+msgstr "اعرف المزيد"
+
+msgid "Entreprise dynamique"
+msgstr "شركة ديناميكية"
+
+msgid "Envoyer la candidature"
+msgstr "إرسال التقديم"
+
+msgid "Envoyer le message"
+msgstr "إرسال الرسالة"
+
+msgid "Envoyer ma candidature"
+msgstr "إرسال تقديمي"
+
+msgid "Envoyez votre candidature — spontanée ou pour un poste spécifique"
+msgstr "أرسلوا ترشيحكم — تلقائياً أو لمنصب محدد"
+
+msgid "Envoyez-nous un message"
+msgstr "أرسلوا لنا رسالة"
+
+msgid "Exclusivité Territoriale"
+msgstr "الحصرية الإقليمية"
+
+msgid "Expertise Clé en Main"
+msgstr "خبرة متكاملة"
+
+msgid "Expertise Médicale Spécialisée"
+msgstr "خبرة طبية متخصصة"
+
+msgid "Explorez nos projets d'aménagement médical grâce à la visite virtuelle immersive"
+msgstr "اكتشفوا مشاريعنا في التجهيز الطبي عبر جولات افتراضية"
+
+msgid "Explorez nos réalisations en visite virtuelle 3D immersive"
+msgstr "اكتشفوا إنجازاتنا عبر جولات افتراضية ثلاثية الأبعاد"
+
+msgid "Fiabilité"
+msgstr "الموثوقية"
+
+msgid "Fil d'ariane"
+msgstr "مسار التنقل"
+
+msgid "Formation & Support"
+msgstr "التدريب والدعم"
+
+msgid "Formation initiale, accès au catalogue et outils commerciaux. Vous êtes prêt à représenter MEDICENTERS PERFORMANCE !"
+msgstr "تدريب أولي، وصول للكتالوج والأدوات التجارية. أنت مستعد لتمثيل MEDICENTERS PERFORMANCE!"
+
+msgid "Formulaire de Candidature"
+msgstr "نموذج التقديم"
+
+msgid "Horaires"
+msgstr "أوقات العمل"
+
+msgid "Informations Entreprise"
+msgstr "معلومات الشركة"
+
+msgid "Informations de contact"
+msgstr "معلومات الاتصال"
+
+msgid "L'expertise qui fait la différence pour votre espace de santé"
+msgstr "الخبرة التي تصنع الفرق لفضائكم الصحي"
+
+msgid "La confiance de nos partenaires est notre plus grande fierté"
+msgstr "ثقة شركائنا هي أعظم فخرنا"
+
+msgid "Laboratoires d'analyse"
+msgstr "مختبرات التحليل"
+
+msgid "Lancement"
+msgstr "الانطلاق"
+
+msgid "Le respect des délais et des engagements pris, pour une relation de confiance durable avec nos clients."
+msgstr "احترام المواعيد والالتزامات لبناء علاقة ثقة دائمة مع عملائنا."
+
+msgid "Les piliers qui guident chacun de nos projets"
+msgstr "الركائز التي توجه كل مشاريعنا"
+
+msgid "Les produits seront bientôt disponibles."
+msgstr "المنتجات ستكون متاحة قريباً."
+
+msgid "Les services seront bientôt disponibles."
+msgstr "الخدمات ستكون متاحة قريباً."
+
+msgid "Liens rapides"
+msgstr "روابط سريعة"
+
+msgid "Lire"
+msgstr "اقرأ"
+
+msgid "Localisation"
+msgstr "الموقع"
+
+msgid "Localisation MEDICENTERS PERFORMANCE"
+msgstr "موقع MEDICENTERS PERFORMANCE"
+
+msgid "MEDICENTERS PERFORMANCE est une entreprise spécialisée dans l'aménagement d'intérieur et le consulting pour les espaces médicaux professionnels, basée à Tanger, au Maroc."
+msgstr "MEDICENTERS PERFORMANCE شركة متخصصة في التصميم الداخلي والاستشارات للفضاءات الطبية المهنية، مقرها في طنجة، المغرب."
+
+msgid "MEDICENTERS PERFORMANCE recherche des partenaires et revendeurs agréés pour distribuer ses produits et services d'aménagement médical à travers le Maroc et l'Afrique. Que vous soyez distributeur, architecte d'intérieur, ou professionnel du secteur médical, nous avons un programme de partenariat adapté à votre profil."
+msgstr "تبحث MEDICENTERS PERFORMANCE عن شركاء وموزعين معتمدين لتوزيع منتجاتها وخدمات التجهيز الطبي في المغرب وأفريقيا. سواء كنت موزعاً أو مهندساً معمارياً أو محترفاً في القطاع الطبي، لدينا برنامج شراكة يناسبك."
+
+msgid "MEDICENTERS PERFORMANCE vous accompagne dans tous les aspects de l'aménagement et de la gestion de votre espace médical. De la conception architecturale à l'équipement, en passant par la signalétique et le consulting, nous proposons une offre complète adaptée aux professionnels de santé."
+msgstr "تواكبكم MEDICENTERS PERFORMANCE في جميع جوانب تجهيز وإدارة فضاءاتكم الطبية. من التصميم المعماري إلى التجهيزات واللافتات والاستشارات، نقدم عرضاً شاملاً للمهنيين الصحيين."
+
+msgid "MEDICENTERS PERFORMANCE — Aménagement et agencement mobilier pour espaces médicaux professionnels à Tanger, Maroc. Solutions clé en main pour cliniques, cabinets médicaux, laboratoires et pharmacies."
+msgstr "MEDICENTERS PERFORMANCE — تجهيز وتأثيث الفضاءات الطبية المهنية في طنجة، المغرب. حلول متكاملة للعيادات والمكاتب الطبية والمختبرات والصيدليات."
+
+msgid "Merci pour votre candidature. Notre équipe examinera votre dossier et vous contactera dans les meilleurs délais."
+msgstr "شكراً على تقديمكم. سيراجع فريقنا ملفكم ويتصل بكم في أقرب وقت."
+
+msgid "Merci pour votre intérêt. Notre équipe commerciale étudiera votre candidature et vous contactera dans les 48 heures ouvrées."
+msgstr "شكراً لاهتمامك. سيدرس فريقنا التجاري طلبك وسيتصل بك خلال 48 ساعة عمل."
+
+msgid "Merci pour votre message. Notre équipe vous répondra dans les 24 à 48 heures ouvrées."
+msgstr "شكراً على رسالتكم. سيرد فريقنا عليكم خلال 24 إلى 48 ساعة عمل."
+
+msgid "Message"
+msgstr "الرسالة"
+
+msgid "Message de motivation"
+msgstr "رسالة التحفيز"
+
+msgid "Message envoyé"
+msgstr "تم إرسال الرسالة"
+
+msgid "Message envoyé avec succès !"
+msgstr "تم إرسال الرسالة بنجاح!"
+
+msgid "Menu"
+msgstr "القائمة"
+
+msgid "Nom complet"
+msgstr "الاسم الكامل"
+
+msgid "Nom de l'entreprise"
+msgstr "اسم الشركة"
+
+msgid "Nombre d'employés"
+msgstr "عدد الموظفين"
+
+msgid "Nos Clients"
+msgstr "عملاؤنا"
+
+msgid "Nos Produits"
+msgstr "منتجاتنا"
+
+msgid "Nos Réalisations"
+msgstr "إنجازاتنا"
+
+msgid "Nos Services"
+msgstr "خدماتنا"
+
+msgid "Nos Valeurs"
+msgstr "قيمنا"
+
+msgid "Notre Catalogue"
+msgstr "كتالوجنا"
+
+msgid "Notre Expertise"
+msgstr "خبرتنا"
+
+msgid "Notre Mission"
+msgstr "مهمتنا"
+
+msgid "Notre engagement ne s'arrête pas à la livraison. Nous assurons un suivi continu et un service après-vente réactif pour garantir votre entière satisfaction."
+msgstr "التزامنا لا يتوقف عند التسليم. نضمن متابعة مستمرة وخدمة ما بعد البيع لرضاكم التام."
+
+msgid "Notre mission est d'accompagner les professionnels de santé — cliniques, cabinets médicaux, laboratoires, pharmacies et centres de radiologie — dans la transformation de leurs espaces de travail en environnements fonctionnels, esthétiques et conformes aux normes en vigueur."
+msgstr "مهمتنا هي مرافقة المهنيين الصحيين — العيادات والمكاتب الطبية والمختبرات والصيدليات ومراكز الأشعة — في تحويل فضاءات عملهم إلى بيئات وظيفية وجمالية ومتوافقة مع المعايير."
+
+msgid "Notre équipe commerciale étudie votre candidature et vous contacte sous 48 heures pour un échange personnalisé."
+msgstr "يدرس فريقنا التجاري طلبك ويتصل بك خلال 48 ساعة."
+
+msgid "Notre équipe est disponible pour répondre à toutes vos interrogations."
+msgstr "فريقنا متاح للإجابة على جميع استفساراتكم."
+
+msgid "Notre équipe élabore des plans d'aménagement sur mesure, en intégrant les contraintes techniques, les normes médicales et vos préférences esthétiques."
+msgstr "يعد فريقنا مخططات تجهيز مخصصة تدمج القيود التقنية والمعايير الطبية وتفضيلاتكم الجمالية."
+
+msgid "Notre équipe"
+msgstr "فريقنا"
+
+msgid "Nous accompagnons les professionnels de santé dans la création de leurs espaces"
+msgstr "نرافق المهنيين الصحيين في إنشاء فضاءاتهم"
+
+msgid "Nous commençons par une analyse approfondie de vos besoins, de votre espace existant et de vos objectifs. Cette étape nous permet de comprendre vos attentes et de définir le cadre du projet."
+msgstr "نبدأ بتحليل معمق لاحتياجاتكم وفضائكم الحالي وأهدافكم. تتيح لنا هذه المرحلة فهم توقعاتكم وتحديد إطار المشروع."
+
+msgid "Nous coordonnons l'ensemble des travaux d'aménagement : mobilier, cloisons, revêtements, signalétique et équipements, dans le respect des délais convenus."
+msgstr "ننسق جميع أعمال التجهيز: الأثاث والفواصل والتغطيات واللافتات والمعدات، مع احترام المواعيد المتفق عليها."
+
+msgid "Nous croyons que l'environnement physique d'un espace de santé a un impact direct sur la qualité des soins, le confort des patients et la productivité des équipes médicales."
+msgstr "نؤمن بأن البيئة المادية للفضاء الصحي لها تأثير مباشر على جودة الرعاية وراحة المرضى وإنتاجية الفرق الطبية."
+
+msgid "Nous définissons ensemble les termes du partenariat : tarifs, territoire, objectifs et conditions de collaboration."
+msgstr "نحدد معاً شروط الشراكة: الأسعار والمنطقة والأهداف وظروف التعاون."
+
+msgid "Offres d'emploi"
+msgstr "عروض العمل"
+
+msgid "Parlons-en ensemble et construisons la solution adaptée à vos besoins."
+msgstr "لنتحدث معاً ونبني الحل المناسب لاحتياجاتكم."
+
+msgid "Partager cet article"
+msgstr "مشاركة هذا المقال"
+
+msgid "Partenariat Médical"
+msgstr "شراكة طبية"
+
+msgid "Participez à la transformation des espaces médicaux au Maroc"
+msgstr "شاركوا في تحويل الفضاءات الطبية في المغرب"
+
+msgid "Pays"
+msgstr "البلد"
+
+msgid "Personne de contact"
+msgstr "الشخص المسؤول"
+
+msgid "Pharmacie"
+msgstr "صيدلية"
+
+msgid "Pharmacies & Parapharmacies"
+msgstr "الصيدليات وشبه الصيدليات"
+
+msgid "Possibilité d'exclusivité géographique pour protéger votre zone de distribution."
+msgstr "إمكانية الحصرية الجغرافية لحماية منطقة توزيعك."
+
+msgid "Poste"
+msgstr "المنصب"
+
+msgid "Poste souhaité"
+msgstr "المنصب المطلوب"
+
+msgid "Postuler"
+msgstr "تقدم"
+
+msgid "Postulez maintenant"
+msgstr "تقدم الآن"
+
+msgid "Pourquoi MEDICENTERS PERFORMANCE ?"
+msgstr "لماذا MEDICENTERS PERFORMANCE؟"
+
+msgid "Pourquoi nous rejoindre"
+msgstr "لماذا تنضم إلينا"
+
+msgid "Pourquoi rejoindre MEDICENTERS PERFORMANCE ?"
+msgstr "لماذا تنضم إلى MEDICENTERS PERFORMANCE؟"
+
+msgid "Processus de Partenariat"
+msgstr "عملية الشراكة"
+
+msgid "Produits & Services"
+msgstr "المنتجات والخدمات"
+
+msgid "Produits/Services d'intérêt"
+msgstr "المنتجات/الخدمات المهمة"
+
+msgid "Profil recherché"
+msgstr "الملف المطلوب"
+
+msgid "Profitez de supports de communication, catalogues et outils de vente personnalisés."
+msgstr "استفد من مواد الاتصال والكتالوجات وأدوات البيع المخصصة."
+
+msgid "Projets réalisés"
+msgstr "مشاريع منجزة"
+
+msgid "Précédent"
+msgstr "السابق"
+
+msgid "Prêt à transformer votre espace médical ?"
+msgstr "مستعد لتحويل فضائك الطبي؟"
+
+msgid "Qualité"
+msgstr "الجودة"
+
+msgid "Qualité Premium"
+msgstr "جودة عالية"
+
+msgid "Qui sommes-nous ?"
+msgstr "من نحن؟"
+
+msgid "Recrutement"
+msgstr "التوظيف"
+
+msgid "Rejoignez le réseau MEDICENTERS PERFORMANCE et développez votre activité"
+msgstr "انضم إلى شبكة MEDICENTERS PERFORMANCE وطوّر نشاطك"
+
+msgid "Rejoignez notre équipe"
+msgstr "انضموا إلى فريقنا"
+
+msgid "Rejoignez une équipe ambitieuse en pleine croissance, au cœur d'un secteur porteur."
+msgstr "انضم إلى فريق طموح في نمو مستمر، في قلب قطاع واعد."
+
+msgid "Rejoignez-nous"
+msgstr "انضموا إلينا"
+
+msgid "Remplissez ce formulaire et notre équipe vous contactera rapidement"
+msgstr "أكمل هذا النموذج وسيتصل بك فريقنا بسرعة"
+
+msgid "Remplissez le formulaire ci-dessous avec les informations de votre entreprise et votre projet de partenariat."
+msgstr "أكمل النموذج أدناه بمعلومات شركتك ومشروع الشراكة."
+
+msgid "Retour au blog"
+msgstr "العودة إلى المدونة"
+
+msgid "Retour à l'accueil"
+msgstr "العودة إلى الرئيسية"
+
+msgid "Retour en haut"
+msgstr "العودة إلى الأعلى"
+
+msgid "Revendeur / Partenaire"
+msgstr "موزع / شريك"
+
+msgid "Réalisation & Aménagement"
+msgstr "التنفيذ والتجهيز"
+
+msgid "Secteur d'activité"
+msgstr "قطاع النشاط"
+
+msgid "Secteur médical"
+msgstr "القطاع الطبي"
+
+msgid "Services spécialisés"
+msgstr "خدمات متخصصة"
+
+msgid "Showroom Virtuel"
+msgstr "صالة العرض الافتراضية"
+
+msgid "Signalétique & Communication"
+msgstr "اللافتات والتواصل"
+
+msgid "Site web"
+msgstr "الموقع الإلكتروني"
+
+msgid "Solution Clé en Main"
+msgstr "حل متكامل"
+
+msgid "Spécialiste de l'aménagement d'intérieur et du consulting pour les espaces médicaux professionnels à Tanger, Maroc."
+msgstr "متخصصون في التصميم الداخلي والاستشارات للفضاءات الطبية المهنية في طنجة، المغرب."
+
+msgid "Suivant"
+msgstr "التالي"
+
+msgid "Suivez-nous"
+msgstr "تابعونا"
+
+msgid "Suivi & Service après-vente"
+msgstr "المتابعة وخدمة ما بعد البيع"
+
+msgid "Sujet"
+msgstr "الموضوع"
+
+msgid "Support Marketing"
+msgstr "الدعم التسويقي"
+
+msgid "Support technique dédié pour l'installation, la maintenance et le service après-vente."
+msgstr "دعم تقني مخصص للتركيب والصيانة وخدمة ما بعد البيع."
+
+msgid "Sécurité & Contrôle"
+msgstr "الأمن والمراقبة"
+
+msgid "Tanger"
+msgstr "طنجة"
+
+msgid "Tarifs Préférentiels"
+msgstr "أسعار تفضيلية"
+
+msgid "Tous"
+msgstr "الكل"
+
+msgid "Tous droits réservés."
+msgstr "جميع الحقوق محفوظة."
+
+msgid "Transformer les espaces médicaux en environnements d'excellence"
+msgstr "تحويل الفضاءات الطبية إلى بيئات متميزة"
+
+msgid "Téléphone"
+msgstr "الهاتف"
+
+msgid "Un consulting sur mesure pour optimiser la performance et la rentabilité de votre cabinet ou clinique."
+msgstr "استشارات مخصصة لتحسين أداء وربحية عيادتك أو مركزك الطبي."
+
+msgid "Un marché en pleine expansion avec des marges attractives et un potentiel de croissance élevé."
+msgstr "سوق في توسع مستمر مع هوامش جذابة وإمكانية نمو عالية."
+
+msgid "Un parcours simple et structuré pour devenir partenaire"
+msgstr "مسار بسيط ومنظم لتصبح شريكاً"
+
+msgid "Un processus structuré pour garantir la réussite de votre projet"
+msgstr "عملية منظمة لضمان نجاح مشروعك"
+
+msgid "Un projet d'aménagement en tête ?"
+msgstr "هل لديكم مشروع تجهيز؟"
+
+msgid "Un seul interlocuteur pour l'ensemble de votre projet, de la conception à la livraison finale."
+msgstr "محاور واحد لمشروعك بالكامل، من التصميم إلى التسليم النهائي."
+
+msgid "Une compréhension profonde des besoins spécifiques des professionnels de santé et de leurs patients."
+msgstr "فهم عميق لاحتياجات المهنيين الصحيين ومرضاهم."
+
+msgid "Une connaissance approfondie des normes et exigences propres aux espaces de santé professionnels."
+msgstr "معرفة معمقة بالمعايير والمتطلبات الخاصة بالفضاءات الصحية المهنية."
+
+msgid "Veuillez entrer la bonne réponse. Ce champ sert uniquement à prévenir le spam."
+msgstr "يرجى إدخال الإجابة الصحيحة. هذا الحقل لمنع الرسائل المزعجة فقط."
+
+msgid "Ville"
+msgstr "المدينة"
+
+msgid "Visite virtuelle 3D bientôt disponible"
+msgstr "جولة افتراضية ثلاثية الأبعاد قريباً"
+
+msgid "Visitez nos réalisations en 3D"
+msgstr "زوروا إنجازاتنا بتقنية ثلاثية الأبعاد"
+
+msgid "Vivez et travaillez dans l'une des villes les plus dynamiques du Maroc."
+msgstr "عش واعمل في واحدة من أكثر المدن ديناميكية في المغرب."
+
+msgid "Votre Projet"
+msgstr "مشروعك"
+
+msgid "Votre partenaire de confiance pour l'aménagement d'espaces médicaux"
+msgstr "شريككم الموثوق لتجهيز الفضاءات الطبية"
+
+msgid "Votre partenaire pour des espaces médicaux"
+msgstr "شريككم للفضاءات الطبية"
+
+msgid "Vous avez un projet d'aménagement médical ?"
+msgstr "هل لديكم مشروع تجهيز طبي؟"
+
+msgid "Vérification anti-spam"
+msgstr "التحقق من مكافحة الرسائل المزعجة"
+
+msgid "Votre réponse"
+msgstr "إجابتك"
+
+msgid "Soumission rejetée."
+msgstr "تم رفض الإرسال."
+
+msgid "La réponse au calcul anti-spam est incorrecte."
+msgstr "الإجابة على حساب مكافحة الرسائل المزعجة غير صحيحة."
+
+msgid "au cœur du Maroc, au service de tout le territoire"
+msgstr "في قلب المغرب، في خدمة كل التراب"
+
+msgid "cliniques, cabinets, laboratoires, pharmacies, centres de radiologie"
+msgstr "عيادات، مكاتب طبية، مختبرات، صيدليات، مراكز أشعة"
+
+msgid "d'exception"
+msgstr "استثنائية"
+
+msgid "réalisés pour des professionnels de santé au Maroc"
+msgstr "منجزة لمهنيين صحيين في المغرب"
+
+msgid "À Propos"
+msgstr "من نحن"
+
+msgid "À Propos de MEDICENTERS PERFORMANCE"
+msgstr "حول MEDICENTERS PERFORMANCE"
+
+msgid "À propos"
+msgstr "من نحن"
+
+msgid "Équipements & Textile"
+msgstr "التجهيزات والنسيج"
+
+msgid "Équipements et mobilier premium pour les professionnels de santé"
+msgstr "تجهيزات وأثاث عالي الجودة للمهنيين الصحيين"
+
+msgid "Évaluation"
+msgstr "التقييم"
+
+msgid "Évolution professionnelle"
+msgstr "التطور المهني"
+
+msgid "Accédez à des formations techniques et commerciales pour maîtriser nos solutions."
+msgstr "احصل على تدريب تقني وتجاري لإتقان حلولنا."
+
+msgid "Bénéficiez de remises exclusives sur l'ensemble de notre catalogue de produits et services."
+msgstr "استفد من خصومات حصرية على مجموعة منتجاتنا وخدماتنا الكاملة."
+
+#: URL translations
+msgid "services/"
+msgstr "services/"
+
+msgid "blog/"
+msgstr "blog/"
+
+msgid "recruitment/"
+msgstr "recruitment/"
+
+msgid "contact/"
+msgstr "contact/"
+
+msgid "partner/"
+msgstr "partner/"
+
+msgid "about/"
+msgstr "about/"
+
+#: Missing template strings
+msgid "De la conception à la réalisation, un interlocuteur unique pour simplifier votre projet d'aménagement."
+msgstr "من التصميم إلى التنفيذ، محاور واحد لتبسيط مشروع التجهيز الخاص بكم."
+
+msgid "Des matériaux sélectionnés et un mobilier médical modulaire conçu pour durer et impressionner."
+msgstr "مواد مختارة وأثاث طبي معياري مصمم ليدوم ويبهر."
+
+msgid "Accompagnement Personnalisé"
+msgstr "مرافقة شخصية"
+
+msgid "Discuter de votre projet"
+msgstr "ناقش مشروعك"
+
+msgid "Ce que disent nos clients"
+msgstr "ماذا يقول عملاؤنا"
+
+msgid "Aménagement clinique"
+msgstr "تجهيز العيادة"
+
+msgid "Cabinet médical"
+msgstr "عيادة طبية"
+
+msgid "Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé."
+msgstr "تواصلوا معنا اليوم لمناقشة مشروعكم والحصول على عرض سعر مخصص."
+
+msgid "De la conception à la réalisation, nous proposons des solutions clé en main qui couvrent l'agencement mobilier, l'architecture d'intérieur, la signalétique, la sécurité, les équipements et le consulting en gestion de cabinet."
+msgstr "من التصميم إلى التنفيذ، نقدم حلولاً متكاملة تغطي تخطيط الأثاث والتصميم الداخلي واللافتات والأمن والمعدات واستشارات إدارة العيادات."
+
+msgid "C'est pourquoi nous mettons notre expertise au service de chaque projet, en combinant design fonctionnel, matériaux de qualité et accompagnement personnalisé pour créer des espaces médicaux qui inspirent confiance et professionnalisme."
+msgstr "لهذا السبب نضع خبرتنا في خدمة كل مشروع، ونجمع بين التصميم الوظيفي والمواد عالية الجودة والدعم الشخصي لإنشاء فضاءات طبية تلهم الثقة والاحترافية."
+
+msgid "Des matériaux sélectionnés avec soin et une exécution irréprochable pour chaque projet d'aménagement."
+msgstr "مواد مختارة بعناية وتنفيذ لا تشوبه شائبة لكل مشروع تصميم."
+
+msgid "Le respect des délais et des engagements pris, pour une relation de confiance durable avec nos clients."
+msgstr "احترام المواعيد والالتزامات لبناء علاقة ثقة دائمة مع عملائنا."
+
+msgid "5 types de clients"
+msgstr "5 أنواع من العملاء"
+
+msgid "Basé à Tanger"
+msgstr "مقرنا في طنجة"
+
+msgid "Contribuez à améliorer les espaces de santé et le quotidien des professionnels médicaux."
+msgstr "المساهمة في تحسين الفضاءات الصحية والحياة اليومية للمهنيين الطبيين."
+
+msgid "Comment nous travaillons"
+msgstr "كيف نعمل"
+
+msgid "Visiter tous nos showrooms"
+msgstr "زيارة جميع معارضنا"
+
+msgid "Lancer la visite"
+msgstr "بدء الجولة"
+
+msgid "Gestion des cookies"
+msgstr "إدارة ملفات تعريف الارتباط"
+
+msgid "Nous utilisons des cookies pour optimiser votre expérience sur notre site, analyser le trafic et personnaliser le contenu. Vous pouvez accepter tous les cookies, les refuser ou personnaliser vos préférences."
+msgstr "نحن نستخدم ملفات تعريف الارتباط لتحسين تجربتك على موقعنا، وتحليل حركة المرور وتخصيص المحتوى. يمكنك قبول جميع ملفات تعريف الارتباط، أو رفضها، أو تخصيص تفضيلاتك."
+
+msgid "Personnaliser"
+msgstr "تخصيص"
+
+msgid "Tout refuser"
+msgstr "رفض الكل"
+
+msgid "Tout accepter"
+msgstr "قبول الكل"
+
+msgid "Cookies Nécessaires"
+msgstr "ملفات تعريف الارتباط الضرورية"
+
+msgid "Toujours actif"
+msgstr "نشط دائماً"
+
+msgid "Ces cookies sont indispensables au bon fonctionnement du site (session, sécurité, langue)."
+msgstr "ملفات تعريف الارتباط هذه ضرورية للتشغيل السليم للموقع (الجلسة، الأمان، اللغة)."
+
+msgid "Cookies Analytiques"
+msgstr "ملفات تعريف الارتباط التحليلية"
+
+msgid "Permettent de mesurer le trafic, d'analyser le comportement des utilisateurs et d'améliorer le site."
+msgstr "تسمح لنا بقياس حركة المرور وتحليل سلوك المستخدمين وتحسين الموقع."
+
+msgid "Cookies Publicitaires / Marketing"
+msgstr "ملفات تعريف الارتباط الإعلانية / التسويقية"
+
+msgid "Utilisés pour vous proposer des contenus ou des publicités pertinents sur d'autres plateformes."
+msgstr "تُستخدم لتقديم محتوى أو إعلانات ملائمة لك على منصات أخرى."
+
+msgid "Enregistrer mes choix"
+msgstr "حفظ خياراتي"
+
+msgid "Description du poste"
+msgstr "الوصف الوظيفي"
+
+msgid "Bonjour, je souhaite obtenir plus d'informations sur vos solutions d'aménagement médical."
+msgstr "مرحباً، أود الحصول على مزيد من المعلومات حول حلول تجهيز الفضاءات الطبية الخاصة بكم."
+
+
+
+

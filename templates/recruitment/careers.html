@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Recrutement" %}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        {% include 'includes/breadcrumbs.html' with breadcrumbs=breadcrumbs %}
+        <h1>{% trans "Rejoignez notre équipe" %}</h1>
+        <p class="text-muted mb-0">{% trans "Participez à la transformation des espaces médicaux au Maroc" %}</p>
+    </div>
+</section>
+
+<!-- Why Join Us -->
+<section class="section">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Pourquoi rejoindre MEDICENTERS PERFORMANCE ?" %}</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon"><i class="bi bi-rocket-takeoff"></i></div>
+                    <h3>{% trans "Entreprise dynamique" %}</h3>
+                    <p>{% trans "Rejoignez une équipe ambitieuse en pleine croissance, au cœur d'un secteur porteur." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon"><i class="bi bi-heart-pulse"></i></div>
+                    <h3>{% trans "Secteur médical" %}</h3>
+                    <p>{% trans "Contribuez à améliorer les espaces de santé et le quotidien des professionnels médicaux." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                    <h3>{% trans "Évolution professionnelle" %}</h3>
+                    <p>{% trans "Développez vos compétences dans un environnement stimulant avec de réelles perspectives." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon"><i class="bi bi-geo-alt"></i></div>
+                    <h3>{% trans "Tanger" %}</h3>
+                    <p>{% trans "Vivez et travaillez dans l'une des villes les plus dynamiques du Maroc." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Open Positions -->
+<section class="section section-alt" id="offres">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Offres d'emploi" %}</h2>
+            <p>{% trans "Découvrez nos postes ouverts et trouvez celui qui vous correspond" %}</p>
+        </div>
+
+        {% if jobs %}
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                {% for job in jobs %}
+                <div class="job-card fade-in-up" id="job-{{ job.pk }}">
+                    <div class="d-flex flex-wrap justify-content-between align-items-start mb-3">
+                        <div>
+                            <h3 class="h5 mb-1">{{ job.title }}</h3>
+                            {% if job.department %}
+                            <span class="text-muted small"><i class="bi bi-building me-1"></i>{{ job.department }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="d-flex gap-2 mt-2 mt-md-0">
+                            <span class="contract-badge contract-{{ job.contract_type|lower }}">{{ job.get_contract_type_display }}</span>
+                            <span class="badge bg-light text-dark"><i class="bi bi-geo-alt me-1"></i>{{ job.location }}</span>
+                        </div>
+                    </div>
+                    <div class="job-details">
+                        <div class="mb-3">
+                            <h4 class="h6">{% trans "Description du poste" %}</h4>
+                            {{ job.description|linebreaks }}
+                        </div>
+                        <div>
+                            <h4 class="h6">{% trans "Profil recherché" %}</h4>
+                            {{ job.requirements|linebreaks }}
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <a href="#apply" class="btn btn-primary btn-sm">
+                            <i class="bi bi-send me-1"></i>{% trans "Postuler" %}
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <div class="text-center py-4 fade-in-up">
+            <i class="bi bi-briefcase display-3 text-muted mb-3"></i>
+            <p class="text-muted">{% trans "Aucune offre disponible actuellement. N'hésitez pas à envoyer une candidature spontanée ci-dessous." %}</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Application Form -->
+<section class="section" id="apply">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Postulez maintenant" %}</h2>
+            <p>{% trans "Envoyez votre candidature — spontanée ou pour un poste spécifique" %}</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7 fade-in-up">
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                    <p class="mb-0">{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <form method="post" enctype="multipart/form-data" novalidate class="needs-validation">
+                    {% csrf_token %}
+
+                    <!-- Honeypot -->
+                    {{ form.website }}
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="{{ form.full_name.id_for_label }}" class="form-label">{% trans "Nom complet" %} *</label>
+                            {{ form.full_name }}
+                            {% if form.full_name.errors %}<div class="text-danger small mt-1">{{ form.full_name.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.email.id_for_label }}" class="form-label">{% trans "Email" %} *</label>
+                            {{ form.email }}
+                            {% if form.email.errors %}<div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.phone.id_for_label }}" class="form-label">{% trans "Téléphone" %} *</label>
+                            {{ form.phone }}
+                            {% if form.phone.errors %}<div class="text-danger small mt-1">{{ form.phone.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.position.id_for_label }}" class="form-label">{% trans "Poste souhaité" %}</label>
+                            {{ form.position }}
+                            {% if form.position.errors %}<div class="text-danger small mt-1">{{ form.position.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="col-12">
+                            <label for="{{ form.cv_file.id_for_label }}" class="form-label">{% trans "CV (PDF, DOC, DOCX — max 5 Mo)" %} *</label>
+                            {{ form.cv_file }}
+                            {% if form.cv_file.errors %}<div class="text-danger small mt-1">{{ form.cv_file.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="col-12">
+                            <label for="{{ form.cover_message.id_for_label }}" class="form-label">{% trans "Message de motivation" %}</label>
+                            {{ form.cover_message }}
+                            {% if form.cover_message.errors %}<div class="text-danger small mt-1">{{ form.cover_message.errors.0 }}</div>{% endif %}
+                        </div>
+
+                        <!-- Math Captcha -->
+                        <div class="col-12">
+                            {{ form.captcha_a }}
+                            {{ form.captcha_b }}
+                            <div class="captcha-group">
+                                <span class="captcha-question">{{ form.captcha_question }}</span>
+                                {{ form.captcha_answer }}
+                            </div>
+                            {% if form.captcha_answer.errors %}<div class="text-danger small mt-1">{{ form.captcha_answer.errors.0 }}</div>{% endif %}
+                            <small class="text-muted mt-1 d-block">{% trans "Veuillez entrer la bonne réponse. Ce champ sert uniquement à prévenir le spam." %}</small>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="bi bi-send me-2"></i>{% trans "Envoyer ma candidature" %}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Schema.org JobPosting -->
+{% for job in jobs %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "{{ job.title|escapejs }}",
+    "description": "{{ job.description|escapejs }}",
+    "datePosted": "{{ job.posted_date|date:'c' }}",
+    "employmentType": "{% if job.contract_type == 'CDI' %}FULL_TIME{% elif job.contract_type == 'CDD' %}CONTRACTOR{% elif job.contract_type == 'Stage' %}INTERN{% else %}OTHER{% endif %}",
+    "jobLocation": {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "{{ job.location|escapejs }}",
+            "addressCountry": "MA"
+        }
+    },
+    "hiringOrganization": {
+        "@type": "Organization",
+        "name": "MEDICENTERS PERFORMANCE",
+        "sameAs": "{{ request.scheme }}://{{ request.get_host }}"
+    }
+}
+</script>
+{% endfor %}
+{% endblock %}

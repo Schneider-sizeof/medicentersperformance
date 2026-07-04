@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Contact" %}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        {% include 'includes/breadcrumbs.html' with breadcrumbs=breadcrumbs %}
+        <h1>{% trans "Contactez-nous" %}</h1>
+        <p class="text-muted mb-0">{% trans "Discutons de votre projet d'aménagement médical" %}</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-7 fade-in-left">
+                <h2 class="h4 mb-4">{% trans "Envoyez-nous un message" %}</h2>
+
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                    <p class="mb-0">{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <form method="post" novalidate>
+                    {% csrf_token %}
+
+                    <!-- Honeypot -->
+                    {{ form.website }}
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="{{ form.name.id_for_label }}" class="form-label">{% trans "Nom complet" %} *</label>
+                            {{ form.name }}
+                            {% if form.name.errors %}<div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.email.id_for_label }}" class="form-label">{% trans "Email" %} *</label>
+                            {{ form.email }}
+                            {% if form.email.errors %}<div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.phone.id_for_label }}" class="form-label">{% trans "Téléphone" %}</label>
+                            {{ form.phone }}
+                            {% if form.phone.errors %}<div class="text-danger small mt-1">{{ form.phone.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.subject.id_for_label }}" class="form-label">{% trans "Sujet" %} *</label>
+                            {{ form.subject }}
+                            {% if form.subject.errors %}<div class="text-danger small mt-1">{{ form.subject.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="col-12">
+                            <label for="{{ form.message.id_for_label }}" class="form-label">{% trans "Message" %} *</label>
+                            {{ form.message }}
+                            {% if form.message.errors %}<div class="text-danger small mt-1">{{ form.message.errors.0 }}</div>{% endif %}
+                        </div>
+
+                        <!-- Math Captcha -->
+                        <div class="col-12">
+                            {{ form.captcha_a }}
+                            {{ form.captcha_b }}
+                            <div class="captcha-group">
+                                <span class="captcha-question">{{ form.captcha_question }}</span>
+                                {{ form.captcha_answer }}
+                            </div>
+                            {% if form.captcha_answer.errors %}<div class="text-danger small mt-1">{{ form.captcha_answer.errors.0 }}</div>{% endif %}
+                            <small class="text-muted mt-1 d-block">{% trans "Veuillez entrer la bonne réponse. Ce champ sert uniquement à prévenir le spam." %}</small>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-send me-2"></i>{% trans "Envoyer le message" %}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-5 fade-in-right">
+                <h2 class="h4 mb-4">{% trans "Informations de contact" %}</h2>
+
+                <div class="contact-info-card mb-4">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div>
+                            <h5 class="h6 mb-1">{% trans "Téléphone" %}</h5>
+                            {% if company.phone %}
+                            <a href="tel:{{ company.phone|cut:' ' }}" class="text-decoration-none">{{ company.phone }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div>
+                            <h5 class="h6 mb-1">{% trans "Email" %}</h5>
+                            {% if company.email %}
+                            <a href="mailto:{{ company.email }}" class="text-decoration-none">{{ company.email }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div>
+                            <h5 class="h6 mb-1">{% trans "Adresse" %}</h5>
+                            {% if company.address %}
+                            <p class="mb-0 small">{{ company.address }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-clock-fill"></i>
+                        </div>
+                        <div>
+                            <h5 class="h6 mb-1">{% trans "Horaires" %}</h5>
+                            {% if company.hours_weekday %}<p class="mb-0 small">{{ company.hours_weekday }}</p>{% endif %}
+                            {% if company.hours_saturday %}<p class="mb-0 small">{{ company.hours_saturday }}</p>{% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <h5 class="h6 mb-3">{% trans "Suivez-nous" %}</h5>
+                <div class="d-flex gap-2 mb-4">
+                    {% if company.facebook_url %}<a href="{{ company.facebook_url }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary"><i class="bi bi-facebook"></i></a>{% endif %}
+                    {% if company.instagram_url %}<a href="{{ company.instagram_url }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary"><i class="bi bi-instagram"></i></a>{% endif %}
+                    {% if company.linkedin_url %}<a href="{{ company.linkedin_url }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary"><i class="bi bi-linkedin"></i></a>{% endif %}
+                    {% if company.youtube_url %}<a href="{{ company.youtube_url }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary"><i class="bi bi-youtube"></i></a>{% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Google Maps -->
+<section class="pb-0">
+    <div class="container-fluid px-0">
+        <div class="ratio" style="--bs-aspect-ratio: 35%;">
+            {% if company.google_maps_embed_url %}
+            <iframe src="{{ company.google_maps_embed_url }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="{% trans 'Localisation MEDICENTERS PERFORMANCE' %}" style="border:0;"></iframe>
+            {% else %}
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12948.0!2d-5.834!3d35.7595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b875cf04c132d%3A0x76bfc571bfb4e17a!2sBoulevard+Mohammed+V%2C+Tanger!5e0!3m2!1sfr!2sma!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="{% trans 'Localisation MEDICENTERS PERFORMANCE' %}" style="border:0;"></iframe>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% block extra_meta %}
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MEDICENTERS PERFORMANCE",
+    "telephone": "+212660785038",
+    "email": "contact@medicenters.ma",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Boulevard Mohammed V, Résidence Redouane Chirine 112 N°48",
+        "addressLocality": "Tanger",
+        "addressCountry": "MA"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.7595,
+        "longitude": -5.8340
+    },
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "20:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "15:00"
+        }
+    ]
+}
+</script>
+{% endblock %}
+{% endblock %}

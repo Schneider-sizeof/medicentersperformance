@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block meta_description %}{{ post.meta_description|default:post.excerpt }}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumbs -->
+<section class="page-header">
+    <div class="container">
+        <nav aria-label="{% trans "Fil d'ariane" %}">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'core:home' %}">{% trans "Accueil" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'blog:list' %}">{% trans "Blog" %}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ post.title|truncatewords:6 }}</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<article class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Article Header -->
+                <header class="mb-4 fade-in-up">
+                    {% if post.category %}
+                    <span class="blog-category-badge mb-3 d-inline-block">{{ post.category.name }}</span>
+                    {% endif %}
+                    <h1 class="mb-3">{{ post.title }}</h1>
+                    <div class="d-flex flex-wrap gap-3 text-muted small mb-4">
+                        <span><i class="bi bi-person me-1"></i> {{ post.author }}</span>
+                        <span><i class="bi bi-calendar3 me-1"></i> {{ post.published_date|date:"d F Y" }}</span>
+                        {% if post.category %}
+                        <span><i class="bi bi-folder me-1"></i> {{ post.category.name }}</span>
+                        {% endif %}
+                    </div>
+                </header>
+
+                <!-- Featured Image -->
+                {% if post.featured_image %}
+                <div class="mb-4 fade-in-up">
+                    <img src="{{ post.featured_image.url }}" alt="{{ post.featured_image_alt|default:post.title }}" class="img-fluid rounded w-100" style="max-height: 450px; object-fit: cover;">
+                </div>
+                {% endif %}
+
+                <!-- Article Content -->
+                <div class="article-content fade-in-up">
+                    {{ post.content|safe }}
+                </div>
+
+                <!-- Share Links -->
+                <div class="article-share my-5 py-4 border-top border-bottom fade-in-up">
+                    <h5 class="mb-3">{% trans "Partager cet article" %}</h5>
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" aria-label="{% trans 'Partager sur Facebook' %}">
+                            <i class="bi bi-facebook me-1"></i> Facebook
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title|urlencode }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" aria-label="{% trans 'Partager sur X' %}">
+                            <i class="bi bi-twitter-x me-1"></i> X
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.build_absolute_uri }}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary" aria-label="{% trans 'Partager sur LinkedIn' %}">
+                            <i class="bi bi-linkedin me-1"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Back to blog -->
+                <div class="text-center mb-5">
+                    <a href="{% url 'blog:list' %}" class="btn btn-outline-primary">
+                        <i class="bi bi-arrow-left me-1"></i> {% trans "Retour au blog" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Posts -->
+        {% if related_posts %}
+        <div class="row mt-5 pt-5 border-top">
+            <div class="col-12">
+                <h2 class="text-center mb-4">{% trans "Articles similaires" %}</h2>
+            </div>
+            {% for rpost in related_posts %}
+            <div class="col-lg-4 col-md-6 fade-in-up">
+                <article class="blog-card h-100">
+                    <a href="{{ rpost.get_absolute_url }}" class="text-decoration-none">
+                        {% if rpost.featured_image %}
+                        <img src="{{ rpost.featured_image.url }}" alt="{{ rpost.featured_image_alt|default:rpost.title }}" class="blog-card-img" loading="lazy">
+                        {% else %}
+                        <div class="blog-card-img-placeholder">
+                            <i class="bi bi-journal-text"></i>
+                        </div>
+                        {% endif %}
+                    </a>
+                    <div class="blog-card-body">
+                        <h3 class="h6">
+                            <a href="{{ rpost.get_absolute_url }}" class="text-decoration-none text-dark">{{ rpost.title }}</a>
+                        </h3>
+                        <span class="blog-date">{{ rpost.published_date|date:"d M Y" }}</span>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</article>
+
+{% block extra_meta %}
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ post.title|escapejs }}",
+    "description": "{{ post.meta_description|default:post.excerpt|escapejs }}",
+    "datePublished": "{{ post.published_date|date:'c' }}",
+    "dateModified": "{{ post.updated_at|date:'c' }}",
+    "author": {
+        "@type": "Organization",
+        "name": "{{ post.author|escapejs }}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "MEDICENTERS PERFORMANCE",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}"
+        }
+    }{% if post.featured_image %},
+    "image": "{{ request.scheme }}://{{ request.get_host }}{{ post.featured_image.url }}"{% endif %}
+}
+</script>
+{% endblock %}
+{% endblock %}

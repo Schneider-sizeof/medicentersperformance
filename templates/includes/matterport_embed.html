@@ -1,0 +1,41 @@
+{% load i18n static %}
+{% if showroom %}
+<div class="panorama-container">
+    {% if showroom.panorama_image %}
+    <div id="panorama-{{ showroom.slug|default:'viewer' }}" class="panorama-viewer"></div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        pannellum.viewer('panorama-{{ showroom.slug|default:"viewer" }}', {
+            type: 'equirectangular',
+            panorama: '{{ showroom.panorama_image.url }}',
+            autoLoad: true,
+            autoRotate: -2,
+            compass: false,
+            showZoomCtrl: true,
+            showFullscreenCtrl: true,
+            mouseZoom: true,
+            title: '{{ showroom.title|escapejs }}',
+            hfov: 110,
+            pitch: 0,
+            yaw: 0,
+        });
+    });
+    </script>
+    {% elif showroom.matterport_embed_url %}
+    <div class="ratio ratio-16x9">
+        <iframe
+            src="{{ showroom.matterport_embed_url }}"
+            title="{{ showroom.title }}"
+            loading="lazy"
+            allowfullscreen
+            allow="xr-spatial-tracking"
+            frameborder="0"
+            class="matterport-iframe">
+        </iframe>
+    </div>
+    {% endif %}
+    {% if showroom.description %}
+    <p class="matterport-description mt-3 text-muted text-center">{{ showroom.description }}</p>
+    {% endif %}
+</div>
+{% endif %}

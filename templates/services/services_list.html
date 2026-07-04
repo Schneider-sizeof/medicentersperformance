@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Produits & Services" %}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        {% include 'includes/breadcrumbs.html' with breadcrumbs=breadcrumbs %}
+        <h1>{% trans "Produits & Services" %}</h1>
+        <p class="text-muted mb-0">{% trans "Des solutions complètes et sur mesure pour l'aménagement de vos espaces médicaux" %}</p>
+    </div>
+</section>
+
+<!-- Intro -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center fade-in-up">
+                <p class="lead">{% trans "MEDICENTERS PERFORMANCE vous accompagne dans tous les aspects de l'aménagement et de la gestion de votre espace médical. De la conception architecturale à l'équipement, en passant par la signalétique et le consulting, nous proposons une offre complète adaptée aux professionnels de santé." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PRODUCTS SECTION ========== -->
+<section class="section section-alt" id="produits">
+    <div class="container">
+        <div class="section-heading fade-in-up">
+            <div class="overline">
+                <span class="hex-accent"></span>
+                {% trans "Notre Catalogue" %}
+            </div>
+            <h2>{% trans "Nos Produits" %}</h2>
+            <p>{% trans "Équipements et mobilier premium pour les professionnels de santé" %}</p>
+        </div>
+
+        <div class="hex-divider fade-in-up">
+            <span class="hex-line"></span>
+            <span class="hex-dot"></span>
+            <span class="hex-line"></span>
+        </div>
+
+        <div class="catalog-grid">
+            {% for product in products %}
+            <div class="catalog-card fade-in-up stagger-{{ forloop.counter|add:"-1"|divisibleby:"6"|yesno:"1,"|default:forloop.counter0|divisibleby:"6"|yesno:"1," }}{% widthratio forloop.counter0 6 1 as stagger_group %}{% with counter0=forloop.counter0 %}{% endwith %}" id="product-{{ product.slug }}">
+                <div class="catalog-card-images">
+                    {% if product.image1 %}
+                    <div class="catalog-img-wrap">
+                        <img src="{{ product.image1.url }}" alt="{{ product.image1_alt|default:product.title }}" loading="lazy">
+                    </div>
+                    {% else %}
+                    <div class="catalog-img-wrap catalog-img-placeholder">
+                        <i class="bi bi-image"></i>
+                    </div>
+                    {% endif %}
+                    {% if product.image2 %}
+                    <div class="catalog-img-wrap">
+                        <img src="{{ product.image2.url }}" alt="{{ product.image2_alt|default:product.title }}" loading="lazy">
+                    </div>
+                    {% else %}
+                    <div class="catalog-img-wrap catalog-img-placeholder">
+                        <i class="bi bi-image"></i>
+                    </div>
+                    {% endif %}
+                    {% if product.image3 %}
+                    <div class="catalog-img-wrap">
+                        <img src="{{ product.image3.url }}" alt="{{ product.image3_alt|default:product.title }}" loading="lazy">
+                    </div>
+                    {% else %}
+                    <div class="catalog-img-wrap catalog-img-placeholder">
+                        <i class="bi bi-image"></i>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="catalog-card-body">
+                    <h3>{{ product.title }}</h3>
+                    {% if product.subtitle %}<p>{{ product.subtitle }}</p>{% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <div class="text-center py-5">
+                <p class="text-muted">{% trans "Les produits seront bientôt disponibles." %}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ========== SERVICES SECTION ========== -->
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-heading fade-in-up">
+            <div class="overline">
+                <span class="hex-accent"></span>
+                {% trans "Notre Expertise" %}
+            </div>
+            <h2>{% trans "Nos Services" %}</h2>
+            <p>{% trans "Des prestations sur mesure pour concevoir et optimiser vos espaces médicaux" %}</p>
+        </div>
+
+        <div class="hex-divider fade-in-up">
+            <span class="hex-line"></span>
+            <span class="hex-dot"></span>
+            <span class="hex-line"></span>
+        </div>
+
+        <div class="catalog-grid">
+            {% for service in services %}
+            <div class="catalog-card fade-in-up" id="service-{{ service.slug }}">
+                <div class="catalog-card-images">
+                    {% if service.image1 %}
+                    <div class="catalog-img-wrap">
+                        <img src="{{ service.image1.url }}" alt="{{ service.image1_alt|default:service.title }}" loading="lazy">
+                    </div>
+                    {% else %}
+                    <div class="catalog-img-wrap catalog-img-placeholder">
+                        <i class="bi bi-image"></i>
+                    </div>
+                    {% endif %}
+                    {% if service.image2 %}
+                    <div class="catalog-img-wrap">
+                        <img src="{{ service.image2.url }}" alt="{{ service.image2_alt|default:service.title }}" loading="lazy">
+                    </div>
+                    {% else %}
+                    <div class="catalog-img-wrap catalog-img-placeholder">
+                        <i class="bi bi-image"></i>
+                    </div>
+                    {% endif %}
+                    {% if service.image3 %}
+                    <div class="catalog-img-wrap">
+                        <img src="{{ service.image3.url }}" alt="{{ service.image3_alt|default:service.title }}" loading="lazy">
+                    </div>
+                    {% else %}
+                    <div class="catalog-img-wrap catalog-img-placeholder">
+                        <i class="bi bi-image"></i>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="catalog-card-body">
+                    <h3>{{ service.title }}</h3>
+                    {% if service.subtitle %}<p>{{ service.subtitle }}</p>{% elif service.short_description %}<p>{{ service.short_description }}</p>{% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <div class="text-center py-5">
+                <p class="text-muted">{% trans "Les services seront bientôt disponibles." %}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Matterport Showroom -->
+{% if showrooms %}
+<section class="section section-alt" id="showroom">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Showroom Virtuel" %}</h2>
+            <p>{% trans "Explorez nos réalisations en visite virtuelle 3D immersive" %}</p>
+        </div>
+        {% for showroom in showrooms %}
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 fade-in-up">
+                <h3 class="text-center mb-4">{{ showroom.title }}</h3>
+                {% include 'includes/matterport_embed.html' with showroom=showroom %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Final CTA -->
+<section class="cta-band">
+    <div class="container text-center fade-in-up">
+        <h2>{% trans "Un projet d'aménagement en tête ?" %}</h2>
+        <p class="cta-subtitle">{% trans "Contactez-nous pour une consultation gratuite et un devis personnalisé." %}</p>
+        <a href="{% url 'contact:contact' %}" class="btn btn-cta-primary btn-lg">
+            <i class="bi bi-envelope-paper me-2"></i>{% trans "Contactez-nous" %}
+        </a>
+    </div>
+</section>
+
+{% block extra_meta %}
+<!-- Schema.org Product/Service markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MEDICENTERS PERFORMANCE",
+    "url": "{{ request.build_absolute_uri }}",
+    "makesOffer": [
+        {% for product in products %}
+        {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Product",
+                "name": "{{ product.title|escapejs }}"{% if product.subtitle %},
+                "description": "{{ product.subtitle|escapejs }}"{% endif %}
+            }
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+        {% if products and services %},{% endif %}
+        {% for service in services %}
+        {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "{{ service.title|escapejs }}"{% if service.subtitle %},
+                "description": "{{ service.subtitle|escapejs }}"{% elif service.short_description %},
+                "description": "{{ service.short_description|escapejs }}"{% endif %}
+            }
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+</script>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,356 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Accueil" %}{% endblock %}
+
+{% block content %}
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="hero">
+    <!-- Floating hex decorations -->
+    <div class="hero-hex hero-hex-1"></div>
+    <div class="hero-hex hero-hex-2"></div>
+    <div class="hero-hex hero-hex-3"></div>
+    <div class="hero-gradient-overlay"></div>
+
+    <div class="container position-relative" style="z-index: 2;">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="hero-content">
+                    <div class="hero-badge mb-3">
+                        <span class="hero-badge-dot"></span>
+                        {% trans "Aménagement d'intérieur médical" %}
+                    </div>
+                    <h1>{% trans "Votre partenaire pour des espaces médicaux" %} <span class="text-gradient">{% trans "d'exception" %}</span></h1>
+                    <p class="hero-subtitle">
+                        {% trans "Aménagement d'intérieur, agencement mobilier, communication et consulting — des solutions clé en main pour les professionnels de santé à Tanger et au Maroc." %}
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="{% url 'contact:contact' %}" class="btn btn-primary btn-lg me-md-3">
+                            <i class="bi bi-envelope-paper me-2"></i>{% trans "Demander un devis" %}
+                        </a>
+                        <a href="{% url 'services:list' %}" class="btn btn-glass btn-lg">
+                            {% trans "Découvrir nos services" %} <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-image-wrap">
+                    <img src="{% static 'images/logo.png' %}" alt="MEDICENTERS PERFORMANCE" class="hero-logo-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════ STATS COUNTER ═══════════════════════════ -->
+<section class="stats-bar">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-6 col-md-3 stats-item fade-in-up">
+                <div class="stats-number counter-number" data-target="150">0</div>
+                <div class="stats-label">{% trans "Projets réalisés" %}</div>
+            </div>
+            <div class="col-6 col-md-3 stats-item fade-in-up">
+                <div class="stats-number counter-number" data-target="6">0</div>
+                <div class="stats-label">{% trans "Services spécialisés" %}</div>
+            </div>
+            <div class="col-6 col-md-3 stats-item fade-in-up">
+                <div class="stats-number counter-number" data-target="10">0</div>
+                <div class="stats-label">{% trans "Années d'expertise" %}</div>
+            </div>
+            <div class="col-6 col-md-3 stats-item fade-in-up">
+                <div class="stats-number counter-number" data-target="100">0</div>
+                <div class="stats-label">{% trans "Clients satisfaits" %}</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════ WHO WE SERVE ═══════════════════════════ -->
+<section class="section-alt py-5">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Nos Clients" %}</h2>
+            <p>{% trans "Nous accompagnons les professionnels de santé dans la création de leurs espaces" %}</p>
+        </div>
+        <div class="client-types fade-in-up">
+            <div class="client-type-item">
+                <div class="client-type-hex">
+                    <i class="bi bi-hospital"></i>
+                </div>
+                <span>{% trans "Cliniques" %}</span>
+            </div>
+            <div class="client-type-item">
+                <div class="client-type-hex">
+                    <i class="bi bi-heart-pulse"></i>
+                </div>
+                <span>{% trans "Cabinets médicaux" %}</span>
+            </div>
+            <div class="client-type-item">
+                <div class="client-type-hex">
+                    <i class="bi bi-moisture"></i>
+                </div>
+                <span>{% trans "Laboratoires d'analyse" %}</span>
+            </div>
+            <div class="client-type-item">
+                <div class="client-type-hex">
+                    <i class="bi bi-capsule"></i>
+                </div>
+                <span>{% trans "Pharmacies & Parapharmacies" %}</span>
+            </div>
+            <div class="client-type-item">
+                <div class="client-type-hex">
+                    <i class="bi bi-broadcast"></i>
+                </div>
+                <span>{% trans "Centres de radiologie" %}</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════ SERVICES OVERVIEW ═══════════════════════════ -->
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Nos Services" %}</h2>
+            <p>{% trans "Des solutions complètes pour chaque aspect de votre espace médical professionnel" %}</p>
+        </div>
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-lg-4 col-md-6 fade-in-up">
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="bi {{ service.icon_class }}"></i>
+                    </div>
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.short_description }}</p>
+                    <a href="{{ service.get_absolute_url }}" class="service-card-link">
+                        {% trans "En savoir plus" %} <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════ MATTERPORT 3D TOUR ═══════════════════════════ -->
+<section class="section section-alt" id="virtual-tour">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Visitez nos réalisations en 3D" %}</h2>
+            <p>{% trans "Explorez nos projets d'aménagement médical grâce à la visite virtuelle immersive" %}</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10 fade-in-up">
+                {% if featured_showroom %}
+                    {% include 'includes/matterport_embed.html' with showroom=featured_showroom %}
+                {% else %}
+                <div class="matterport-placeholder text-center py-5">
+                    <i class="bi bi-badge-3d display-1 text-muted"></i>
+                    <p class="text-muted mt-3">{% trans "Visite virtuelle 3D bientôt disponible" %}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════ WHY US ═══════════════════════════ -->
+<section class="section" id="why-us">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Pourquoi MEDICENTERS PERFORMANCE ?" %}</h2>
+            <p>{% trans "L'expertise qui fait la différence pour votre espace de santé" %}</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+                    <h3>{% trans "Expertise Médicale Spécialisée" %}</h3>
+                    <p>{% trans "Une connaissance approfondie des normes et exigences propres aux espaces de santé professionnels." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon">
+                        <i class="bi bi-key"></i>
+                    </div>
+                    <h3>{% trans "Solution Clé en Main" %}</h3>
+                    <p>{% trans "De la conception à la réalisation, un interlocuteur unique pour simplifier votre projet d'aménagement." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon">
+                        <i class="bi bi-gem"></i>
+                    </div>
+                    <h3>{% trans "Qualité Premium" %}</h3>
+                    <p>{% trans "Des matériaux sélectionnés et un mobilier médical modulaire conçu pour durer et impressionner." %}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 fade-in-up">
+                <div class="value-prop">
+                    <div class="value-prop-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h3>{% trans "Accompagnement Personnalisé" %}</h3>
+                    <p>{% trans "Un consulting sur mesure pour optimiser la performance et la rentabilité de votre cabinet ou clinique." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════ PORTFOLIO TEASER ═══════════════════════════ -->
+<section class="section section-alt" id="portfolio">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Nos Réalisations" %}</h2>
+            <p>{% trans "Découvrez quelques-uns de nos projets d'aménagement médical" %}</p>
+        </div>
+        <div class="row g-4">
+            {% for showroom in showrooms %}
+            <div class="col-lg-4 col-md-6 fade-in-up">
+                <div class="portfolio-card" onclick="open360Modal('{{ showroom.slug }}', '{{ showroom.title|escapejs }}', '{{ showroom.panorama_image.url }}')">
+                    {% if showroom.cover_image %}
+                    <div class="portfolio-card-img" style="background-image: url('{{ showroom.cover_image.url }}');">
+                    {% else %}
+                    <div class="portfolio-card-img" style="background: linear-gradient(135deg, var(--mc-grey) 0%, var(--mc-grey-warm) 100%);">
+                    {% endif %}
+                        <div class="portfolio-card-badge">
+                            <i class="bi bi-badge-3d-fill me-1"></i>360° TOUR
+                        </div>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <h3>{{ showroom.title }}</h3>
+                        <p>{{ showroom.description }}</p>
+                        <span class="btn-view-3d">
+                            <i class="bi bi-play-circle-fill me-1"></i>{% trans "Lancer la visite" %}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center py-5">
+                <p class="text-muted">{% trans "Les projets seront bientôt disponibles." %}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5 fade-in-up">
+            <a href="{% url 'services:list' %}#showroom" class="btn btn-outline-primary btn-lg">
+                {% trans "Visiter tous nos showrooms" %} <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════ TESTIMONIALS ═══════════════════════════ -->
+{% if testimonials %}
+<section class="section" id="testimonials">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Ce que disent nos clients" %}</h2>
+            <p>{% trans "La confiance de nos partenaires est notre plus grande fierté" %}</p>
+        </div>
+        <div class="row g-4">
+            {% for testimonial in testimonials %}
+            <div class="col-lg-4 col-md-6 fade-in-up">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">
+                        <i class="bi bi-quote"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>{{ testimonial.content }}</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">
+                            {{ testimonial.client_name|first }}
+                        </div>
+                        <div>
+                            <div class="testimonial-author">{{ testimonial.client_name }}</div>
+                            <div class="testimonial-role">{{ testimonial.client_role }}{% if testimonial.company %} — {{ testimonial.company }}{% endif %}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ═══════════════════════════ FINAL CTA ═══════════════════════════ -->
+<section class="cta-band">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 text-center fade-in-up">
+                <h2>{% trans "Prêt à transformer votre espace médical ?" %}</h2>
+                <p class="cta-subtitle">{% trans "Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé." %}</p>
+                <div class="cta-buttons">
+                    <a href="{% url 'contact:contact' %}" class="btn btn-cta-primary btn-lg me-md-3">
+                        <i class="bi bi-envelope-paper me-2"></i>{% trans "Demander un devis" %}
+                    </a>
+                    {% if company.phone %}
+                    <a href="tel:{{ company.phone|cut:' ' }}" class="btn btn-outline-light btn-lg">
+                        <i class="bi bi-telephone me-2"></i>{{ company.phone }}
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp Floating Button -->
+{% if company.phone %}
+<a href="https://wa.me/{{ company.phone|cut:' '|cut:'+' }}?text={% trans "Bonjour, je souhaite obtenir plus d'informations sur vos solutions d'aménagement médical."|urlencode %}" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+{% endif %}
+
+{% block extra_meta %}
+<!-- Schema.org LocalBusiness / ProfessionalService -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "name": "MEDICENTERS PERFORMANCE",
+    "description": "{% trans "Aménagement d'intérieur, agencement mobilier et consulting pour espaces médicaux professionnels à Tanger, Maroc." %}",
+    "url": "{{ request.scheme }}://{{ request.get_host }}",
+    "telephone": "+212660785038",
+    "email": "contact@medicenters.ma",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Boulevard Mohammed V, Résidence Redouane Chirine 112 N°48",
+        "addressLocality": "Tanger",
+        "addressCountry": "MA"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.7595,
+        "longitude": -5.8340
+    },
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "20:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "15:00"
+        }
+    ],
+    "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}",
+    "priceRange": "$$"
+}
+</script>
+{% endblock %}
+{% endblock %}

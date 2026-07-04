@@ -1,0 +1,99 @@
+{% load static i18n %}
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="{% url 'core:home' %}">
+            <img src="{% static 'images/logo.png' %}" alt="MEDICENTERS PERFORMANCE" class="navbar-logo" loading="eager">
+        </a>
+
+        <!-- Mobile toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="{% trans 'Menu' %}">
+            <span class="toggler-bar"></span>
+            <span class="toggler-bar"></span>
+            <span class="toggler-bar"></span>
+        </button>
+
+        <!-- Nav links -->
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <!-- Mobile logo inside menu -->
+            <div class="d-lg-none text-center py-3 mobile-nav-logo">
+                <img src="{% static 'images/logo.png' %}" alt="MEDICENTERS PERFORMANCE" style="height: 40px; width: auto;">
+            </div>
+
+            <ul class="navbar-nav ms-auto me-3 align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'core:home' %}">
+                        <i class="bi bi-house-door d-lg-none me-2"></i>{% trans "Accueil" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'core:about' %}">
+                        <i class="bi bi-info-circle d-lg-none me-2"></i>{% trans "À Propos" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.app_name == 'services' %}active{% endif %}" href="{% url 'services:list' %}">
+                        <i class="bi bi-grid d-lg-none me-2"></i>{% trans "Produits & Services" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.app_name == 'recruitment' %}active{% endif %}" href="{% url 'recruitment:careers' %}">
+                        <i class="bi bi-briefcase d-lg-none me-2"></i>{% trans "Recrutement" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.app_name == 'partnership' %}active{% endif %}" href="{% url 'partnership:partnership' %}">
+                        <i class="bi bi-handshake d-lg-none me-2"></i>{% trans "Revendeur / Partenaire" %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.app_name == 'contact' %}active{% endif %}" href="{% url 'contact:contact' %}">
+                        <i class="bi bi-envelope d-lg-none me-2"></i>{% trans "Contact" %}
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Language switcher with flags -->
+            <div class="dropdown me-3">
+                <button class="btn btn-sm lang-switcher dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {% if current_language == 'fr' %}<img src="https://flagcdn.com/w40/fr.png" alt="FR" class="lang-flag">{% elif current_language == 'ar' %}<img src="https://flagcdn.com/w40/ma.png" alt="AR" class="lang-flag">{% else %}<img src="https://flagcdn.com/w40/gb.png" alt="EN" class="lang-flag">{% endif %}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end lang-dropdown">
+                    {% for lang_code, lang_name in available_languages %}
+                    {% if lang_code != current_language %}
+                    <li>
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="language" value="{{ lang_code }}">
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                            <button type="submit" class="dropdown-item d-flex align-items-center gap-2">
+                                {% if lang_code == 'fr' %}<img src="https://flagcdn.com/w40/fr.png" alt="FR" class="lang-flag"> Français{% elif lang_code == 'ar' %}<img src="https://flagcdn.com/w40/ma.png" alt="AR" class="lang-flag"> العربية{% else %}<img src="https://flagcdn.com/w40/gb.png" alt="EN" class="lang-flag"> English{% endif %}
+                            </button>
+                        </form>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- CTA -->
+            <a href="{% url 'contact:contact' %}" class="btn btn-quote d-none d-lg-inline-flex">
+                <i class="bi bi-envelope-paper me-1"></i> {% trans "Demander un devis" %}
+            </a>
+
+            <!-- Mobile CTA -->
+            <div class="d-lg-none mt-3 pb-3 mobile-cta-wrap">
+                <a href="{% url 'contact:contact' %}" class="btn btn-quote w-100">
+                    <i class="bi bi-envelope-paper me-1"></i> {% trans "Demander un devis" %}
+                </a>
+                {% if company.phone %}
+                <a href="tel:{{ company.phone|cut:' ' }}" class="btn btn-outline-light w-100 mt-2">
+                    <i class="bi bi-telephone me-1"></i> {{ company.phone }}
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Navbar spacer -->
+<div class="navbar-spacer"></div>

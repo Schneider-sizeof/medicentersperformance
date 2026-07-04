@@ -1,0 +1,32 @@
+{% load i18n %}
+{% if breadcrumbs %}
+<nav aria-label="{% trans "Fil d'ariane" %}">
+    <ol class="breadcrumb mb-0">
+        {% for crumb in breadcrumbs %}
+        {% if crumb.url %}
+        <li class="breadcrumb-item"><a href="{{ crumb.url }}">{{ crumb.title }}</a></li>
+        {% else %}
+        <li class="breadcrumb-item active" aria-current="page">{{ crumb.title }}</li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+</nav>
+
+<!-- BreadcrumbList structured data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {% for crumb in breadcrumbs %}
+        {
+            "@type": "ListItem",
+            "position": {{ forloop.counter }},
+            "name": "{{ crumb.title }}",
+            {% if crumb.url %}"item": "{{ request.scheme }}://{{ request.get_host }}{{ crumb.url }}"{% endif %}
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+</script>
+{% endif %}

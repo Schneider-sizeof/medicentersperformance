@@ -1,0 +1,748 @@
+# English translations for MEDICENTERS PERFORMANCE
+# Copyright (C) 2026 MEDICENTERS PERFORMANCE
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: medicenters 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-04 00:00+0000\n"
+"PO-Revision-Date: 2026-07-04 00:00+0000\n"
+"Last-Translator: MEDICENTERS PERFORMANCE\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Accueil"
+msgstr "Home"
+
+msgid "Adresse"
+msgstr "Address"
+
+msgid "Aménagement & Agencement"
+msgstr "Design & Fitting"
+
+msgid "Aménagement d'espaces médicaux à Tanger"
+msgstr "Medical Space Design in Tangier"
+
+msgid "Aménagement d'intérieur, agencement mobilier, communication et consulting — des solutions clé en main pour les professionnels de santé à Tanger et au Maroc."
+msgstr "Interior design, furniture fitting, communication and consulting — turnkey solutions for healthcare professionals in Tangier and Morocco."
+
+msgid "Analogie & Audit"
+msgstr "Analysis & Audit"
+
+msgid "Années d'activité"
+msgstr "Years in Business"
+
+msgid "Architecture & Décoration"
+msgstr "Architecture & Decoration"
+
+msgid "Assistance Technique"
+msgstr "Technical Assistance"
+
+msgid "Aucun article n'a encore été publié."
+msgstr "No articles have been published yet."
+
+msgid "Avantages du Partenariat"
+msgstr "Partnership Benefits"
+
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Cabinets médicaux"
+msgstr "Medical Offices"
+
+msgid "Candidature"
+msgstr "Application"
+
+msgid "Candidature envoyée"
+msgstr "Application Sent"
+
+msgid "Candidature envoyée avec succès !"
+msgstr "Application submitted successfully!"
+
+msgid "Centres de radiologie"
+msgstr "Radiology Centers"
+
+msgid "Cliniques & Hôpitaux"
+msgstr "Clinics & Hospitals"
+
+msgid "Comment ça marche"
+msgstr "How It Works"
+
+msgid "Conception & Planification"
+msgstr "Design & Planning"
+
+msgid "Consulting & Performance"
+msgstr "Consulting & Performance"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Contactez-nous"
+msgstr "Contact Us"
+
+msgid "Contactez-nous pour une consultation gratuite et un devis personnalisé."
+msgstr "Contact us for a free consultation and personalized quote."
+
+msgid "Convention"
+msgstr "Agreement"
+
+msgid "Croissance Partagée"
+msgstr "Shared Growth"
+
+msgid "CV"
+msgstr "Resume"
+
+msgid "Date de publication"
+msgstr "Publication Date"
+
+msgid "Demander un devis"
+msgstr "Request a Quote"
+
+msgid "Des avantages concrets pour développer votre activité avec nous"
+msgstr "Concrete benefits to grow your business with us"
+
+msgid "Des questions sur le partenariat ?"
+msgstr "Questions about the partnership?"
+
+msgid "Des solutions complètes et sur mesure pour l'aménagement de vos espaces médicaux"
+msgstr "Complete and tailored solutions for your medical space design"
+
+msgid "Des solutions complètes pour chaque aspect de votre espace médical professionnel"
+msgstr "Comprehensive solutions for every aspect of your professional medical space"
+
+msgid "Des prestations sur mesure pour concevoir et optimiser vos espaces médicaux"
+msgstr "Tailored services to design and optimize your medical spaces"
+
+msgid "Devenez Revendeur ou Partenaire"
+msgstr "Become a Reseller or Partner"
+
+msgid "Discutons de votre projet d'aménagement médical"
+msgstr "Let's discuss your medical design project"
+
+msgid "Découvrez nos postes ouverts et trouvez celui qui vous correspond"
+msgstr "Discover our open positions and find the one that suits you"
+
+msgid "Découvrez quelques-uns de nos projets d'aménagement médical"
+msgstr "Discover some of our medical space design projects"
+
+msgid "Découvrir nos services"
+msgstr "Discover Our Services"
+
+msgid "Détails de l'Activité"
+msgstr "Business Details"
+
+msgid "Développez vos compétences dans un environnement stimulant avec de réelles perspectives."
+msgstr "Develop your skills in a stimulating environment with real career prospects."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "En savoir plus"
+msgstr "Learn More"
+
+msgid "Entreprise dynamique"
+msgstr "Dynamic Company"
+
+msgid "Envoyer la candidature"
+msgstr "Submit Application"
+
+msgid "Envoyer le message"
+msgstr "Send Message"
+
+msgid "Envoyer ma candidature"
+msgstr "Submit My Application"
+
+msgid "Envoyez votre candidature — spontanée ou pour un poste spécifique"
+msgstr "Submit your application — spontaneous or for a specific position"
+
+msgid "Envoyez-nous un message"
+msgstr "Send Us a Message"
+
+msgid "Exclusivité Territoriale"
+msgstr "Territorial Exclusivity"
+
+msgid "Expertise Clé en Main"
+msgstr "Turnkey Expertise"
+
+msgid "Expertise Médicale Spécialisée"
+msgstr "Specialized Medical Expertise"
+
+msgid "Explorez nos projets d'aménagement médical grâce à la visite virtuelle immersive"
+msgstr "Explore our medical design projects through immersive virtual tours"
+
+msgid "Explorez nos réalisations en visite virtuelle 3D immersive"
+msgstr "Explore our achievements through immersive 3D virtual tours"
+
+msgid "Fiabilité"
+msgstr "Reliability"
+
+msgid "Fil d'ariane"
+msgstr "Breadcrumb"
+
+msgid "Formation & Support"
+msgstr "Training & Support"
+
+msgid "Formation initiale, accès au catalogue et outils commerciaux. Vous êtes prêt à représenter MEDICENTERS PERFORMANCE !"
+msgstr "Initial training, catalog access, and sales tools. You are ready to represent MEDICENTERS PERFORMANCE!"
+
+msgid "Formulaire de Candidature"
+msgstr "Application Form"
+
+msgid "Horaires"
+msgstr "Hours"
+
+msgid "Informations Entreprise"
+msgstr "Company Information"
+
+msgid "Informations de contact"
+msgstr "Contact Information"
+
+msgid "L'expertise qui fait la différence pour votre espace de santé"
+msgstr "The expertise that makes the difference for your healthcare space"
+
+msgid "La confiance de nos partenaires est notre plus grande fierté"
+msgstr "The trust of our partners is our greatest pride"
+
+msgid "Laboratoires d'analyse"
+msgstr "Analysis Laboratories"
+
+msgid "Lancement"
+msgstr "Launch"
+
+msgid "Le respect des délais et des engagements pris, pour une relation de confiance durable avec nos clients."
+msgstr "Meeting deadlines and commitments for a lasting relationship of trust with our clients."
+
+msgid "Les piliers qui guident chacun de nos projets"
+msgstr "The pillars that guide each of our projects"
+
+msgid "Les produits seront bientôt disponibles."
+msgstr "Products will be available soon."
+
+msgid "Les services seront bientôt disponibles."
+msgstr "Services will be available soon."
+
+msgid "Liens rapides"
+msgstr "Quick Links"
+
+msgid "Lire"
+msgstr "Read"
+
+msgid "Localisation"
+msgstr "Location"
+
+msgid "Localisation MEDICENTERS PERFORMANCE"
+msgstr "MEDICENTERS PERFORMANCE Location"
+
+msgid "MEDICENTERS PERFORMANCE est une entreprise spécialisée dans l'aménagement d'intérieur et le consulting pour les espaces médicaux professionnels, basée à Tanger, au Maroc."
+msgstr "MEDICENTERS PERFORMANCE is a company specializing in interior design and consulting for professional medical spaces, based in Tangier, Morocco."
+
+msgid "MEDICENTERS PERFORMANCE recherche des partenaires et revendeurs agréés pour distribuer ses produits et services d'aménagement médical à travers le Maroc et l'Afrique. Que vous soyez distributeur, architecte d'intérieur, ou professionnel du secteur médical, nous avons un programme de partenariat adapté à votre profil."
+msgstr "MEDICENTERS PERFORMANCE is looking for authorized partners and resellers to distribute its medical design products and services across Morocco and Africa. Whether you are a distributor, interior designer, or medical sector professional, we have a partnership program tailored to your profile."
+
+msgid "MEDICENTERS PERFORMANCE vous accompagne dans tous les aspects de l'aménagement et de la gestion de votre espace médical. De la conception architecturale à l'équipement, en passant par la signalétique et le consulting, nous proposons une offre complète adaptée aux professionnels de santé."
+msgstr "MEDICENTERS PERFORMANCE supports you in all aspects of designing and managing your medical space. From architectural design to equipment, signage, and consulting, we offer a comprehensive solution tailored to healthcare professionals."
+
+msgid "MEDICENTERS PERFORMANCE — Aménagement et agencement mobilier pour espaces médicaux professionnels à Tanger, Maroc. Solutions clé en main pour cliniques, cabinets médicaux, laboratoires et pharmacies."
+msgstr "MEDICENTERS PERFORMANCE — Furniture design and fitting for professional medical spaces in Tangier, Morocco. Turnkey solutions for clinics, medical offices, laboratories, and pharmacies."
+
+msgid "Merci pour votre candidature. Notre équipe examinera votre dossier et vous contactera dans les meilleurs délais."
+msgstr "Thank you for your application. Our team will review your file and contact you as soon as possible."
+
+msgid "Merci pour votre intérêt. Notre équipe commerciale étudiera votre candidature et vous contactera dans les 48 heures ouvrées."
+msgstr "Thank you for your interest. Our sales team will review your application and contact you within 48 business hours."
+
+msgid "Merci pour votre message. Notre équipe vous répondra dans les 24 à 48 heures ouvrées."
+msgstr "Thank you for your message. Our team will respond within 24 to 48 business hours."
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Message de motivation"
+msgstr "Cover Letter"
+
+msgid "Message envoyé"
+msgstr "Message Sent"
+
+msgid "Message envoyé avec succès !"
+msgstr "Message sent successfully!"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Nom complet"
+msgstr "Full Name"
+
+msgid "Nom de l'entreprise"
+msgstr "Company Name"
+
+msgid "Nombre d'employés"
+msgstr "Number of Employees"
+
+msgid "Nos Clients"
+msgstr "Our Clients"
+
+msgid "Nos Produits"
+msgstr "Our Products"
+
+msgid "Nos Réalisations"
+msgstr "Our Projects"
+
+msgid "Nos Services"
+msgstr "Our Services"
+
+msgid "Nos Valeurs"
+msgstr "Our Values"
+
+msgid "Notre Catalogue"
+msgstr "Our Catalog"
+
+msgid "Notre Expertise"
+msgstr "Our Expertise"
+
+msgid "Notre Mission"
+msgstr "Our Mission"
+
+msgid "Notre engagement ne s'arrête pas à la livraison. Nous assurons un suivi continu et un service après-vente réactif pour garantir votre entière satisfaction."
+msgstr "Our commitment doesn't end at delivery. We provide continuous follow-up and responsive after-sales service to ensure your complete satisfaction."
+
+msgid "Notre mission est d'accompagner les professionnels de santé — cliniques, cabinets médicaux, laboratoires, pharmacies et centres de radiologie — dans la transformation de leurs espaces de travail en environnements fonctionnels, esthétiques et conformes aux normes en vigueur."
+msgstr "Our mission is to support healthcare professionals — clinics, medical offices, laboratories, pharmacies, and radiology centers — in transforming their workspaces into functional, aesthetic environments that comply with current standards."
+
+msgid "Notre équipe commerciale étudie votre candidature et vous contacte sous 48 heures pour un échange personnalisé."
+msgstr "Our sales team reviews your application and contacts you within 48 hours for a personalized discussion."
+
+msgid "Notre équipe est disponible pour répondre à toutes vos interrogations."
+msgstr "Our team is available to answer all your questions."
+
+msgid "Notre équipe élabore des plans d'aménagement sur mesure, en intégrant les contraintes techniques, les normes médicales et vos préférences esthétiques."
+msgstr "Our team develops custom design plans, integrating technical constraints, medical standards, and your aesthetic preferences."
+
+msgid "Notre équipe"
+msgstr "Our Team"
+
+msgid "Nous accompagnons les professionnels de santé dans la création de leurs espaces"
+msgstr "We support healthcare professionals in creating their spaces"
+
+msgid "Nous commençons par une analyse approfondie de vos besoins, de votre espace existant et de vos objectifs. Cette étape nous permet de comprendre vos attentes et de définir le cadre du projet."
+msgstr "We begin with a thorough analysis of your needs, existing space, and objectives. This step allows us to understand your expectations and define the project framework."
+
+msgid "Nous coordonnons l'ensemble des travaux d'aménagement : mobilier, cloisons, revêtements, signalétique et équipements, dans le respect des délais convenus."
+msgstr "We coordinate all design work: furniture, partitions, coverings, signage, and equipment, while meeting agreed deadlines."
+
+msgid "Nous croyons que l'environnement physique d'un espace de santé a un impact direct sur la qualité des soins, le confort des patients et la productivité des équipes médicales."
+msgstr "We believe that the physical environment of a healthcare space has a direct impact on the quality of care, patient comfort, and the productivity of medical teams."
+
+msgid "Nous définissons ensemble les termes du partenariat : tarifs, territoire, objectifs et conditions de collaboration."
+msgstr "Together we define the partnership terms: pricing, territory, objectives, and collaboration conditions."
+
+msgid "Offres d'emploi"
+msgstr "Job Offers"
+
+msgid "Parlons-en ensemble et construisons la solution adaptée à vos besoins."
+msgstr "Let's discuss it together and build the solution tailored to your needs."
+
+msgid "Partager cet article"
+msgstr "Share This Article"
+
+msgid "Partenariat Médical"
+msgstr "Medical Partnership"
+
+msgid "Participez à la transformation des espaces médicaux au Maroc"
+msgstr "Participate in transforming medical spaces in Morocco"
+
+msgid "Pays"
+msgstr "Country"
+
+msgid "Personne de contact"
+msgstr "Contact Person"
+
+msgid "Pharmacie"
+msgstr "Pharmacy"
+
+msgid "Pharmacies & Parapharmacies"
+msgstr "Pharmacies & Parapharmacies"
+
+msgid "Possibilité d'exclusivité géographique pour protéger votre zone de distribution."
+msgstr "Possibility of geographic exclusivity to protect your distribution area."
+
+msgid "Poste"
+msgstr "Position"
+
+msgid "Poste souhaité"
+msgstr "Desired Position"
+
+msgid "Postuler"
+msgstr "Apply"
+
+msgid "Postulez maintenant"
+msgstr "Apply Now"
+
+msgid "Pourquoi MEDICENTERS PERFORMANCE ?"
+msgstr "Why MEDICENTERS PERFORMANCE?"
+
+msgid "Pourquoi nous rejoindre"
+msgstr "Why Join Us"
+
+msgid "Pourquoi rejoindre MEDICENTERS PERFORMANCE ?"
+msgstr "Why Join MEDICENTERS PERFORMANCE?"
+
+msgid "Processus de Partenariat"
+msgstr "Partnership Process"
+
+msgid "Produits & Services"
+msgstr "Products & Services"
+
+msgid "Produits/Services d'intérêt"
+msgstr "Products/Services of Interest"
+
+msgid "Profil recherché"
+msgstr "Required Profile"
+
+msgid "Profitez de supports de communication, catalogues et outils de vente personnalisés."
+msgstr "Benefit from communication materials, catalogs, and personalized sales tools."
+
+msgid "Projets réalisés"
+msgstr "Completed Projects"
+
+msgid "Précédent"
+msgstr "Previous"
+
+msgid "Prêt à transformer votre espace médical ?"
+msgstr "Ready to transform your medical space?"
+
+msgid "Qualité"
+msgstr "Quality"
+
+msgid "Qualité Premium"
+msgstr "Premium Quality"
+
+msgid "Qui sommes-nous ?"
+msgstr "Who Are We?"
+
+msgid "Recrutement"
+msgstr "Recruitment"
+
+msgid "Rejoignez le réseau MEDICENTERS PERFORMANCE et développez votre activité"
+msgstr "Join the MEDICENTERS PERFORMANCE network and grow your business"
+
+msgid "Rejoignez notre équipe"
+msgstr "Join Our Team"
+
+msgid "Rejoignez une équipe ambitieuse en pleine croissance, au cœur d'un secteur porteur."
+msgstr "Join an ambitious, fast-growing team at the heart of a thriving sector."
+
+msgid "Rejoignez-nous"
+msgstr "Join Us"
+
+msgid "Remplissez ce formulaire et notre équipe vous contactera rapidement"
+msgstr "Fill out this form and our team will contact you shortly"
+
+msgid "Remplissez le formulaire ci-dessous avec les informations de votre entreprise et votre projet de partenariat."
+msgstr "Fill out the form below with your company details and partnership project."
+
+msgid "Retour au blog"
+msgstr "Back to Blog"
+
+msgid "Retour à l'accueil"
+msgstr "Back to Home"
+
+msgid "Retour en haut"
+msgstr "Back to Top"
+
+msgid "Revendeur / Partenaire"
+msgstr "Reseller / Partner"
+
+msgid "Réalisation & Aménagement"
+msgstr "Implementation & Design"
+
+msgid "Secteur d'activité"
+msgstr "Industry Sector"
+
+msgid "Secteur médical"
+msgstr "Medical Sector"
+
+msgid "Services spécialisés"
+msgstr "Specialized Services"
+
+msgid "Showroom Virtuel"
+msgstr "Virtual Showroom"
+
+msgid "Signalétique & Communication"
+msgstr "Signage & Communication"
+
+msgid "Site web"
+msgstr "Website"
+
+msgid "Solution Clé en Main"
+msgstr "Turnkey Solution"
+
+msgid "Spécialiste de l'aménagement d'intérieur et du consulting pour les espaces médicaux professionnels à Tanger, Maroc."
+msgstr "Specialist in interior design and consulting for professional medical spaces in Tangier, Morocco."
+
+msgid "Suivant"
+msgstr "Next"
+
+msgid "Suivez-nous"
+msgstr "Follow Us"
+
+msgid "Suivi & Service après-vente"
+msgstr "Follow-up & After-Sales Service"
+
+msgid "Sujet"
+msgstr "Subject"
+
+msgid "Support Marketing"
+msgstr "Marketing Support"
+
+msgid "Support technique dédié pour l'installation, la maintenance et le service après-vente."
+msgstr "Dedicated technical support for installation, maintenance, and after-sales service."
+
+msgid "Sécurité & Contrôle"
+msgstr "Security & Access Control"
+
+msgid "Tanger"
+msgstr "Tangier"
+
+msgid "Tarifs Préférentiels"
+msgstr "Preferential Pricing"
+
+msgid "Tous"
+msgstr "All"
+
+msgid "Tous droits réservés."
+msgstr "All rights reserved."
+
+msgid "Transformer les espaces médicaux en environnements d'excellence"
+msgstr "Transforming medical spaces into environments of excellence"
+
+msgid "Téléphone"
+msgstr "Phone"
+
+msgid "Un consulting sur mesure pour optimiser la performance et la rentabilité de votre cabinet ou clinique."
+msgstr "Custom consulting to optimize the performance and profitability of your practice or clinic."
+
+msgid "Un marché en pleine expansion avec des marges attractives et un potentiel de croissance élevé."
+msgstr "A rapidly expanding market with attractive margins and high growth potential."
+
+msgid "Un parcours simple et structuré pour devenir partenaire"
+msgstr "A simple and structured path to becoming a partner"
+
+msgid "Un processus structuré pour garantir la réussite de votre projet"
+msgstr "A structured process to ensure the success of your project"
+
+msgid "Un projet d'aménagement en tête ?"
+msgstr "Have a design project in mind?"
+
+msgid "Un seul interlocuteur pour l'ensemble de votre projet, de la conception à la livraison finale."
+msgstr "A single point of contact for your entire project, from design to final delivery."
+
+msgid "Une compréhension profonde des besoins spécifiques des professionnels de santé et de leurs patients."
+msgstr "A deep understanding of the specific needs of healthcare professionals and their patients."
+
+msgid "Une connaissance approfondie des normes et exigences propres aux espaces de santé professionnels."
+msgstr "In-depth knowledge of the standards and requirements specific to professional healthcare spaces."
+
+msgid "Veuillez entrer la bonne réponse. Ce champ sert uniquement à prévenir le spam."
+msgstr "Please enter the correct answer. This field is only used to prevent spam."
+
+msgid "Ville"
+msgstr "City"
+
+msgid "Visite virtuelle 3D bientôt disponible"
+msgstr "3D Virtual Tour Coming Soon"
+
+msgid "Visitez nos réalisations en 3D"
+msgstr "Visit Our Projects in 3D"
+
+msgid "Vivez et travaillez dans l'une des villes les plus dynamiques du Maroc."
+msgstr "Live and work in one of the most dynamic cities in Morocco."
+
+msgid "Votre Projet"
+msgstr "Your Project"
+
+msgid "Votre partenaire de confiance pour l'aménagement d'espaces médicaux"
+msgstr "Your trusted partner for medical space design"
+
+msgid "Votre partenaire pour des espaces médicaux"
+msgstr "Your partner for medical spaces"
+
+msgid "Vous avez un projet d'aménagement médical ?"
+msgstr "Do you have a medical design project?"
+
+msgid "Vérification anti-spam"
+msgstr "Anti-spam verification"
+
+msgid "Votre réponse"
+msgstr "Your answer"
+
+msgid "Soumission rejetée."
+msgstr "Submission rejected."
+
+msgid "La réponse au calcul anti-spam est incorrecte."
+msgstr "The anti-spam answer is incorrect."
+
+msgid "au cœur du Maroc, au service de tout le territoire"
+msgstr "at the heart of Morocco, serving the entire territory"
+
+msgid "cliniques, cabinets, laboratoires, pharmacies, centres de radiologie"
+msgstr "clinics, offices, laboratories, pharmacies, radiology centers"
+
+msgid "d'exception"
+msgstr "of excellence"
+
+msgid "réalisés pour des professionnels de santé au Maroc"
+msgstr "completed for healthcare professionals in Morocco"
+
+msgid "À Propos"
+msgstr "About"
+
+msgid "À Propos de MEDICENTERS PERFORMANCE"
+msgstr "About MEDICENTERS PERFORMANCE"
+
+msgid "À propos"
+msgstr "About"
+
+msgid "Équipements & Textile"
+msgstr "Equipment & Textile"
+
+msgid "Équipements et mobilier premium pour les professionnels de santé"
+msgstr "Premium equipment and furniture for healthcare professionals"
+
+msgid "Évaluation"
+msgstr "Evaluation"
+
+msgid "Évolution professionnelle"
+msgstr "Career Development"
+
+msgid "Accédez à des formations techniques et commerciales pour maîtriser nos solutions."
+msgstr "Access technical and commercial training to master our solutions."
+
+msgid "Bénéficiez de remises exclusives sur l'ensemble de notre catalogue de produits et services."
+msgstr "Enjoy exclusive discounts on our entire product and service catalog."
+
+#: URL translations
+msgid "services/"
+msgstr "services/"
+
+msgid "blog/"
+msgstr "blog/"
+
+msgid "recruitment/"
+msgstr "recruitment/"
+
+msgid "contact/"
+msgstr "contact/"
+
+msgid "partner/"
+msgstr "partner/"
+
+msgid "about/"
+msgstr "about/"
+
+#: Missing template strings
+msgid "De la conception à la réalisation, un interlocuteur unique pour simplifier votre projet d'aménagement."
+msgstr "From design to completion, a single point of contact to simplify your interior design project."
+
+msgid "Des matériaux sélectionnés et un mobilier médical modulaire conçu pour durer et impressionner."
+msgstr "Selected materials and modular medical furniture designed to last and impress."
+
+msgid "Accompagnement Personnalisé"
+msgstr "Personalized Support"
+
+msgid "Discuter de votre projet"
+msgstr "Discuss Your Project"
+
+msgid "Ce que disent nos clients"
+msgstr "What Our Clients Say"
+
+msgid "Aménagement clinique"
+msgstr "Clinic Design"
+
+msgid "Cabinet médical"
+msgstr "Medical Office"
+
+msgid "Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé."
+msgstr "Contact us today to discuss your project and get a personalized quote."
+
+msgid "De la conception à la réalisation, nous proposons des solutions clé en main qui couvrent l'agencement mobilier, l'architecture d'intérieur, la signalétique, la sécurité, les équipements et le consulting en gestion de cabinet."
+msgstr "From design to completion, we offer turnkey solutions covering furniture layout, interior design, signage, security, equipment, and practice management consulting."
+
+msgid "C'est pourquoi nous mettons notre expertise au service de chaque projet, en combinant design fonctionnel, matériaux de qualité et accompagnement personnalisé pour créer des espaces médicaux qui inspirent confiance et professionnalisme."
+msgstr "This is why we put our expertise at the service of every project, combining functional design, quality materials, and personalized support to create medical spaces that inspire trust and professionalism."
+
+msgid "Des matériaux sélectionnés avec soin et une exécution irréprochable pour chaque projet d'aménagement."
+msgstr "Carefully selected materials and flawless execution for every design project."
+
+msgid "Le respect des délais et des engagements pris, pour une relation de confiance durable avec nos clients."
+msgstr "Respect for deadlines and commitments, for a lasting relationship of trust with our clients."
+
+msgid "5 types de clients"
+msgstr "5 Types of Clients"
+
+msgid "Basé à Tanger"
+msgstr "Based in Tangier"
+
+msgid "Contribuez à améliorer les espaces de santé et le quotidien des professionnels médicaux."
+msgstr "Contribute to improving healthcare spaces and the daily lives of medical professionals."
+
+msgid "Comment nous travaillons"
+msgstr "How We Work"
+
+msgid "Visiter tous nos showrooms"
+msgstr "Visit All Our Showrooms"
+
+msgid "Lancer la visite"
+msgstr "Launch Tour"
+
+msgid "Gestion des cookies"
+msgstr "Cookie Management"
+
+msgid "Nous utilisons des cookies pour optimiser votre expérience sur notre site, analyser le trafic et personnaliser le contenu. Vous pouvez accepter tous les cookies, les refuser ou personnaliser vos préférences."
+msgstr "We use cookies to optimize your experience on our website, analyze traffic, and personalize content. You can accept all cookies, decline them, or customize your preferences."
+
+msgid "Personnaliser"
+msgstr "Customize"
+
+msgid "Tout refuser"
+msgstr "Decline All"
+
+msgid "Tout accepter"
+msgstr "Accept All"
+
+msgid "Cookies Nécessaires"
+msgstr "Necessary Cookies"
+
+msgid "Toujours actif"
+msgstr "Always active"
+
+msgid "Ces cookies sont indispensables au bon fonctionnement du site (session, sécurité, langue)."
+msgstr "These cookies are essential for the proper functioning of the website (session, security, language)."
+
+msgid "Cookies Analytiques"
+msgstr "Analytics Cookies"
+
+msgid "Permettent de mesurer le trafic, d'analyser le comportement des utilisateurs et d'améliorer le site."
+msgstr "These allow us to measure traffic, analyze user behavior, and improve the website."
+
+msgid "Cookies Publicitaires / Marketing"
+msgstr "Advertising / Marketing Cookies"
+
+msgid "Utilisés pour vous proposer des contenus ou des publicités pertinents sur d'autres plateformes."
+msgstr "Used to offer you relevant content or advertisements on other platforms."
+
+msgid "Enregistrer mes choix"
+msgstr "Save My Preferences"
+
+msgid "Description du poste"
+msgstr "Job Description"
+
+msgid "Bonjour, je souhaite obtenir plus d'informations sur vos solutions d'aménagement médical."
+msgstr "Hello, I would like to get more information about your medical space design solutions."
+
+
+
+

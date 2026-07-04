@@ -1,0 +1,80 @@
+{% load i18n %}
+<!-- 360 Viewer Modal -->
+<div class="modal fade" id="panoramaModal" tabindex="-1" aria-labelledby="panoramaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content" style="background: var(--mc-charcoal); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-lg); overflow: hidden;">
+            <div class="modal-header border-bottom-0" style="padding: var(--sp-md) var(--sp-lg); background: rgba(0, 0, 0, 0.2);">
+                <h5 class="modal-title text-white d-flex align-items-center" id="panoramaModalLabel">
+                    <i class="bi bi-badge-3d text-primary me-2"></i>Visite Virtuelle 360°
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div id="modal-panorama-viewer" style="width: 100%; height: 65vh; min-height: 400px; background: #000;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let modalViewer = null;
+
+function open360Modal(slug, title, imageUrl) {
+    // Set title
+    document.getElementById('panoramaModalLabel').innerHTML = '<i class="bi bi-badge-3d text-primary me-2"></i>' + title;
+    
+    // Show modal
+    const modalElement = document.getElementById('panoramaModal');
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+    
+    // Clear container
+    const container = document.getElementById('modal-panorama-viewer');
+    container.innerHTML = '<div class="d-flex justify-content-center align-items-center h-100"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+    
+    // Initialize Pannellum after modal is fully shown
+    const onShown = function() {
+        container.innerHTML = '';
+        if (modalViewer) {
+            try { modalViewer.destroy(); } catch(e) {}
+        }
+        
+        // Check if pannellum library is loaded
+        if (typeof pannellum !== 'undefined') {
+            modalViewer = pannellum.viewer('modal-panorama-viewer', {
+                type: 'equirectangular',
+                panorama: imageUrl,
+                autoLoad: true,
+                autoRotate: -2,
+                compass: false,
+                showZoomCtrl: true,
+                showFullscreenCtrl: true,
+                mouseZoom: true,
+                hfov: 110,
+                pitch: 0,
+                yaw: 0,
+            });
+        } else {
+            container.innerHTML = '<div class="text-center text-white py-5"><p>Erreur: Pannellum 3D viewer library not loaded.</p></div>';
+        }
+        
+        modalElement.removeEventListener('shown.bs.modal', onShown);
+    };
+    
+    modalElement.addEventListener('shown.bs.modal', onShown);
+    
+    // Cleanup when hidden
+    const onHidden = function() {
+        if (modalViewer) {
+            try {
+                modalViewer.destroy();
+                modalViewer = null;
+            } catch(e) {}
+        }
+        container.innerHTML = '';
+        modalElement.removeEventListener('hidden.bs.modal', onHidden);
+    };
+    
+    modalElement.addEventListener('hidden.bs.modal', onHidden);
+}
+</script>

@@ -1,0 +1,33 @@
+{% load i18n %}
+<!-- SEO Meta Tags -->
+<meta name="description" content="{% block meta_description %}{% trans "MEDICENTERS PERFORMANCE — Aménagement et agencement mobilier pour espaces médicaux professionnels à Tanger, Maroc. Solutions clé en main pour cliniques, cabinets médicaux, laboratoires et pharmacies." %}{% endblock %}">
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{% block og_title %}{{ site_name }}{% endblock %}">
+<meta property="og:description" content="{% block og_description %}{% trans "Aménagement et agencement mobilier pour espaces médicaux professionnels à Tanger" %}{% endblock %}">
+<meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% load static %}{% static 'images/logo.png' %}{% endblock %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site_name }}">
+{% if current_language == 'ar' %}
+<meta property="og:locale" content="ar_MA">
+{% elif current_language == 'en' %}
+<meta property="og:locale" content="en_US">
+{% else %}
+<meta property="og:locale" content="fr_FR">
+{% endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% block twitter_title %}{{ site_name }}{% endblock %}">
+<meta name="twitter:description" content="{% block twitter_description %}{% trans "Aménagement d'espaces médicaux professionnels à Tanger" %}{% endblock %}">
+
+<!-- hreflang tags -->
+{% for lang_code, lang_name in available_languages %}
+{% get_language_info for lang_code as lang_info %}
+<link rel="alternate" hreflang="{{ lang_code }}" href="{{ request.scheme }}://{{ request.get_host }}/{{ lang_code }}{{ request.path|slice:'3:' }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ request.scheme }}://{{ request.get_host }}/fr{{ request.path|slice:'3:' }}">
+
+{% block extra_meta %}{% endblock %}

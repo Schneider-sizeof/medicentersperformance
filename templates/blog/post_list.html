@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Blog" %}{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        {% include 'includes/breadcrumbs.html' with breadcrumbs=breadcrumbs %}
+        <h1>{% trans "Blog" %}</h1>
+        <p class="text-muted mb-0">{% trans "Actualités, conseils et tendances pour les espaces médicaux professionnels" %}</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <!-- Category Filter -->
+        <div class="mb-5 text-center fade-in-up">
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <a href="{% url 'blog:list' %}" class="btn {% if not current_category %}btn-primary{% else %}btn-outline-primary{% endif %} btn-sm rounded-pill">
+                    {% trans "Tous" %}
+                </a>
+                {% for cat in categories %}
+                <a href="{% url 'blog:list' %}?category={{ cat.slug }}" class="btn {% if current_category == cat.slug %}btn-primary{% else %}btn-outline-primary{% endif %} btn-sm rounded-pill">
+                    {{ cat.name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Posts Grid -->
+        {% if posts %}
+        <div class="row g-4">
+            {% for post in posts %}
+            <div class="col-lg-4 col-md-6 fade-in-up">
+                <article class="blog-card h-100">
+                    <a href="{{ post.get_absolute_url }}" class="text-decoration-none">
+                        {% if post.featured_image %}
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.featured_image_alt|default:post.title }}" class="blog-card-img" loading="lazy">
+                        {% else %}
+                        <div class="blog-card-img-placeholder">
+                            <i class="bi bi-journal-text"></i>
+                        </div>
+                        {% endif %}
+                    </a>
+                    <div class="blog-card-body">
+                        {% if post.category %}
+                        <span class="blog-category-badge">{{ post.category.name }}</span>
+                        {% endif %}
+                        <h3 class="h5 mt-2 mb-2">
+                            <a href="{{ post.get_absolute_url }}" class="text-decoration-none text-dark">{{ post.title }}</a>
+                        </h3>
+                        <p class="text-muted small mb-3">{{ post.excerpt|truncatewords:25 }}</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="blog-date">
+                                <i class="bi bi-calendar3 me-1"></i>
+                                {{ post.published_date|date:"d M Y" }}
+                            </span>
+                            <a href="{{ post.get_absolute_url }}" class="btn btn-sm btn-outline-primary">
+                                {% trans "Lire" %} <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        {% if posts.has_other_pages %}
+        <nav aria-label="{% trans 'Pagination du blog' %}" class="mt-5">
+            <ul class="pagination justify-content-center">
+                {% if posts.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.previous_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}">
+                        <i class="bi bi-chevron-left"></i> {% trans "Précédent" %}
+                    </a>
+                </li>
+                {% endif %}
+                {% for num in posts.paginator.page_range %}
+                <li class="page-item {% if posts.number == num %}active{% endif %}">
+                    <a class="page-link" href="?page={{ num }}{% if current_category %}&category={{ current_category }}{% endif %}">{{ num }}</a>
+                </li>
+                {% endfor %}
+                {% if posts.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.next_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}">
+                        {% trans "Suivant" %} <i class="bi bi-chevron-right"></i>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+
+        {% else %}
+        <!-- Empty State -->
+        <div class="text-center py-5 fade-in-up">
+            <i class="bi bi-journal-x display-1 text-muted"></i>
+            <p class="text-muted mt-3 mb-4">{% trans "Aucun article pour le moment." %}</p>
+            <a href="{% url 'core:home' %}" class="btn btn-outline-primary">{% trans "Retour à l'accueil" %}</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
