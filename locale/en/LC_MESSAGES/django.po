@@ -677,8 +677,6 @@ msgstr "This is why we put our expertise at the service of every project, combin
 msgid "Des matériaux sélectionnés avec soin et une exécution irréprochable pour chaque projet d'aménagement."
 msgstr "Carefully selected materials and flawless execution for every design project."
 
-msgid "Le respect des délais et des engagements pris, pour une relation de confiance durable avec nos clients."
-msgstr "Respect for deadlines and commitments, for a lasting relationship of trust with our clients."
 
 msgid "5 types de clients"
 msgstr "5 Types of Clients"
