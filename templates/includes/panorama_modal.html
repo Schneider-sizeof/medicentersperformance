@@ -19,7 +19,7 @@
 <script>
 let modalViewer = null;
 
-function open360Modal(slug, title, imageUrl) {
+function open360Modal(slug, title, type, sourceUrl) {
     // Set title
     document.getElementById('panoramaModalLabel').innerHTML = '<i class="bi bi-badge-3d text-primary me-2"></i>' + title;
     
@@ -32,30 +32,39 @@ function open360Modal(slug, title, imageUrl) {
     const container = document.getElementById('modal-panorama-viewer');
     container.innerHTML = '<div class="d-flex justify-content-center align-items-center h-100"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
     
-    // Initialize Pannellum after modal is fully shown
+    // Initialize viewer after modal is fully shown
     const onShown = function() {
         container.innerHTML = '';
         if (modalViewer) {
             try { modalViewer.destroy(); } catch(e) {}
+            modalViewer = null;
         }
         
-        // Check if pannellum library is loaded
-        if (typeof pannellum !== 'undefined') {
-            modalViewer = pannellum.viewer('modal-panorama-viewer', {
-                type: 'equirectangular',
-                panorama: imageUrl,
-                autoLoad: true,
-                autoRotate: -2,
-                compass: false,
-                showZoomCtrl: true,
-                showFullscreenCtrl: true,
-                mouseZoom: true,
-                hfov: 110,
-                pitch: 0,
-                yaw: 0,
-            });
-        } else {
-            container.innerHTML = '<div class="text-center text-white py-5"><p>Erreur: Pannellum 3D viewer library not loaded.</p></div>';
+        if (type === 'panorama') {
+            // Check if pannellum library is loaded
+            if (typeof pannellum !== 'undefined') {
+                modalViewer = pannellum.viewer('modal-panorama-viewer', {
+                    type: 'equirectangular',
+                    panorama: sourceUrl,
+                    autoLoad: true,
+                    autoRotate: -2,
+                    compass: false,
+                    showZoomCtrl: true,
+                    showFullscreenCtrl: true,
+                    mouseZoom: true,
+                    hfov: 110,
+                    pitch: 0,
+                    yaw: 0,
+                });
+            } else {
+                container.innerHTML = '<div class="text-center text-white py-5"><p>Erreur: Pannellum 3D viewer library not loaded.</p></div>';
+            }
+        } else if (type === 'matterport') {
+            container.innerHTML = `
+                <div class="ratio ratio-16x9 w-100 h-100" style="height: 65vh; min-height: 400px;">
+                    <iframe src="${sourceUrl}" class="w-100 h-100" allowfullscreen allow="xr-spatial-tracking" frameborder="0"></iframe>
+                </div>
+            `;
         }
         
         modalElement.removeEventListener('shown.bs.modal', onShown);

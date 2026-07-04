@@ -215,7 +215,13 @@
         <div class="row g-4">
             {% for showroom in showrooms %}
             <div class="col-lg-4 col-md-6 fade-in-up">
-                <div class="portfolio-card" onclick="open360Modal('{{ showroom.slug }}', '{{ showroom.title|escapejs }}', '{{ showroom.panorama_image.url }}')">
+                {% if showroom.panorama_image %}
+                <div class="portfolio-card" onclick="open360Modal('{{ showroom.slug }}', '{{ showroom.title|escapejs }}', 'panorama', '{{ showroom.panorama_image.url }}')">
+                {% elif showroom.matterport_embed_url %}
+                <div class="portfolio-card" onclick="open360Modal('{{ showroom.slug }}', '{{ showroom.title|escapejs }}', 'matterport', '{{ showroom.matterport_embed_url }}')">
+                {% else %}
+                <div class="portfolio-card">
+                {% endif %}
                     {% if showroom.cover_image %}
                     <div class="portfolio-card-img" style="background-image: url('{{ showroom.cover_image.url }}');">
                     {% else %}
