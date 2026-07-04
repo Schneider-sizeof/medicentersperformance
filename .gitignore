@@ -31,3 +31,6 @@ staticfiles/
 # OS
 .DS_Store
 Thumbs.db
+
+# User data files
+static/images/dataimages/
