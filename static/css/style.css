@@ -112,10 +112,12 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 14.4px;
+  font-size: 15.2px;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: calc(var(--nav-h) + 1rem);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -126,6 +128,7 @@ body {
   color: var(--mc-charcoal);
   background: var(--mc-white);
   overflow-x: hidden;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -3255,7 +3258,6 @@ a.footer-contact-value:hover { color: var(--mc-white); }
   .client-types { gap: var(--sp-xl); }
   .stats-item + .stats-item { border-left: none; }
 
-  /* Mobile navbar collapse */
   .navbar-collapse {
     position: fixed;
     top: 0;
@@ -3267,9 +3269,15 @@ a.footer-contact-value:hover { color: var(--mc-white); }
     z-index: 1090;
     padding: calc(var(--nav-h) + var(--sp-xl)) var(--sp-xl) var(--sp-xl);
     overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     transition: right var(--dur-slow) var(--ease-smooth);
     display: block !important;
     border-left: 1px solid rgba(255,255,255,.06);
+  }
+  .navbar-collapse::-webkit-scrollbar {
+    display: none;
   }
   .navbar-collapse.show { right: 0; }
 
