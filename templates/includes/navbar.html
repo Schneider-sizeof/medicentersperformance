@@ -54,7 +54,7 @@
             </ul>
 
             <!-- Language switcher with flags -->
-            <div class="dropdown me-3">
+            <div class="dropdown me-3 my-3 my-lg-0">
                 <button class="btn btn-sm lang-switcher dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {% if current_language == 'fr' %}<img src="https://flagcdn.com/w40/fr.png" alt="FR" class="lang-flag">{% elif current_language == 'ar' %}<img src="https://flagcdn.com/w40/ma.png" alt="AR" class="lang-flag">{% else %}<img src="https://flagcdn.com/w40/gb.png" alt="EN" class="lang-flag">{% endif %}
                 </button>
@@ -82,7 +82,7 @@
             </a>
 
             <!-- Mobile CTA -->
-            <div class="d-lg-none mt-3 pb-3 mobile-cta-wrap">
+            <div class="d-lg-none mt-4 pb-3 mobile-cta-wrap">
                 <a href="{% url 'contact:contact' %}" class="btn btn-quote w-100">
                     <i class="bi bi-envelope-paper me-1"></i> {% trans "Demander un devis" %}
                 </a>

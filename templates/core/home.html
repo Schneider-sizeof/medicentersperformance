@@ -311,12 +311,6 @@
     </div>
 </section>
 
-<!-- WhatsApp Floating Button -->
-{% if company.phone %}
-<a href="https://wa.me/{{ company.phone|cut:' '|cut:'+' }}?text={% trans "Bonjour, je souhaite obtenir plus d'informations sur vos solutions d'aménagement médical."|urlencode %}" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-</a>
-{% endif %}
 
 {% block extra_meta %}
 <!-- Schema.org LocalBusiness / ProfessionalService -->
