@@ -2,6 +2,16 @@
 <html lang="{{ LANGUAGE_CODE }}" dir="{% if is_rtl %}rtl{% else %}ltr{% endif %}">
 <head>
     <meta charset="UTF-8">
+    {% if company.google_analytics_id %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ company.google_analytics_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ company.google_analytics_id }}');
+    </script>
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>{% block title %}MEDICENTERS PERFORMANCE{% endblock %} — {% trans "Aménagement d'espaces médicaux à Tanger" %}</title>
 

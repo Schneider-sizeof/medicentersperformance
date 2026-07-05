@@ -35,6 +35,12 @@ class CompanyInfo(models.Model):
         blank=True,
         help_text=_('URL iframe src pour la carte Google Maps sur la page Contact'),
     )
+    google_analytics_id = models.CharField(
+        _('ID Google Analytics'),
+        max_length=50,
+        blank=True,
+        help_text=_('Ex : G-XXXXXXX. Laissez vide pour désactiver le suivi.'),
+    )
 
     class Meta:
         verbose_name = _('Informations entreprise')
