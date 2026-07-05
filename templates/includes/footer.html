@@ -37,13 +37,31 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="footer-heading">{% trans "Nos Services" %}</h4>
                 <ul class="list-unstyled footer-links">
-                    <li><a href="{% url 'services:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Architecture d'intérieur" %}</a></li>
-                    <li><a href="{% url 'services:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Mobilier médical modulaire" %}</a></li>
-                    <li><a href="{% url 'services:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Comptoir d'accueil" %}</a></li>
-                    <li><a href="{% url 'services:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Portes & cloisons" %}</a></li>
-                    <li><a href="{% url 'services:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Enseignes publicitaires" %}</a></li>
-                    <li><a href="{% url 'services:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Logiciel de gestion" %}</a></li>
-                    <li><a href="{% url 'services:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Coaching et formation" %}</a></li>
+                    {% if current_language == 'ar' %}
+                    <li><a href="{% url 'services:list' %}#service-architecture-interieur" class="footer-link"><i class="bi bi-chevron-left ms-1"></i>التصميم الداخلي</a></li>
+                    <li><a href="{% url 'services:list' %}#product-mobilier-medical-modulaire" class="footer-link"><i class="bi bi-chevron-left ms-1"></i>أثاث طبي معياري</a></li>
+                    <li><a href="{% url 'services:list' %}#product-comptoir-accueil" class="footer-link"><i class="bi bi-chevron-left ms-1"></i>مكتب الاستقبال</a></li>
+                    <li><a href="{% url 'services:list' %}#product-portes-cloisons" class="footer-link"><i class="bi bi-chevron-left ms-1"></i>أبواب وقواطع</a></li>
+                    <li><a href="{% url 'services:list' %}#product-enseignes-publicitaires" class="footer-link"><i class="bi bi-chevron-left ms-1"></i>لوحات إعلانية</a></li>
+                    <li><a href="{% url 'services:list' %}#product-logiciel-gestion" class="footer-link"><i class="bi bi-chevron-left ms-1"></i>برامج التسيير</a></li>
+                    <li><a href="{% url 'services:list' %}#service-coaching-formation" class="footer-link"><i class="bi bi-chevron-left ms-1"></i>التدريب والتكوين</a></li>
+                    {% elif current_language == 'en' %}
+                    <li><a href="{% url 'services:list' %}#service-architecture-interieur" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Interior architecture</a></li>
+                    <li><a href="{% url 'services:list' %}#product-mobilier-medical-modulaire" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Modular medical furniture</a></li>
+                    <li><a href="{% url 'services:list' %}#product-comptoir-accueil" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Reception desk</a></li>
+                    <li><a href="{% url 'services:list' %}#product-portes-cloisons" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Doors & partitions</a></li>
+                    <li><a href="{% url 'services:list' %}#product-enseignes-publicitaires" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Advertising signage</a></li>
+                    <li><a href="{% url 'services:list' %}#product-logiciel-gestion" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Management software</a></li>
+                    <li><a href="{% url 'services:list' %}#service-coaching-formation" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Coaching and training</a></li>
+                    {% else %}
+                    <li><a href="{% url 'services:list' %}#service-architecture-interieur" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Architecture d'intérieur</a></li>
+                    <li><a href="{% url 'services:list' %}#product-mobilier-medical-modulaire" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Mobilier médical modulaire</a></li>
+                    <li><a href="{% url 'services:list' %}#product-comptoir-accueil" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Comptoir d'accueil</a></li>
+                    <li><a href="{% url 'services:list' %}#product-portes-cloisons" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Portes & cloisons</a></li>
+                    <li><a href="{% url 'services:list' %}#product-enseignes-publicitaires" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Enseignes publicitaires</a></li>
+                    <li><a href="{% url 'services:list' %}#product-logiciel-gestion" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Logiciel de gestion</a></li>
+                    <li><a href="{% url 'services:list' %}#service-coaching-formation" class="footer-link"><i class="bi bi-chevron-right me-1"></i>Coaching et formation</a></li>
+                    {% endif %}
                 </ul>
             </div>
 
