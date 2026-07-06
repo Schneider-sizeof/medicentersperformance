@@ -33,11 +33,14 @@ class PartnershipForm(forms.ModelForm):
     class Meta:
         model = PartnershipInquiry
         fields = [
-            'company_name', 'contact_person', 'position', 'email', 'phone',
+            'partnership_type', 'company_name', 'contact_person', 'position', 'email', 'phone',
             'country', 'city', 'company_website', 'activity_sector',
             'years_in_business', 'num_employees', 'products_of_interest', 'message',
         ]
         widgets = {
+            'partnership_type': forms.Select(attrs={
+                'class': 'form-select',
+            }),
             'company_name': forms.TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': _('Nom de votre entreprise'),

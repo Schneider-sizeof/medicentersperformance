@@ -5,6 +5,17 @@ from django.utils.translation import gettext_lazy as _
 
 class PartnershipInquiry(models.Model):
     """A B2B partnership or reseller inquiry submitted through the form."""
+    PARTNERSHIP_TYPES = [
+        ('revendeur', _('Revendeur / Distributeur')),
+        ('partenaire', _('Partenaire commercial')),
+        ('investisseur', _('Investisseur')),
+    ]
+    partnership_type = models.CharField(
+        _('Type de partenariat souhaité'),
+        max_length=20,
+        choices=PARTNERSHIP_TYPES,
+        default='partenaire',
+    )
     company_name = models.CharField(_('Nom de l\'entreprise'), max_length=200)
     contact_person = models.CharField(_('Personne de contact'), max_length=150)
     position = models.CharField(_('Poste'), max_length=100, blank=True)
