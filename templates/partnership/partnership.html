@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% load static i18n %}
 
-{% block title %}{% trans "Revendeur / Partenaire" %}{% endblock %}
+{% block title %}{% if current_language == 'ar' %}موزع / شريك / مستثمر{% elif current_language == 'en' %}Reseller / Partner / Investor{% else %}Revendeur / Partenaire / Investisseur{% endif %}{% endblock %}
 
 {% block content %}
 <!-- Page Header -->
 <section class="page-header">
     <div class="container">
         {% include 'includes/breadcrumbs.html' with breadcrumbs=breadcrumbs %}
-        <h1>{% trans "Devenez Revendeur ou Partenaire" %}</h1>
-        <p class="text-muted mb-0">{% trans "Rejoignez le réseau MEDICENTERS PERFORMANCE et développez votre activité" %}</p>
+        <h1>{% if current_language == 'ar' %}كن موزعاً أو شريكاً أو مستثمراً{% elif current_language == 'en' %}Become a Reseller, Partner or Investor{% else %}Devenez Revendeur, Partenaire ou Investisseur{% endif %}</h1>
+        <p class="text-muted mb-0">{% if current_language == 'ar' %}انضم إلى شبكة MEDICENTERS PERFORMANCE ونمّ عملك أو استثماراتك{% elif current_language == 'en' %}Join the MEDICENTERS PERFORMANCE network and grow your business or investments{% else %}Rejoignez le réseau MEDICENTERS PERFORMANCE et développez votre activité ou vos investissements{% endif %}</p>
     </div>
 </section>
 
@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center fade-in-up">
-                <p class="lead">{% trans "MEDICENTERS PERFORMANCE recherche des partenaires et revendeurs agréés pour distribuer ses produits et services d'aménagement médical à travers le Maroc et l'Afrique. Que vous soyez distributeur, architecte d'intérieur, ou professionnel du secteur médical, nous avons un programme de partenariat adapté à votre profil." %}</p>
+                <p class="lead">{% if current_language == 'ar' %}تبحث MEDICENTERS PERFORMANCE عن شركاء وموزعين معتمدين ومستثمرين لتطوير وتوزيع منتجاتها وخدماتها في مجال التجهيز الطبي بالمغرب وإفريقيا. وسواء كنتم موزعاً، مهندساً داخلياً، مستثمراً، أو مهنياً في القطاع الطبي، فلدينا برنامج شراكة واستثمار يتناسب مع تطلعاتكم.{% elif current_language == 'en' %}MEDICENTERS PERFORMANCE is looking for approved partners, resellers, and investors to distribute and develop its medical design products and services across Morocco and Africa. Whether you are a distributor, interior architect, investor, or medical professional, we have a partnership and investment program tailored to your profile.{% else %}MEDICENTERS PERFORMANCE recherche des partenaires, revendeurs agréés et investisseurs pour distribuer et développer ses produits et services d'aménagement médical au Maroc et en Afrique. Que vous soyez distributeur, architecte d'intérieur, investisseur ou professionnel du secteur médical, nous avons un programme de partenariat et d'investissement adapté à votre profil.{% endif %}</p>
             </div>
         </div>
     </div>
@@ -134,6 +134,82 @@
                 <div class="process-step-content">
                     <h3>{% trans "Lancement" %}</h3>
                     <p>{% trans "Formation initiale, accès au catalogue et outils commerciaux. Vous êtes prêt à représenter MEDICENTERS PERFORMANCE !" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Investor Section -->
+<section class="section" id="investisseurs" style="background: linear-gradient(180deg, var(--mc-charcoal) 0%, #151515 100%); color: var(--mc-white); border-top: 1px solid var(--mc-maroon-dark); border-bottom: 1px solid var(--mc-maroon-dark);">
+    <div class="container">
+        <div class="section-heading fade-in-up text-center mb-5">
+            <div class="overline" style="color: var(--mc-maroon-light);">
+                <span class="hex-accent" style="background: var(--mc-maroon-light);"></span>
+                {% if current_language == 'ar' %}فرص الاستثمار{% elif current_language == 'en' %}Investment{% else %}Opportunités d'Investissement{% endif %}
+            </div>
+            <h2 style="color: var(--mc-white);">{% if current_language == 'ar' %}قسم المستثمرين{% elif current_language == 'en' %}Investors Section{% else %}Section Investisseurs{% endif %}</h2>
+            <p style="color: rgba(255,255,255,.6);">{% if current_language == 'ar' %}شارك في نمو البنية التحتية الطبية الأكثر ابتكاراً بالمغرب وإفريقيا{% elif current_language == 'en' %}Participate in the growth of the most innovative medical infrastructure in Morocco & Africa{% else %}Participez à la croissance des infrastructures médicales les plus innovantes au Maroc et en Afrique{% endif %}</p>
+        </div>
+
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6 fade-in-left">
+                <div class="investor-intro-card p-4 p-md-5 rounded-4" style="background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.05); backdrop-filter: blur(10px);">
+                    <h3 class="mb-4" style="color: var(--mc-white); font-family: var(--font-heading); font-weight: var(--fw-bold);">
+                        {% if current_language == 'ar' %}لماذا تستثmer مع MEDICENTERS PERFORMANCE؟{% elif current_language == 'en' %}Why Invest with MEDICENTERS PERFORMANCE?{% else %}Pourquoi investir avec MEDICENTERS PERFORMANCE ?{% endif %}
+                    </h3>
+                    <p style="line-height: 1.8; color: rgba(255,255,255,.85);">
+                        {% if current_language == 'ar' %}
+                        نحن نقدم نموذج أعمال قوي في قطاع الرعاية الصحية المتنامي. يتيح لك الاستثمار معنا المشاركة في تمويل وتجهيز كبرى المصحات، المراكز الطبية، وصالات العرض الإقليمية، مع تحقيق عوائد استثمارية جذابة ومستدامة بفضل التحديث الشامل لمنظومة الصحة.
+                        {% elif current_language == 'en' %}
+                        We offer a highly robust business model in the booming healthcare sector. Investing with us allows you to participate in financing and fully equipping major clinics, medical centers, and regional showrooms, yielding highly attractive and sustainable returns driven by the national health sector modernization.
+                        {% else %}
+                        Nous offrons un modèle économique robuste dans le secteur en plein essor de la santé. Investir avec nous vous permet de co-financer et d'équiper des cliniques majeures, des centres médicaux et des showrooms régionaux, générant des rendements attractifs et durables portés par la modernisation de la santé.
+                        {% endif %}
+                    </p>
+                    <div class="mt-4">
+                        <a href="{% url 'contact:contact' %}?subject=Investissement" class="btn btn-primary btn-lg">
+                            <i class="bi bi-briefcase me-2"></i>{% if current_language == 'ar' %}تواصل معنا لمناقشة الاستثمار{% elif current_language == 'en' %}Contact Our Investment Team{% else %}Contacter notre équipe d'investissement{% endif %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 fade-in-right">
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <div class="investor-feature-card p-4 rounded-3 d-flex align-items-start gap-3" style="background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.04); transition: all var(--dur-normal);">
+                            <div class="feature-icon p-3 rounded-3" style="background: rgba(219, 58, 52, 0.1); color: var(--mc-maroon-light);">
+                                <i class="bi bi-graph-up-arrow fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-2" style="color: var(--mc-white); font-weight: var(--fw-semibold);">{% if current_language == 'ar' %}عوائد ممتازة ومستدامة{% elif current_language == 'en' %}High & Sustainable Returns{% else %}Rendements élevés & durables{% endif %}</h4>
+                                <p class="mb-0 text-muted small" style="line-height: 1.6;">{% if current_language == 'ar' %}عوائد تنافسية للغاية مدعومة بعقود تجهيز طويلة الأمد ومشاريع بنية تحتية طبية وطنية.{% elif current_language == 'en' %}Highly competitive yields backed by long-term design contracts and national medical infrastructure projects.{% else %}Rendements très compétitifs soutenus par des contrats d'aménagement à long terme et des projets d'infrastructure nationaux.{% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="investor-feature-card p-4 rounded-3 d-flex align-items-start gap-3" style="background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.04); transition: all var(--dur-normal);">
+                            <div class="feature-icon p-3 rounded-3" style="background: rgba(219, 58, 52, 0.1); color: var(--mc-maroon-light);">
+                                <i class="bi bi-shield-lock fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-2" style="color: var(--mc-white); font-weight: var(--fw-semibold);">{% if current_language == 'ar' %}استثمار آمن ومضمون{% elif current_language == 'en' %}Safe & Secured Investment{% else %}Investissement sécurisé{% endif %}</h4>
+                                <p class="mb-0 text-muted small" style="line-height: 1.6;">{% if current_language == 'ar' %}شراكات استثمارية مدعومة بأصول عينية، صالات عرض حديثة، وعقود تجارية موثقة.{% elif current_language == 'en' %}Investment structures backed by tangible inventory assets, modern showrooms, and certified commercial agreements.{% else %}Structures d'investissement adossées à des actifs tangibles, des showrooms modernes et des accords commerciaux certifiés.{% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="investor-feature-card p-4 rounded-3 d-flex align-items-start gap-3" style="background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.04); transition: all var(--dur-normal);">
+                            <div class="feature-icon p-3 rounded-3" style="background: rgba(219, 58, 52, 0.1); color: var(--mc-maroon-light);">
+                                <i class="bi bi-globe fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-2" style="color: var(--mc-white); font-weight: var(--fw-semibold);">{% if current_language == 'ar' %}التوسع الإقليمي والقاري{% elif current_language == 'en' %}Regional & Continental Expansion{% else %}Expansion régionale & continentale{% endif %}</h4>
+                                <p class="mb-0 text-muted small" style="line-height: 1.6;">{% if current_language == 'ar' %}كن جزءاً من نمو وتوسع أعمالنا لتشمل جميع أنحاء المغرب والأسواق الإفريقية الواعدة.{% elif current_language == 'en' %}Be a key player in our expansion strategy covering all of Morocco and high-potential African markets.{% else %}Devenez un acteur clé de notre expansion couvrant l'ensemble du Maroc et les marchés africains à fort potentiel.{% endif %}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -26,9 +26,8 @@
                     <li><a href="{% url 'core:home' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Accueil" %}</a></li>
                     <li><a href="{% url 'core:about' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "À Propos" %}</a></li>
                     <li><a href="{% url 'services:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Produits & Services" %}</a></li>
-                    <li><a href="{% url 'blog:list' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Blog" %}</a></li>
                     <li><a href="{% url 'recruitment:careers' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Recrutement" %}</a></li>
-                    <li><a href="{% url 'partnership:partnership' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Revendeur / Partenaire" %}</a></li>
+                    <li><a href="{% url 'partnership:partnership' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% if current_language == 'ar' %}موزع / شريك / مستثمر{% elif current_language == 'en' %}Reseller / Partner / Investor{% else %}Revendeur / Partenaire / Investisseur{% endif %}</a></li>
                     <li><a href="{% url 'contact:contact' %}" class="footer-link"><i class="bi bi-chevron-right me-1"></i>{% trans "Contact" %}</a></li>
                 </ul>
             </div>
