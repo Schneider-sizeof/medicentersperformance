@@ -173,7 +173,7 @@ def send_admin_contact_notification(message_obj):
         f'Message :\n{message_obj.message}'
     )
     _send(
-        subject=f'📩 Nouveau contact — {message_obj.subject}',
+        subject=f'[Contact Web] Nouveau contact — {message_obj.subject}',
         plain_text=plain, html_content=html,
         to_list=[settings.NOTIFICATION_EMAIL],
     )
@@ -230,7 +230,7 @@ def send_admin_partnership_notification(inquiry):
         f'Téléphone : {inquiry.phone}\n\nMessage :\n{inquiry.message}'
     )
     _send(
-        subject=f'🤝 Nouveau {type_display} — {inquiry.company_name}',
+        subject=f'[Partenariat] Nouvelle demande ({type_display}) — {inquiry.company_name}',
         plain_text=plain, html_content=html,
         to_list=[settings.NOTIFICATION_EMAIL],
     )
@@ -259,20 +259,25 @@ def send_admin_recruitment_notification(application):
         f'<div style="background:{BRAND_GREY};border-radius:8px;padding:16px;font-size:14px;'
         f'line-height:1.7;color:{BRAND_TEXT};white-space:pre-wrap;">{application.cover_message}</div>'
     )
-    if application.cv:
+    if application.cv_file:
         body += (
             f'<p style="margin:16px 0 0;font-size:13px;color:{BRAND_MUTED};">'
-            f'📎 CV joint : <a href="{SITE_URL}{application.cv.url}" style="color:{BRAND_MAROON};">'
-            f'{application.cv.name}</a></p>'
+            f'CV joint : <a href="{SITE_URL}{application.cv_file.url}" style="color:{BRAND_MAROON};">'
+            f'{application.cv_file.name}</a></p>'
         )
     html = _base_html(body)
     plain = (
-        f'[RECRUTEMENT]\n\nNom : {application.full_name}\n'
-        f'Email : {application.email}\nTéléphone : {application.phone}\n'
-        f'Poste : {position_label}\n\nMessage :\n{application.cover_message}'
+        f'[RECRUTEMENT — {position_label.upper()}]\n\n'
+        f'Nom complet : {application.full_name}\n'
+        f'Email : {application.email}\n'
+        f'Téléphone : {application.phone}\n'
+        f'Poste : {position_label}\n\n'
+        f'Message de motivation :\n{application.cover_message}'
     )
+    if application.cv_file:
+        plain += f'\n\nCV joint : {SITE_URL}{application.cv_file.url}'
     _send(
-        subject=f'👤 Nouvelle candidature — {position_label}',
+        subject=f'[Recrutement] Nouvelle candidature — {position_label}',
         plain_text=plain, html_content=html,
         to_list=[settings.NOTIFICATION_EMAIL],
     )
@@ -314,6 +319,14 @@ def send_user_contact_confirmation(message_obj):
             closing='مع خالص التقدير،',
             sign_off='فريق MEDICENTERS PERFORMANCE',
         )
+        plain = (
+            f"مرحباً {message_obj.name}،\n\n"
+            f"نشكركم على تواصلكم مع MEDICENTERS PERFORMANCE. لقد تلقينا رسالتكم بنجاح.\n\n"
+            f"موضوع الرسالة: {message_obj.subject}\n\n"
+            f"سيقوم فريقنا بمعالجة طلبكم والرد عليكم في أقرب وقت ممكن، في مدة لا تتجاوز 48 ساعة عمل.\n\n"
+            f"مع خالص التقدير،\n"
+            f"فريق MEDICENTERS PERFORMANCE"
+        )
     elif lang == 'en':
         subject = 'Message Confirmation — MEDICENTERS PERFORMANCE'
         body = _user_confirmation_body(
@@ -324,6 +337,14 @@ def send_user_contact_confirmation(message_obj):
             response_time='Our team will process your request and get back to you as soon as possible, within <strong>48 business hours</strong>.',
             closing='Best regards,',
             sign_off='The MEDICENTERS PERFORMANCE Team',
+        )
+        plain = (
+            f"Hello {message_obj.name},\n\n"
+            f"Thank you for contacting MEDICENTERS PERFORMANCE. We have successfully received your message.\n\n"
+            f"Message subject: {message_obj.subject}\n\n"
+            f"Our team will process your request and get back to you as soon as possible, within 48 business hours.\n\n"
+            f"Best regards,\n"
+            f"The MEDICENTERS PERFORMANCE Team"
         )
     else:
         subject = 'Confirmation de votre message — MEDICENTERS PERFORMANCE'
@@ -336,9 +357,16 @@ def send_user_contact_confirmation(message_obj):
             closing='Cordialement,',
             sign_off="L'équipe MEDICENTERS PERFORMANCE",
         )
+        plain = (
+            f"Bonjour {message_obj.name},\n\n"
+            f"Nous vous remercions d'avoir contacté MEDICENTERS PERFORMANCE. Votre message a bien été reçu.\n\n"
+            f"Sujet du message : {message_obj.subject}\n\n"
+            f"Notre équipe traitera votre demande et vous répondra dans les plus brefs délais, sous 48 heures ouvrées maximum.\n\n"
+            f"Cordialement,\n"
+            f"L'équipe MEDICENTERS PERFORMANCE"
+        )
 
     html = _base_html(body, direction, lang)
-    plain = f'{subject}\n\n{message_obj.subject}\n'
     _send(subject=subject, plain_text=plain, html_content=html, to_list=[message_obj.email])
 
 
@@ -358,6 +386,14 @@ def send_user_partnership_confirmation(inquiry):
             closing='مع خالص التقدير،',
             sign_off='فريق MEDICENTERS PERFORMANCE',
         )
+        plain = (
+            f"مرحباً {inquiry.contact_person}،\n\n"
+            f"نشكركم على اهتمامكم بـ MEDICENTERS PERFORMANCE. لقد تلقينا طلبكم بنجاح.\n\n"
+            f"نوع الطلب: {type_display}\n\n"
+            f"يقوم فريقنا التجاري بدراسة طلبكم بعناية فائقة، وسنتواصل معكم في غضون 48 ساعة عمل كحد أقصى لمناقشة مشروعكم.\n\n"
+            f"مع خالص التقدير،\n"
+            f"فريق MEDICENTERS PERFORMANCE"
+        )
     elif lang == 'en':
         subject = 'Partnership Inquiry Confirmation — MEDICENTERS PERFORMANCE'
         body = _user_confirmation_body(
@@ -368,6 +404,14 @@ def send_user_partnership_confirmation(inquiry):
             response_time='Our business team is reviewing your request with the utmost care and will get back to you within <strong>48 business hours</strong> to discuss your project.',
             closing='Best regards,',
             sign_off='The MEDICENTERS PERFORMANCE Team',
+        )
+        plain = (
+            f"Hello {inquiry.contact_person},\n\n"
+            f"Thank you for your interest in MEDICENTERS PERFORMANCE. We have successfully received your inquiry.\n\n"
+            f"Inquiry type: {type_display}\n\n"
+            f"Our business team is reviewing your request with the utmost care and will get back to you within 48 business hours to discuss your project.\n\n"
+            f"Best regards,\n"
+            f"The MEDICENTERS PERFORMANCE Team"
         )
     else:
         subject = 'Confirmation de votre demande — MEDICENTERS PERFORMANCE'
@@ -380,9 +424,16 @@ def send_user_partnership_confirmation(inquiry):
             closing='Cordialement,',
             sign_off="L'équipe MEDICENTERS PERFORMANCE",
         )
+        plain = (
+            f"Bonjour {inquiry.contact_person},\n\n"
+            f"Nous vous remercions pour l'intérêt que vous portez à MEDICENTERS PERFORMANCE. Votre demande a bien été reçue.\n\n"
+            f"Type de demande : {type_display}\n\n"
+            f"Notre équipe commerciale étudie votre demande avec le plus grand soin et vous contactera sous 48 heures ouvrées pour échanger sur votre projet.\n\n"
+            f"Cordialement,\n"
+            f"L'équipe MEDICENTERS PERFORMANCE"
+        )
 
     html = _base_html(body, direction, lang)
-    plain = f'{subject}\n\n{type_display}\n'
     _send(subject=subject, plain_text=plain, html_content=html, to_list=[inquiry.email])
 
 
@@ -405,6 +456,14 @@ def send_user_recruitment_confirmation(application):
             closing='مع خالص التقدير،',
             sign_off='فريق MEDICENTERS PERFORMANCE',
         )
+        plain = (
+            f"مرحباً {application.full_name}،\n\n"
+            f"نشكركم على ترشحكم للعمل مع MEDICENTERS PERFORMANCE. لقد تلقينا طلبكم بنجاح.\n\n"
+            f"المنصب المطلوب: {position_label}\n\n"
+            f"يقوم فريقنا بدراسة ملفكم بعناية. سنتواصل معكم إذا كان ملفكم مطابقاً لاحتياجاتنا.\n\n"
+            f"مع خالص التقدير،\n"
+            f"فريق MEDICENTERS PERFORMANCE"
+        )
     elif lang == 'en':
         subject = 'Application Confirmation — MEDICENTERS PERFORMANCE'
         body = _user_confirmation_body(
@@ -415,6 +474,14 @@ def send_user_recruitment_confirmation(application):
             response_time='Our team is carefully reviewing your profile. We will contact you if your application matches our needs.',
             closing='Best regards,',
             sign_off='The MEDICENTERS PERFORMANCE Team',
+        )
+        plain = (
+            f"Hello {application.full_name},\n\n"
+            f"Thank you for applying to MEDICENTERS PERFORMANCE. We have successfully received your application.\n\n"
+            f"Position applied for: {position_label}\n\n"
+            f"Our team is carefully reviewing your profile. We will contact you if your application matches our needs.\n\n"
+            f"Best regards,\n"
+            f"The MEDICENTERS PERFORMANCE Team"
         )
     else:
         subject = 'Confirmation de votre candidature — MEDICENTERS PERFORMANCE'
@@ -427,7 +494,14 @@ def send_user_recruitment_confirmation(application):
             closing='Cordialement,',
             sign_off="L'équipe MEDICENTERS PERFORMANCE",
         )
+        plain = (
+            f"Bonjour {application.full_name},\n\n"
+            f"Nous vous remercions d'avoir postulé chez MEDICENTERS PERFORMANCE. Votre candidature a bien été enregistrée.\n\n"
+            f"Poste visé : {position_label}\n\n"
+            f"Notre équipe étudie attentivement votre profil. Nous vous contacterons si votre candidature correspond à nos besoins.\n\n"
+            f"Cordialement,\n"
+            f"L'équipe MEDICENTERS PERFORMANCE"
+        )
 
     html = _base_html(body, direction, lang)
-    plain = f'{subject}\n\n{position_label}\n'
     _send(subject=subject, plain_text=plain, html_content=html, to_list=[application.email])
