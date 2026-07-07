@@ -1,11 +1,10 @@
-"""Recruitment views — careers page and application handling."""
+"""Recruitment views — careers page and application handling with professional email notifications."""
 import logging
-from django.conf import settings
-from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext_lazy as _
 from .models import JobPosting
 from .forms import ApplicationForm
+from apps.core.emails import send_admin_recruitment_notification, send_user_recruitment_confirmation
 
 logger = logging.getLogger(__name__)
 
@@ -19,28 +18,11 @@ def careers(request):
         if form.is_valid():
             application = form.save()
 
-            # Send notification email
-            position_label = (
-                application.position.title if application.position
-                else 'Candidature spontanée'
-            )
-            try:
-                send_mail(
-                    subject=f'Nouvelle candidature — {position_label}',
-                    message=(
-                        f'Nouvelle candidature reçue :\n\n'
-                        f'Nom : {application.full_name}\n'
-                        f'Email : {application.email}\n'
-                        f'Téléphone : {application.phone}\n'
-                        f'Poste : {position_label}\n'
-                        f'Message :\n{application.cover_message}\n'
-                    ),
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[settings.NOTIFICATION_EMAIL],
-                    fail_silently=True,
-                )
-            except Exception as e:
-                logger.warning('Failed to send application notification: %s', e)
+            # Send professional HTML admin notification
+            send_admin_recruitment_notification(application)
+
+            # Send professional HTML confirmation to user
+            send_user_recruitment_confirmation(application)
 
             return redirect('recruitment:success')
     else:
