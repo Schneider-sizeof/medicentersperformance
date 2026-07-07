@@ -16,7 +16,6 @@ BRAND_WHITE = '#ffffff'
 BRAND_TEXT = '#333333'
 BRAND_MUTED = '#777777'
 SITE_URL = 'https://medicentersperformance.pythonanywhere.com'
-LOGO_URL = f'{SITE_URL}/static/images/logo.png'
 
 
 def _base_html(body_content, direction='ltr', lang='fr'):
@@ -39,7 +38,7 @@ def _base_html(body_content, direction='ltr', lang='fr'):
 <!-- Header -->
 <tr>
 <td style="background:linear-gradient(135deg,{BRAND_DARK} 0%,{BRAND_MAROON} 100%);padding:32px 40px;text-align:center;">
-<img src="{LOGO_URL}" alt="MEDICENTERS PERFORMANCE" width="160" style="display:inline-block;max-width:160px;height:auto;" />
+<div style="font-size:22px;font-weight:bold;color:#ffffff;letter-spacing:1px;font-family:'Segoe UI',Arial,sans-serif;text-transform:uppercase;">MEDICENTERS PERFORMANCE</div>
 </td>
 </tr>
 
