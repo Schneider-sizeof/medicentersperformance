@@ -28,8 +28,15 @@ else:
         }
     }
 
-# Email via SMTP
+# Email via Gmail SMTP
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'medicentersperformance@gmail.com'
+EMAIL_HOST_PASSWORD = 'uzmw ehyd bzqb iiru'
+DEFAULT_FROM_EMAIL = 'MEDICENTERS PERFORMANCE <medicentersperformance@gmail.com>'
+NOTIFICATION_EMAIL = 'medicentersperformance@gmail.com'
 
 # Security settings
 SECURE_BROWSER_XSS_FILTER = True
