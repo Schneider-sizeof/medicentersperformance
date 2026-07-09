@@ -1,7 +1,19 @@
-"""Compile .po files to .mo files without requiring GNU gettext."""
+"""Compile .po files to .mo files without requiring GNU gettext.
+Properly handles escape sequences in header metadata so Python's
+gettext can detect charset=UTF-8."""
 import struct
 import array
 import os
+import re
+
+
+def unescape(s):
+    """Convert PO escape sequences to actual characters."""
+    s = s.replace('\\n', '\n')
+    s = s.replace('\\t', '\t')
+    s = s.replace('\\\\', '\\')
+    s = s.replace('\\"', '"')
+    return s
 
 
 def compile_po(po_path, mo_path):
@@ -14,7 +26,7 @@ def compile_po(po_path, mo_path):
             line = line.strip()
             if line.startswith('msgid "'):
                 if msgid is not None and msgstr is not None:
-                    messages[msgid] = msgstr
+                    messages[unescape(msgid)] = unescape(msgstr)
                 msgid = line[7:-1]
                 msgstr = None
                 in_msgid = True
@@ -31,16 +43,13 @@ def compile_po(po_path, mo_path):
                     msgstr += s
             else:
                 if msgid is not None and msgstr is not None:
-                    messages[msgid] = msgstr
+                    messages[unescape(msgid)] = unescape(msgstr)
                     msgid = msgstr = None
                 in_msgid = in_msgstr = False
         if msgid is not None and msgstr is not None:
-            messages[msgid] = msgstr
+            messages[unescape(msgid)] = unescape(msgstr)
 
-    # Remove empty msgid (header)
-    messages.pop('', None)
-
-    # Build .mo
+    # Build .mo file
     keys = sorted(messages.keys())
     offsets = []
     ids = strs = b''
@@ -73,7 +82,12 @@ def compile_po(po_path, mo_path):
 
     with open(mo_path, 'wb') as f:
         f.write(output)
-    print(f'Compiled {po_path} -> {mo_path} ({len(keys)} entries)')
+    
+    # Verify charset is in the header
+    header = messages.get('', '')
+    charset_match = re.search(r'charset=(\S+)', header)
+    charset = charset_match.group(1) if charset_match else 'NOT FOUND'
+    print(f'Compiled {po_path} -> {mo_path} ({len(keys)} entries, charset={charset})')
 
 
 if __name__ == '__main__':
