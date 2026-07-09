@@ -9,8 +9,23 @@
                 </h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body p-0">
+            <div class="modal-body p-0" style="position: relative;">
                 <div id="modal-panorama-viewer" style="width: 100%; height: 65vh; min-height: 400px; background: #000;"></div>
+                <!-- Navigation arrows overlay (Google Maps style) -->
+                <div id="pano-nav-controls" style="display:none;">
+                    <button class="pano-nav-btn pano-nav-forward" onclick="panoNavigate('forward')" title="Move forward">
+                        <i class="bi bi-chevron-up"></i>
+                    </button>
+                    <button class="pano-nav-btn pano-nav-left" onclick="panoNavigate('left')" title="Turn left">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="pano-nav-btn pano-nav-right" onclick="panoNavigate('right')" title="Turn right">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                    <button class="pano-nav-btn pano-nav-back" onclick="panoNavigate('back')" title="Turn around">
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -18,6 +33,45 @@
 
 <script>
 let modalViewer = null;
+
+function panoNavigate(direction) {
+    if (!modalViewer) return;
+    
+    // Stop auto-rotation when user navigates
+    modalViewer.setAutoRotate(0);
+    
+    var currentYaw = modalViewer.getYaw();
+    var currentPitch = modalViewer.getPitch();
+    var currentHfov = modalViewer.getHfov();
+    var targetYaw = currentYaw;
+    var targetPitch = currentPitch;
+    var targetHfov = currentHfov;
+    
+    switch(direction) {
+        case 'forward':
+            // Zoom in + look slightly down (simulate walking forward)
+            targetHfov = Math.max(50, currentHfov - 20);
+            targetPitch = Math.max(-30, currentPitch - 5);
+            break;
+        case 'back':
+            // Turn 180° (look behind) + zoom out
+            targetYaw = currentYaw + 180;
+            targetHfov = Math.min(120, currentHfov + 10);
+            targetPitch = 0;
+            break;
+        case 'left':
+            // Turn 90° left
+            targetYaw = currentYaw - 90;
+            break;
+        case 'right':
+            // Turn 90° right
+            targetYaw = currentYaw + 90;
+            break;
+    }
+    
+    // Smooth animated transition
+    modalViewer.lookAt(targetPitch, targetYaw, targetHfov, 800);
+}
 
 function open360Modal(slug, title, type, sourceUrl) {
     // Set title
@@ -31,6 +85,9 @@ function open360Modal(slug, title, type, sourceUrl) {
     // Clear container
     const container = document.getElementById('modal-panorama-viewer');
     container.innerHTML = '<div class="d-flex justify-content-center align-items-center h-100"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+    
+    // Hide nav controls initially
+    document.getElementById('pano-nav-controls').style.display = 'none';
     
     // Initialize viewer after modal is fully shown
     const onShown = function() {
@@ -48,43 +105,23 @@ function open360Modal(slug, title, type, sourceUrl) {
                     panorama: sourceUrl,
                     autoLoad: true,
                     autoRotate: -2,
-                    compass: false,
+                    compass: true,
                     showZoomCtrl: true,
                     showFullscreenCtrl: true,
                     mouseZoom: true,
-                    hfov: 110,
+                    hfov: 100,
+                    minHfov: 40,
+                    maxHfov: 120,
                     pitch: 0,
                     yaw: 0,
-                    hotSpots: [
-                        {
-                            pitch: 5,
-                            yaw: 30,
-                            type: 'info',
-                            text: 'Espace d\'accueil — Reception Area',
-                            cssClass: 'mc-hotspot'
-                        },
-                        {
-                            pitch: -2,
-                            yaw: 120,
-                            type: 'info',
-                            text: 'Salle d\'attente — Waiting Room',
-                            cssClass: 'mc-hotspot'
-                        },
-                        {
-                            pitch: 3,
-                            yaw: -60,
-                            type: 'info',
-                            text: 'Cabinet de consultation — Consultation Room',
-                            cssClass: 'mc-hotspot'
-                        },
-                        {
-                            pitch: 0,
-                            yaw: -150,
-                            type: 'info',
-                            text: 'Mobilier médical — Medical Furniture',
-                            cssClass: 'mc-hotspot'
-                        }
-                    ]
+                    friction: 0.15,
+                    keyboardZoom: true,
+                    draggable: true,
+                    disableKeyboardCtrl: false,
+                });
+                // Show nav controls once loaded
+                modalViewer.on('load', function() {
+                    document.getElementById('pano-nav-controls').style.display = 'block';
                 });
             } else {
                 container.innerHTML = '<div class="text-center text-white py-5"><p>Erreur: Pannellum 3D viewer library not loaded.</p></div>';
@@ -111,6 +148,7 @@ function open360Modal(slug, title, type, sourceUrl) {
             } catch(e) {}
         }
         container.innerHTML = '';
+        document.getElementById('pano-nav-controls').style.display = 'none';
         modalElement.removeEventListener('hidden.bs.modal', onHidden);
     };
     
