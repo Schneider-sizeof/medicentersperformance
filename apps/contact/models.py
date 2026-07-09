@@ -7,7 +7,7 @@ class ContactMessage(models.Model):
     """A message submitted through the Contact page form."""
     name = models.CharField(_('Nom'), max_length=150)
     email = models.EmailField(_('Email'))
-    phone = models.CharField(_('Téléphone'), max_length=20, blank=True)
+    phone = models.CharField(_('Téléphone'), max_length=20)
     subject = models.CharField(_('Sujet'), max_length=200)
     message = models.TextField(_('Message'))
     created_at = models.DateTimeField(_('Reçu le'), auto_now_add=True)

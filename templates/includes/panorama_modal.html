@@ -55,6 +55,36 @@ function open360Modal(slug, title, type, sourceUrl) {
                     hfov: 110,
                     pitch: 0,
                     yaw: 0,
+                    hotSpots: [
+                        {
+                            pitch: 5,
+                            yaw: 30,
+                            type: 'info',
+                            text: 'Espace d\'accueil — Reception Area',
+                            cssClass: 'mc-hotspot'
+                        },
+                        {
+                            pitch: -2,
+                            yaw: 120,
+                            type: 'info',
+                            text: 'Salle d\'attente — Waiting Room',
+                            cssClass: 'mc-hotspot'
+                        },
+                        {
+                            pitch: 3,
+                            yaw: -60,
+                            type: 'info',
+                            text: 'Cabinet de consultation — Consultation Room',
+                            cssClass: 'mc-hotspot'
+                        },
+                        {
+                            pitch: 0,
+                            yaw: -150,
+                            type: 'info',
+                            text: 'Mobilier médical — Medical Furniture',
+                            cssClass: 'mc-hotspot'
+                        }
+                    ]
                 });
             } else {
                 container.innerHTML = '<div class="text-center text-white py-5"><p>Erreur: Pannellum 3D viewer library not loaded.</p></div>';

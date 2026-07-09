@@ -741,6 +741,107 @@ msgstr "الوصف الوظيفي"
 msgid "Bonjour, je souhaite obtenir plus d'informations sur vos solutions d'aménagement médical."
 msgstr "مرحباً، أود الحصول على مزيد من المعلومات حول حلول تجهيز الفضاءات الطبية الخاصة بكم."
 
+#: New stats labels
+msgid "Clients"
+msgstr "العملاء"
 
+msgid "Produits & Services"
+msgstr "المنتجات والخدمات"
 
+msgid "Années d'expérience"
+msgstr "سنوات الخبرة"
+
+#: Updated testimonials title
+msgid "Ils nous font confiance"
+msgstr "يثقون بنا"
+
+#: Updated about page — mission text
+msgid "MEDICENTERS PERFORMANCE, basée à Tanger au Maroc, est une entreprise experte dans la conception, l'aménagement intérieur et extérieur, et le conseil stratégique dédiés aux espaces médicaux professionnels."
+msgstr "MEDICENTERS PERFORMANCE، ومقرها في طنجة بالمغرب، هي شركة خبيرة في التصميم والتجهيز الداخلي والخارجي والاستشارات الاستراتيجية المخصصة للفضاءات الطبية المهنية."
+
+msgid "Notre mission est d'accompagner les professionnels de santé — cliniques, cabinets médicaux, laboratoires, pharmacies et centres de radiologie — dans la transformation de leurs espaces de travail. Nous concevons des environnements fonctionnels, esthétiques et rigoureusement conformes aux normes en vigueur, tant pour vos espaces intérieurs que pour vos zones d'accueil extérieures et façades."
+msgstr "مهمتنا هي مرافقة المهنيين الصحيين — العيادات والمكاتب الطبية والمختبرات والصيدليات ومراكز الأشعة — في تحويل فضاءات عملهم. نصمم بيئات وظيفية وجمالية ومتوافقة بشكل صارم مع المعايير المعمول بها، سواء لفضاءاتكم الداخلية أو مناطق الاستقبال الخارجية والواجهات."
+
+msgid "De la conception à la réalisation, nous proposons des solutions clé en main qui couvrent l'agencement mobilier, l'architecture, la signalétique, la sécurité et les équipements. De plus, nous complétons notre expertise par des services de consulting en gestion de cabinet ainsi que des formations spécialisées pour optimiser la performance et l'organisation de vos structures médicales."
+msgstr "من التصميم إلى التنفيذ، نقدم حلولاً متكاملة تشمل تخطيط الأثاث والهندسة المعمارية واللافتات والأمان والمعدات. بالإضافة إلى ذلك، نكمل خبرتنا بخدمات استشارية في إدارة العيادات وتدريبات متخصصة لتحسين أداء وتنظيم منشآتكم الطبية."
+
+#: Updated about page — process steps
+msgid "Validation du bon de commande"
+msgstr "التحقق من طلب الشراء"
+
+msgid "Cette étape consiste à valider le bon de commande, confirmer l'ensemble des spécifications techniques, vérifier les descriptifs détaillés des produits et services, et approuver les maquettes imprimées avant le lancement de la production."
+msgstr "تتمثل هذه المرحلة في التحقق من طلب الشراء، وتأكيد جميع المواصفات التقنية، والتحقق من الأوصاف التفصيلية للمنتجات والخدمات، والموافقة على النماذج المطبوعة قبل بدء الإنتاج."
+
+msgid "Élaboration, Réalisation & Aménagement"
+msgstr "التطوير والتنفيذ والتجهيز"
+
+#: Updated about page — three-grid
+msgid "Maroc"
+msgstr "المغرب"
+
+msgid "cliniques, cabinets, laboratoires, pharmacies, parapharmacies, centres de radiologie"
+msgstr "عيادات، مكاتب طبية، مختبرات، صيدليات، شبه صيدليات، مراكز أشعة"
+
+#: Form placeholders — contact
+msgid "Votre nom complet"
+msgstr "اسمك الكامل"
+
+msgid "votre.email@exemple.com"
+msgstr "بريدك@مثال.كوم"
+
+msgid "+212 6XX XX XX XX"
+msgstr "+212 6XX XX XX XX"
+
+msgid "Objet de votre message"
+msgstr "موضوع رسالتك"
+
+msgid "Décrivez votre besoin ou posez-nous vos questions…"
+msgstr "صِف احتياجك أو اطرح علينا أسئلتك…"
+
+#: Form placeholders — partnership
+msgid "Nom de votre entreprise"
+msgstr "اسم شركتك"
+
+msgid "Ex : Directeur commercial"
+msgstr "مثال: مدير تجاري"
+
+msgid "votre.email@entreprise.com"
+msgstr "بريدك@شركة.كوم"
+
+msgid "https://www.exemple.com"
+msgstr "https://www.exemple.com"
+
+msgid "Ex : Fournitures médicales"
+msgstr "مثال: مستلزمات طبية"
+
+msgid "Ex : 5 ans"
+msgstr "مثال: 5 سنوات"
+
+msgid "Ex : 10-50"
+msgstr "مثال: 10-50"
+
+msgid "Quels produits ou services vous intéressent ?"
+msgstr "ما هي المنتجات أو الخدمات التي تهمك؟"
+
+msgid "Décrivez votre projet de partenariat ou de revente…"
+msgstr "صِف مشروع الشراكة أو إعادة البيع الخاص بك…"
+
+#: Form placeholders — recruitment
+msgid "Présentez-vous et expliquez votre motivation…"
+msgstr "قدّم نفسك واشرح دوافعك…"
+
+msgid "Candidature spontanée"
+msgstr "ترشح تلقائي"
+
+msgid "Format non supporté. Veuillez envoyer un fichier PDF, DOC ou DOCX."
+msgstr "صيغة غير مدعومة. يرجى إرسال ملف PDF أو DOC أو DOCX."
+
+msgid "Le fichier est trop volumineux. Taille maximale : 5 Mo."
+msgstr "الملف كبير جداً. الحجم الأقصى: 5 ميغابايت."
+
+msgid "Des dizaines de projets"
+msgstr "عشرات المشاريع"
+
+msgid "Années d'expertise"
+msgstr "سنوات الخبرة"
 

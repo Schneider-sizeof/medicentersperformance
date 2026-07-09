@@ -59,6 +59,7 @@ class ContactForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields['phone'].required = True
         a = random.randint(2, 9)
         b = random.randint(2, 9)
         self.fields['captcha_a'].initial = a

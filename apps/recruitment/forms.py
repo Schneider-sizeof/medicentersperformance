@@ -66,6 +66,7 @@ class ApplicationForm(forms.ModelForm):
         self.fields['position'].empty_label = _('Candidature spontanée')
         self.fields['position'].required = False
         self.fields['position'].widget.attrs.update({'class': 'form-select'})
+        self.fields['phone'].required = True
 
         # Generate random captcha numbers
         a = random.randint(2, 9)

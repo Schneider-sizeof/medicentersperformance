@@ -741,6 +741,107 @@ msgstr "Job Description"
 msgid "Bonjour, je souhaite obtenir plus d'informations sur vos solutions d'aménagement médical."
 msgstr "Hello, I would like to get more information about your medical space design solutions."
 
+#: New stats labels
+msgid "Clients"
+msgstr "Clients"
 
+msgid "Produits & Services"
+msgstr "Products & Services"
 
+msgid "Années d'expérience"
+msgstr "Years of Experience"
+
+#: Updated testimonials title
+msgid "Ils nous font confiance"
+msgstr "They Trust Us"
+
+#: Updated about page — mission text
+msgid "MEDICENTERS PERFORMANCE, basée à Tanger au Maroc, est une entreprise experte dans la conception, l'aménagement intérieur et extérieur, et le conseil stratégique dédiés aux espaces médicaux professionnels."
+msgstr "MEDICENTERS PERFORMANCE, based in Tangier, Morocco, is a company specializing in design, interior and exterior fitting, and strategic consulting dedicated to professional medical spaces."
+
+msgid "Notre mission est d'accompagner les professionnels de santé — cliniques, cabinets médicaux, laboratoires, pharmacies et centres de radiologie — dans la transformation de leurs espaces de travail. Nous concevons des environnements fonctionnels, esthétiques et rigoureusement conformes aux normes en vigueur, tant pour vos espaces intérieurs que pour vos zones d'accueil extérieures et façades."
+msgstr "Our mission is to support healthcare professionals — clinics, medical offices, laboratories, pharmacies, and radiology centers — in transforming their workspaces. We design functional, aesthetic environments that rigorously comply with current standards, for both your interior spaces and exterior reception areas and facades."
+
+msgid "De la conception à la réalisation, nous proposons des solutions clé en main qui couvrent l'agencement mobilier, l'architecture, la signalétique, la sécurité et les équipements. De plus, nous complétons notre expertise par des services de consulting en gestion de cabinet ainsi que des formations spécialisées pour optimiser la performance et l'organisation de vos structures médicales."
+msgstr "From design to completion, we offer turnkey solutions covering furniture layout, architecture, signage, security, and equipment. Additionally, we complement our expertise with practice management consulting services and specialized training to optimize the performance and organization of your medical facilities."
+
+#: Updated about page — process steps
+msgid "Validation du bon de commande"
+msgstr "Purchase Order Validation"
+
+msgid "Cette étape consiste à valider le bon de commande, confirmer l'ensemble des spécifications techniques, vérifier les descriptifs détaillés des produits et services, et approuver les maquettes imprimées avant le lancement de la production."
+msgstr "This step involves validating the purchase order, confirming all technical specifications, verifying detailed product and service descriptions, and approving printed mockups before launching production."
+
+msgid "Élaboration, Réalisation & Aménagement"
+msgstr "Development, Implementation & Design"
+
+#: Updated about page — three-grid
+msgid "Maroc"
+msgstr "Morocco"
+
+msgid "cliniques, cabinets, laboratoires, pharmacies, parapharmacies, centres de radiologie"
+msgstr "clinics, offices, laboratories, pharmacies, parapharmacies, radiology centers"
+
+#: Form placeholders — contact
+msgid "Votre nom complet"
+msgstr "Your full name"
+
+msgid "votre.email@exemple.com"
+msgstr "your.email@example.com"
+
+msgid "+212 6XX XX XX XX"
+msgstr "+212 6XX XX XX XX"
+
+msgid "Objet de votre message"
+msgstr "Subject of your message"
+
+msgid "Décrivez votre besoin ou posez-nous vos questions…"
+msgstr "Describe your needs or ask us your questions…"
+
+#: Form placeholders — partnership
+msgid "Nom de votre entreprise"
+msgstr "Your company name"
+
+msgid "Ex : Directeur commercial"
+msgstr "e.g. Sales Director"
+
+msgid "votre.email@entreprise.com"
+msgstr "your.email@company.com"
+
+msgid "https://www.exemple.com"
+msgstr "https://www.example.com"
+
+msgid "Ex : Fournitures médicales"
+msgstr "e.g. Medical supplies"
+
+msgid "Ex : 5 ans"
+msgstr "e.g. 5 years"
+
+msgid "Ex : 10-50"
+msgstr "e.g. 10-50"
+
+msgid "Quels produits ou services vous intéressent ?"
+msgstr "Which products or services are you interested in?"
+
+msgid "Décrivez votre projet de partenariat ou de revente…"
+msgstr "Describe your partnership or resale project…"
+
+#: Form placeholders — recruitment
+msgid "Présentez-vous et expliquez votre motivation…"
+msgstr "Introduce yourself and explain your motivation…"
+
+msgid "Candidature spontanée"
+msgstr "Spontaneous Application"
+
+msgid "Format non supporté. Veuillez envoyer un fichier PDF, DOC ou DOCX."
+msgstr "Unsupported format. Please upload a PDF, DOC or DOCX file."
+
+msgid "Le fichier est trop volumineux. Taille maximale : 5 Mo."
+msgstr "The file is too large. Maximum size: 5 MB."
+
+msgid "Des dizaines de projets"
+msgstr "Dozens of Projects"
+
+msgid "Années d'expertise"
+msgstr "Years of Expertise"
 
