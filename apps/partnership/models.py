@@ -7,7 +7,7 @@ class PartnershipInquiry(models.Model):
     """A B2B partnership or reseller inquiry submitted through the form."""
     PARTNERSHIP_TYPES = [
         ('revendeur', _('Revendeur / Distributeur')),
-        ('partenaire', _('Partenaire commercial')),
+        ('partenaire', _('Partenaire')),
         ('investisseur', _('Investisseur')),
     ]
     partnership_type = models.CharField(

@@ -758,8 +758,8 @@ msgstr "شهادات عملائنا"
 msgid "Revendeur / Distributeur"
 msgstr "موزع / وكيل"
 
-msgid "Partenaire commercial"
-msgstr "شريك تجاري"
+msgid "Partenaire"
+msgstr "شريك"
 
 msgid "Investisseur"
 msgstr "مستثمر"

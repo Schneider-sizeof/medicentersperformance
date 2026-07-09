@@ -758,8 +758,8 @@ msgstr "Testimonials"
 msgid "Revendeur / Distributeur"
 msgstr "Reseller / Distributor"
 
-msgid "Partenaire commercial"
-msgstr "Business Partner"
+msgid "Partenaire"
+msgstr "Partner"
 
 msgid "Investisseur"
 msgstr "Investor"
