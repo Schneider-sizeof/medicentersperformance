@@ -34,6 +34,17 @@
 <script>
 let modalViewer = null;
 
+function clickFloorHotspot(yaw) {
+    if (!modalViewer) return;
+    modalViewer.setAutoRotate(0);
+    // Pan to target yaw, zoom in (hfov: 50), look down slightly (pitch: -20)
+    modalViewer.lookAt(-20, yaw, 50, 1000);
+    // After 1000ms, zoom back out to look normal
+    setTimeout(function() {
+        modalViewer.lookAt(0, yaw, 100, 800);
+    }, 1100);
+}
+
 function panoNavigate(direction) {
     if (!modalViewer) return;
     
@@ -118,6 +129,48 @@ function open360Modal(slug, title, type, sourceUrl) {
                     keyboardZoom: true,
                     draggable: true,
                     disableKeyboardCtrl: false,
+                    hotSpots: [
+                        {
+                            pitch: -25,
+                            yaw: 0,
+                            cssClass: 'mc-floor-arrow',
+                            createTooltipFunc: function(hotSpotDiv) {
+                                hotSpotDiv.addEventListener('click', function() {
+                                    clickFloorHotspot(0);
+                                });
+                            }
+                        },
+                        {
+                            pitch: -25,
+                            yaw: 90,
+                            cssClass: 'mc-floor-arrow',
+                            createTooltipFunc: function(hotSpotDiv) {
+                                hotSpotDiv.addEventListener('click', function() {
+                                    clickFloorHotspot(90);
+                                });
+                            }
+                        },
+                        {
+                            pitch: -25,
+                            yaw: 180,
+                            cssClass: 'mc-floor-arrow',
+                            createTooltipFunc: function(hotSpotDiv) {
+                                hotSpotDiv.addEventListener('click', function() {
+                                    clickFloorHotspot(180);
+                                });
+                            }
+                        },
+                        {
+                            pitch: -25,
+                            yaw: 270,
+                            cssClass: 'mc-floor-arrow',
+                            createTooltipFunc: function(hotSpotDiv) {
+                                hotSpotDiv.addEventListener('click', function() {
+                                    clickFloorHotspot(270);
+                                });
+                            }
+                        }
+                    ]
                 });
                 // Show nav controls once loaded
                 modalViewer.on('load', function() {

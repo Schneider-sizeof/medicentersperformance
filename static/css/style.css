@@ -4266,4 +4266,37 @@ a.footer-contact-value:hover { color: var(--mc-white); }
 .pano-nav-right   { grid-area: right; }
 .pano-nav-back    { grid-area: down; }
 
+/* ═══════════════ 360° Floor Arrows (Google Street View style) ═══════════════ */
+.mc-floor-arrow {
+  width: 54px;
+  height: 54px;
+  background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.3) 70%, rgba(255,255,255,0) 100%) !important;
+  border-radius: 50% !important;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: perspective(60px) rotateX(65deg) scaleY(0.7) !important;
+  transition: background 0.2s, transform 0.2s, opacity 0.2s !important;
+  opacity: 0.8;
+  border: none !important;
+}
+.mc-floor-arrow::after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-left: 4px solid var(--mc-maroon);
+  border-top: 4px solid var(--mc-maroon);
+  transform: rotate(45deg);
+  margin-top: 4px;
+  display: block;
+}
+.mc-floor-arrow:hover {
+  background: radial-gradient(circle, #fff 0%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%) !important;
+  transform: perspective(60px) rotateX(65deg) scaleY(0.7) scale(1.25) !important;
+  opacity: 1;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4) !important;
+}
+
 
