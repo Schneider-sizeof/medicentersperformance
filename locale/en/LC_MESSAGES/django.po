@@ -753,7 +753,20 @@ msgstr "Years of Experience"
 
 #: Updated testimonials title
 msgid "Ils nous font confiance"
-msgstr "They Trust Us"
+msgstr "Testimonials"
+
+msgid "Revendeur / Distributeur"
+msgstr "Reseller / Distributor"
+
+msgid "Partenaire commercial"
+msgstr "Business Partner"
+
+msgid "Investisseur"
+msgstr "Investor"
+
+msgid "Type de partenariat souhaité"
+msgstr "Type of partnership desired"
+
 
 #: Updated about page — mission text
 msgid "MEDICENTERS PERFORMANCE, basée à Tanger au Maroc, est une entreprise experte dans la conception, l'aménagement intérieur et extérieur, et le conseil stratégique dédiés aux espaces médicaux professionnels."
