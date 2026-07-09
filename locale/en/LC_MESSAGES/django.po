@@ -240,8 +240,8 @@ msgstr "MEDICENTERS PERFORMANCE Location"
 msgid "MEDICENTERS PERFORMANCE est une entreprise spécialisée dans l'aménagement d'intérieur et le consulting pour les espaces médicaux professionnels, basée à Tanger, au Maroc."
 msgstr "MEDICENTERS PERFORMANCE is a company specializing in interior design and consulting for professional medical spaces, based in Tangier, Morocco."
 
-msgid "MEDICENTERS PERFORMANCE recherche des partenaires et revendeurs agréés pour distribuer ses produits et services d'aménagement médical à travers le Maroc et l'Afrique. Que vous soyez distributeur, architecte d'intérieur, ou professionnel du secteur médical, nous avons un programme de partenariat adapté à votre profil."
-msgstr "MEDICENTERS PERFORMANCE is looking for authorized partners and resellers to distribute its medical design products and services across Morocco and Africa. Whether you are a distributor, interior designer, or medical sector professional, we have a partnership program tailored to your profile."
+msgid "MEDICENTERS PERFORMANCE recherche des partenaires et revendeurs agréés pour distribuer ses produits et services d'aménagement médical à travers le Maroc. Que vous soyez distributeur, architecte d'intérieur, ou professionnel du secteur médical, nous avons un programme de partenariat adapté à votre profil."
+msgstr "MEDICENTERS PERFORMANCE is looking for authorized partners and resellers to distribute its medical design products and services across Morocco. Whether you are a distributor, interior designer, or medical sector professional, we have a partnership program tailored to your profile."
 
 msgid "MEDICENTERS PERFORMANCE vous accompagne dans tous les aspects de l'aménagement et de la gestion de votre espace médical. De la conception architecturale à l'équipement, en passant par la signalétique et le consulting, nous proposons une offre complète adaptée aux professionnels de santé."
 msgstr "MEDICENTERS PERFORMANCE supports you in all aspects of designing and managing your medical space. From architectural design to equipment, signage, and consulting, we offer a comprehensive solution tailored to healthcare professionals."

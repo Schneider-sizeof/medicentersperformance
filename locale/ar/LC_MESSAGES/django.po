@@ -240,8 +240,8 @@ msgstr "موقع MEDICENTERS PERFORMANCE"
 msgid "MEDICENTERS PERFORMANCE est une entreprise spécialisée dans l'aménagement d'intérieur et le consulting pour les espaces médicaux professionnels, basée à Tanger, au Maroc."
 msgstr "MEDICENTERS PERFORMANCE شركة متخصصة في التصميم الداخلي والاستشارات للفضاءات الطبية المهنية، مقرها في طنجة، المغرب."
 
-msgid "MEDICENTERS PERFORMANCE recherche des partenaires et revendeurs agréés pour distribuer ses produits et services d'aménagement médical à travers le Maroc et l'Afrique. Que vous soyez distributeur, architecte d'intérieur, ou professionnel du secteur médical, nous avons un programme de partenariat adapté à votre profil."
-msgstr "تبحث MEDICENTERS PERFORMANCE عن شركاء وموزعين معتمدين لتوزيع منتجاتها وخدمات التجهيز الطبي في المغرب وأفريقيا. سواء كنت موزعاً أو مهندساً معمارياً أو محترفاً في القطاع الطبي، لدينا برنامج شراكة يناسبك."
+msgid "MEDICENTERS PERFORMANCE recherche des partenaires et revendeurs agréés pour distribuer ses produits et services d'aménagement médical à travers le Maroc. Que vous soyez distributeur, architecte d'intérieur, ou professionnel du secteur médical, nous avons un programme de partenariat adapté à votre profil."
+msgstr "تبحث MEDICENTERS PERFORMANCE عن شركاء وموزعين معتمدين لتوزيع منتجاتها وخدمات التجهيز الطبي في المغرب. سواء كنت موزعاً أو مهندساً معمارياً أو محترفاً في القطاع الطبي، لدينا برنامج شراكة يناسبك."
 
 msgid "MEDICENTERS PERFORMANCE vous accompagne dans tous les aspects de l'aménagement et de la gestion de votre espace médical. De la conception architecturale à l'équipement, en passant par la signalétique et le consulting, nous proposons une offre complète adaptée aux professionnels de santé."
 msgstr "تواكبكم MEDICENTERS PERFORMANCE في جميع جوانب تجهيز وإدارة فضاءاتكم الطبية. من التصميم المعماري إلى التجهيزات واللافتات والاستشارات، نقدم عرضاً شاملاً للمهنيين الصحيين."
