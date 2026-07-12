@@ -30,205 +30,243 @@
 <script>
 let modalViewer = null;
 
-// Reusable static multi-scene configuration mapping all virtual tour showrooms
-const virtualTourConfig = {
-    "default": {
-        "sceneFadeDuration": 1200
+/**
+ * Multi-scene virtual tour configuration.
+ * Each scene maps to a Showroom record by slug.
+ * hotSpots with type:"scene" create floor-anchored arrows
+ * that transition between rooms using Pannellum's native fade.
+ *
+ * NOTE: hotspot pitch/yaw values are initial estimates.
+ * Open the browser console and click on the floor to see
+ * "Calibrate Coords - Pitch: XX  Yaw: YY" — use those
+ * values to fine-tune placement.
+ */
+const TOUR_SCENES = {
+    "clinique-tanger": {
+        "title": "Clinique Médicale",
+        "type": "equirectangular",
+        "panorama": "/media/showrooms/clinique-360.jpg",
+        "autoLoad": true,
+        "autoRotate": -1,
+        "compass": false,
+        "showZoomCtrl": true,
+        "showFullscreenCtrl": true,
+        "mouseZoom": true,
+        "hfov": 100,
+        "minHfov": 40,
+        "maxHfov": 120,
+        "pitch": 0,
+        "yaw": 0,
+        "friction": 0.15,
+        "hotSpots": [
+            {
+                "pitch": -25,
+                "yaw": -35,
+                "type": "scene",
+                "text": "Cabinet KineDoc",
+                "sceneId": "kinedoc-tanger",
+                "cssClass": "mc-floor-arrow"
+            },
+            {
+                "pitch": -25,
+                "yaw": 35,
+                "type": "scene",
+                "text": "Pharmacie & Parapharmacie",
+                "sceneId": "pharmacie-tanger",
+                "cssClass": "mc-floor-arrow"
+            }
+        ]
     },
-    "scenes": {
-        "clinique-tanger": {
-            "title": "Clinique Médicale",
-            "type": "equirectangular",
-            "panorama": "/media/showrooms/clinique-360.jpg",
-            "hfov": 100,
-            "pitch": 0,
-            "yaw": 0,
-            "hotSpots": [
-                {
-                    "pitch": -25,
-                    "yaw": -35,
-                    "type": "scene",
-                    "text": "Cabinet KineDoc - Tanger",
-                    "sceneId": "kinedoc-tanger",
-                    "cssClass": "mc-floor-arrow"
-                },
-                {
-                    "pitch": -25,
-                    "yaw": 35,
-                    "type": "scene",
-                    "text": "Pharmacie & Parapharmacie",
-                    "sceneId": "pharmacie-tanger",
-                    "cssClass": "mc-floor-arrow"
-                }
-            ]
-        },
-        "kinedoc-tanger": {
-            "title": "Cabinet KineDoc - Tanger",
-            "type": "equirectangular",
-            "panorama": "/media/showrooms/kinedoc-360.jpg",
-            "hfov": 100,
-            "pitch": 0,
-            "yaw": 0,
-            "hotSpots": [
-                {
-                    "pitch": -25,
-                    "yaw": 145,
-                    "type": "scene",
-                    "text": "Clinique Médicale",
-                    "sceneId": "clinique-tanger",
-                    "cssClass": "mc-floor-arrow"
-                }
-            ]
-        },
-        "pharmacie-tanger": {
-            "title": "Pharmacie & Parapharmacie",
-            "type": "equirectangular",
-            "panorama": "/media/showrooms/pharmacie-360.jpg",
-            "hfov": 100,
-            "pitch": 0,
-            "yaw": 0,
-            "hotSpots": [
-                {
-                    "pitch": -25,
-                    "yaw": -145,
-                    "type": "scene",
-                    "text": "Clinique Médicale",
-                    "sceneId": "clinique-tanger",
-                    "cssClass": "mc-floor-arrow"
-                }
-            ]
-        }
+    "kinedoc-tanger": {
+        "title": "Cabinet KineDoc - Tanger",
+        "type": "equirectangular",
+        "panorama": "/media/showrooms/kinedoc-360.jpg",
+        "autoLoad": true,
+        "autoRotate": -1,
+        "compass": false,
+        "showZoomCtrl": true,
+        "showFullscreenCtrl": true,
+        "mouseZoom": true,
+        "hfov": 100,
+        "minHfov": 40,
+        "maxHfov": 120,
+        "pitch": 0,
+        "yaw": 0,
+        "friction": 0.15,
+        "hotSpots": [
+            {
+                "pitch": -25,
+                "yaw": 145,
+                "type": "scene",
+                "text": "Clinique Médicale",
+                "sceneId": "clinique-tanger",
+                "cssClass": "mc-floor-arrow"
+            },
+            {
+                "pitch": -25,
+                "yaw": -45,
+                "type": "scene",
+                "text": "Pharmacie & Parapharmacie",
+                "sceneId": "pharmacie-tanger",
+                "cssClass": "mc-floor-arrow"
+            }
+        ]
+    },
+    "pharmacie-tanger": {
+        "title": "Pharmacie & Parapharmacie",
+        "type": "equirectangular",
+        "panorama": "/media/showrooms/pharmacie-360.jpg",
+        "autoLoad": true,
+        "autoRotate": -1,
+        "compass": false,
+        "showZoomCtrl": true,
+        "showFullscreenCtrl": true,
+        "mouseZoom": true,
+        "hfov": 100,
+        "minHfov": 40,
+        "maxHfov": 120,
+        "pitch": 0,
+        "yaw": 0,
+        "friction": 0.15,
+        "hotSpots": [
+            {
+                "pitch": -25,
+                "yaw": -145,
+                "type": "scene",
+                "text": "Clinique Médicale",
+                "sceneId": "clinique-tanger",
+                "cssClass": "mc-floor-arrow"
+            },
+            {
+                "pitch": -25,
+                "yaw": 45,
+                "type": "scene",
+                "text": "Cabinet KineDoc",
+                "sceneId": "kinedoc-tanger",
+                "cssClass": "mc-floor-arrow"
+            }
+        ]
     }
 };
 
 function open360Modal(slug, title, type, sourceUrl) {
     // Set header title
-    document.getElementById('panoramaModalLabel').innerHTML = '<i class="bi bi-badge-3d text-primary me-2"></i>' + title;
-    
+    document.getElementById('panoramaModalLabel').innerHTML =
+        '<i class="bi bi-badge-3d text-primary me-2"></i>' + title;
+
     // Show modal
-    const modalElement = document.getElementById('panoramaModal');
-    const modal = new bootstrap.Modal(modalElement);
+    var modalElement = document.getElementById('panoramaModal');
+    var modal = new bootstrap.Modal(modalElement);
     modal.show();
-    
-    // Clear container and reset compass
-    const container = document.getElementById('modal-panorama-viewer');
-    container.innerHTML = '<div class="d-flex justify-content-center align-items-center h-100"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
-    
-    const compassWidget = document.getElementById('pano-compass-widget');
+
+    // Loading spinner
+    var container = document.getElementById('modal-panorama-viewer');
+    container.innerHTML =
+        '<div class="d-flex justify-content-center align-items-center h-100">' +
+        '<div class="spinner-border text-primary" role="status">' +
+        '<span class="visually-hidden">Loading...</span></div></div>';
+
+    var compassWidget = document.getElementById('pano-compass-widget');
     if (compassWidget) compassWidget.style.display = 'none';
 
     // Initialize viewer after modal is fully shown
-    const onShown = function() {
+    var onShown = function () {
         container.innerHTML = '';
         if (modalViewer) {
-            try { modalViewer.destroy(); } catch(e) {}
+            try { modalViewer.destroy(); } catch (e) {}
             modalViewer = null;
         }
-        
-        if (type === 'panorama') {
-            if (typeof pannellum !== 'undefined') {
-                // Determine if we should boot into a connected tour scene or fallback to single scene
-                const hasScene = virtualTourConfig.scenes.hasOwnProperty(slug);
-                let viewerConfig = {};
-                
-                if (hasScene) {
-                    // Start multi-scene Google Street View style tour
-                    viewerConfig = {
-                        "default": {
-                            "firstScene": slug,
-                            "sceneFadeDuration": virtualTourConfig.default.sceneFadeDuration,
-                            "autoLoad": true,
-                            "autoRotate": -1,
-                            "compass": false,
-                            "showZoomCtrl": true,
-                            "showFullscreenCtrl": true,
-                            "mouseZoom": true,
-                            "minHfov": 40,
-                            "maxHfov": 120,
-                            "friction": 0.15,
-                            "keyboardZoom": true,
-                            "draggable": true
-                        },
-                        "scenes": virtualTourConfig.scenes
-                    };
-                } else {
-                    // Fallback to standalone single panorama scene
-                    viewerConfig = {
-                        "type": "equirectangular",
-                        "panorama": sourceUrl,
-                        "autoLoad": true,
-                        "autoRotate": -1,
-                        "compass": false,
-                        "showZoomCtrl": true,
-                        "showFullscreenCtrl": true,
-                        "mouseZoom": true,
-                        "hfov": 100,
-                        "minHfov": 40,
-                        "maxHfov": 120,
-                        "pitch": 0,
-                        "yaw": 0,
-                        "friction": 0.15
-                    };
-                }
-                
-                // Initialize the Pannellum instance
-                modalViewer = pannellum.viewer('modal-panorama-viewer', viewerConfig);
-                
-                // Setup callbacks once loaded
-                modalViewer.on('load', function() {
-                    if (compassWidget) compassWidget.style.display = 'flex';
-                    
-                    // Add calibration click logger for easy fine-tuning of hotspots
-                    const canvas = container.querySelector('canvas');
-                    if (canvas) {
-                        canvas.addEventListener('click', function(e) {
-                            if (modalViewer) {
-                                const coords = modalViewer.mouseEventToCoords(e);
-                                if (coords && coords.length >= 2) {
-                                    console.log('Calibrate Coords - Pitch:', coords[0].toFixed(2), 'Yaw:', coords[1].toFixed(2));
-                                }
-                            }
-                        });
-                    }
-                });
 
-                // Update compass rotation in real-time as user rotates panorama
-                modalViewer.on('change', function() {
-                    const needle = document.getElementById('pano-compass-needle');
-                    if (needle) {
-                        const yaw = modalViewer.getYaw();
-                        needle.style.transform = `translate(-50%, -50%) rotate(${-yaw}deg)`;
-                    }
+        if (type === 'panorama') {
+            if (typeof pannellum === 'undefined') {
+                container.innerHTML =
+                    '<div class="text-center text-white py-5">' +
+                    '<p>Error: Pannellum library not loaded.</p></div>';
+                return;
+            }
+
+            var hasScene = TOUR_SCENES.hasOwnProperty(slug);
+
+            if (hasScene) {
+                // ── Multi-scene tour ──
+                modalViewer = pannellum.viewer('modal-panorama-viewer', {
+                    "default": {
+                        "firstScene": slug,
+                        "sceneFadeDuration": 1200
+                    },
+                    "scenes": TOUR_SCENES
                 });
             } else {
-                container.innerHTML = '<div class="text-center text-white py-5"><p>Erreur: Pannellum 3D viewer library not loaded.</p></div>';
+                // ── Standalone panorama (not in tour config) ──
+                modalViewer = pannellum.viewer('modal-panorama-viewer', {
+                    "type": "equirectangular",
+                    "panorama": sourceUrl,
+                    "autoLoad": true,
+                    "autoRotate": -1,
+                    "compass": false,
+                    "showZoomCtrl": true,
+                    "showFullscreenCtrl": true,
+                    "mouseZoom": true,
+                    "hfov": 100,
+                    "minHfov": 40,
+                    "maxHfov": 120,
+                    "pitch": 0,
+                    "yaw": 0,
+                    "friction": 0.15
+                });
             }
+
+            // Show compass once loaded
+            modalViewer.on('load', function () {
+                if (compassWidget) compassWidget.style.display = 'flex';
+            });
+
+            // Live compass rotation
+            modalViewer.on('change', function () {
+                var needle = document.getElementById('pano-compass-needle');
+                if (needle && modalViewer) {
+                    var yaw = modalViewer.getYaw();
+                    needle.style.transform =
+                        'translate(-50%, -50%) rotate(' + (-yaw) + 'deg)';
+                }
+            });
+
+            // Debug: click anywhere on floor to log pitch/yaw for hotspot calibration
+            modalViewer.on('mousedown', function (event) {
+                try {
+                    var coords = modalViewer.mouseEventToCoords(event);
+                    if (coords) {
+                        console.log(
+                            'Calibrate Coords — Pitch:',
+                            coords[0].toFixed(2),
+                            ' Yaw:',
+                            coords[1].toFixed(2)
+                        );
+                    }
+                } catch (e) {}
+            });
+
         } else if (type === 'matterport') {
-            container.innerHTML = `
-                <div class="ratio ratio-16x9 w-100 h-100" style="height: 65vh; min-height: 400px;">
-                    <iframe src="${sourceUrl}" class="w-100 h-100" allowfullscreen allow="xr-spatial-tracking" frameborder="0"></iframe>
-                </div>
-            `;
+            container.innerHTML =
+                '<div class="ratio ratio-16x9 w-100 h-100" style="height:65vh;min-height:400px;">' +
+                '<iframe src="' + sourceUrl + '" class="w-100 h-100" ' +
+                'allowfullscreen allow="xr-spatial-tracking" frameborder="0"></iframe></div>';
         }
-        
+
         modalElement.removeEventListener('shown.bs.modal', onShown);
     };
-    
+
     modalElement.addEventListener('shown.bs.modal', onShown);
-    
-    // Cleanup when hidden
-    const onHidden = function() {
+
+    // Cleanup on close
+    var onHidden = function () {
         if (modalViewer) {
-            try {
-                modalViewer.destroy();
-                modalViewer = null;
-            } catch(e) {}
+            try { modalViewer.destroy(); modalViewer = null; } catch (e) {}
         }
         container.innerHTML = '';
         if (compassWidget) compassWidget.style.display = 'none';
         modalElement.removeEventListener('hidden.bs.modal', onHidden);
     };
-    
     modalElement.addEventListener('hidden.bs.modal', onHidden);
 }
 </script>
