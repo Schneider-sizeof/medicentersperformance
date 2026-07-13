@@ -745,9 +745,6 @@ msgstr "مرحباً، أود الحصول على مزيد من المعلوما
 msgid "Clients"
 msgstr "العملاء"
 
-msgid "Produits & Services"
-msgstr "المنتجات والخدمات"
-
 msgid "Années d'expérience"
 msgstr "سنوات الخبرة"
 

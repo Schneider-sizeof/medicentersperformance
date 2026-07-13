@@ -745,9 +745,6 @@ msgstr "Hello, I would like to get more information about your medical space des
 msgid "Clients"
 msgstr "Clients"
 
-msgid "Produits & Services"
-msgstr "Products & Services"
-
 msgid "Années d'expérience"
 msgstr "Years of Experience"
 
