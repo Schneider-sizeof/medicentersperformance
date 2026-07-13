@@ -135,7 +135,7 @@
     </div>
 </section>
 
-<!-- ═══════════════════════════ MATTERPORT 3D TOUR ═══════════════════════════ -->
+<!-- ═══════════════════════════ VIRTUAL TOUR — Slider ═══════════════════════════ -->
 <section class="section section-alt" id="virtual-tour">
     <div class="container">
         <div class="section-title fade-in-up">
@@ -143,19 +143,106 @@
             <p>{% trans "Explorez nos projets d'aménagement médical grâce à la visite virtuelle immersive" %}</p>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-10 fade-in-up">
-                {% if featured_showroom %}
-                    {% include 'includes/matterport_embed.html' with showroom=featured_showroom %}
-                {% else %}
-                <div class="matterport-placeholder text-center py-5">
-                    <i class="bi bi-badge-3d display-1 text-muted"></i>
-                    <p class="text-muted mt-3">{% trans "Visite virtuelle 3D bientôt disponible" %}</p>
+            <div class="col-lg-11 fade-in-up">
+                <div class="vtour-wrap" id="vtour-wrap">
+                    <!-- Scene label + counter -->
+                    <div class="vtour-scene-badge" id="vtour-scene-badge">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span id="vtour-scene-name">{% trans "Réception" %}</span>
+                        <span class="vtour-scene-counter" id="vtour-counter">1 / 11</span>
+                    </div>
+                    <!-- Loading -->
+                    <div class="vtour-loading" id="vtour-loading">
+                        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                        <div class="vtour-loading-text">{% trans "Chargement de la visite virtuelle…" %}</div>
+                    </div>
+                    <!-- Pannellum -->
+                    <div id="vtour-viewer" class="vtour-viewer"></div>
+                    <!-- Prev / Next -->
+                    <button class="vtour-nav vtour-nav-prev" id="vtour-prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+                    <button class="vtour-nav vtour-nav-next" id="vtour-next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+                    <!-- Dots -->
+                    <div class="vtour-dots" id="vtour-dots"></div>
                 </div>
-                {% endif %}
             </div>
         </div>
     </div>
 </section>
+
+<script>
+(function() {
+    'use strict';
+    var LABELS = {
+        'reception-1':    '{% trans "Réception" %} (1/4)',
+        'reception-2':    '{% trans "Réception" %} (2/4)',
+        'reception-3':    '{% trans "Réception" %} (3/4)',
+        'reception-4':    '{% trans "Réception" %} (4/4)',
+        'consultation-1': '{% trans "Salle de Consultation" %} (1/4)',
+        'consultation-2': '{% trans "Salle de Consultation" %} (2/4)',
+        'consultation-3': '{% trans "Salle de Consultation" %} (3/4)',
+        'consultation-4': '{% trans "Salle de Consultation" %} (4/4)',
+        'bathroom':       '{% trans "Salle de Bain" %}',
+        'kitchenette':    '{% trans "Kitchenette" %}',
+        'vestiaire':      '{% trans "Vestiaire" %}'
+    };
+    var MEDIA = '/media/showrooms/tour/';
+    var SCENES = [
+        'reception-1','reception-2','reception-3','reception-4',
+        'consultation-1','consultation-2','consultation-3','consultation-4',
+        'bathroom','kitchenette','vestiaire'
+    ];
+    var cfgs = {};
+    SCENES.forEach(function(id) {
+        cfgs[id] = {
+            title: LABELS[id], type: 'equirectangular',
+            panorama: MEDIA + id + '.jpg',
+            autoLoad: true, autoRotate: -1.5, compass: false,
+            showZoomCtrl: true, showFullscreenCtrl: true,
+            mouseZoom: true, hfov: 100, minHfov: 40, maxHfov: 120,
+            pitch: 0, yaw: 0, friction: 0.15, hotSpots: []
+        };
+    });
+    var viewer = null, idx = 0;
+    var nameEl = document.getElementById('vtour-scene-name');
+    var ctrEl  = document.getElementById('vtour-counter');
+    var loadEl = document.getElementById('vtour-loading');
+    var dotsEl = document.getElementById('vtour-dots');
+    var prevB  = document.getElementById('vtour-prev');
+    var nextB  = document.getElementById('vtour-next');
+    function ui() {
+        nameEl.textContent = LABELS[SCENES[idx]];
+        ctrEl.textContent = (idx+1) + ' / ' + SCENES.length;
+        dotsEl.querySelectorAll('.vtour-dot').forEach(function(d,i){ d.classList.toggle('active', i===idx); });
+        prevB.classList.toggle('vtour-nav-disabled', idx===0);
+        nextB.classList.toggle('vtour-nav-disabled', idx===SCENES.length-1);
+    }
+    function go(i) {
+        if (i<0||i>=SCENES.length||!viewer) return;
+        idx=i; viewer.loadScene(SCENES[idx]); ui();
+    }
+    function init() {
+        if (typeof pannellum==='undefined') return;
+        SCENES.forEach(function(id,i){
+            var d=document.createElement('button');
+            d.className='vtour-dot'+(i===0?' active':'');
+            d.title=LABELS[id];
+            d.addEventListener('click',function(){go(i);});
+            dotsEl.appendChild(d);
+        });
+        viewer = pannellum.viewer('vtour-viewer', {
+            default:{firstScene:SCENES[0],sceneFadeDuration:800},
+            scenes:cfgs
+        });
+        viewer.on('load',function(){loadEl.classList.add('hidden');});
+        viewer.on('scenechange',function(nid){idx=SCENES.indexOf(nid);if(idx===-1)idx=0;ui();});
+        prevB.addEventListener('click',function(){go(idx-1);});
+        nextB.addEventListener('click',function(){go(idx+1);});
+        ui();
+    }
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}
+    else{setTimeout(init,300);}
+})();
+</script>
 
 <!-- ═══════════════════════════ WHY US ═══════════════════════════ -->
 <section class="section" id="why-us">
@@ -282,6 +369,40 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ═══════════════════════════ NOS RÉFÉRENCES ═══════════════════════════ -->
+{% if partners %}
+<section class="refs-section" id="references">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>{% trans "Nos Références" %}</h2>
+            <p>{% trans "Ils nous ont fait confiance pour leurs projets d'aménagement médical" %}</p>
+        </div>
+    </div>
+    <div class="refs-track-wrap fade-in-up">
+        <div class="refs-track" id="refs-track">
+            {% for partner in partners %}
+            <div class="ref-card">
+                {% if partner.logo %}
+                <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="ref-card-logo">
+                {% else %}
+                <span class="ref-card-name">{{ partner.name }}</span>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% for partner in partners %}
+            <div class="ref-card">
+                {% if partner.logo %}
+                <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="ref-card-logo">
+                {% else %}
+                <span class="ref-card-name">{{ partner.name }}</span>
+                {% endif %}
             </div>
             {% endfor %}
         </div>

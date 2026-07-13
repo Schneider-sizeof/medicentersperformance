@@ -858,3 +858,32 @@ msgstr "Dozens of Projects"
 msgid "Années d'expertise"
 msgstr "Years of Expertise"
 
+msgid "Nos Références"
+msgstr "Our References"
+
+msgid "Ils nous ont fait confiance pour leurs projets d'aménagement médical"
+msgstr "They trusted us with their medical space design projects"
+
+msgid "Chargement de la visite virtuelle…"
+msgstr "Loading the virtual tour…"
+
+msgid "Cliquez sur le sol pour vous déplacer"
+msgstr "Click on the floor to move around"
+
+msgid "Réception"
+msgstr "Reception"
+
+msgid "Consultation"
+msgstr "Consultation"
+
+msgid "Salle de Consultation"
+msgstr "Consultation Room"
+
+msgid "Salle de Bain"
+msgstr "Bathroom"
+
+msgid "Kitchenette"
+msgstr "Kitchenette"
+
+msgid "Vestiaire"
+msgstr "Changing Room"

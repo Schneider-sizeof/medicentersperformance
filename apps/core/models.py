@@ -124,3 +124,23 @@ class Showroom(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Partner(models.Model):
+    """Reference / partner shown in the home page carousel. Managed from admin."""
+    name = models.CharField(_('Nom'), max_length=200)
+    logo = models.ImageField(
+        _('Logo'), upload_to='partners/', blank=True, null=True,
+        help_text=_('Logo du partenaire (optionnel). Laissez vide pour afficher uniquement le nom.'),
+    )
+    website_url = models.URLField(_('Site web'), blank=True)
+    is_active = models.BooleanField(_('Actif'), default=True)
+    ordering = models.PositiveIntegerField(_('Ordre'), default=0)
+
+    class Meta:
+        ordering = ['ordering']
+        verbose_name = _('Référence / Partenaire')
+        verbose_name_plural = _('Références / Partenaires')
+
+    def __str__(self):
+        return self.name

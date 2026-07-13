@@ -858,3 +858,33 @@ msgstr "عشرات المشاريع"
 msgid "Années d'expertise"
 msgstr "سنوات الخبرة"
 
+msgid "Nos Références"
+msgstr "مراجعنا"
+
+msgid "Ils nous ont fait confiance pour leurs projets d'aménagement médical"
+msgstr "وثقوا بنا لتصميم مساحاتهم الطبية"
+
+msgid "Chargement de la visite virtuelle…"
+msgstr "جارٍ تحميل الجولة الافتراضية…"
+
+msgid "Cliquez sur le sol pour vous déplacer"
+msgstr "انقر على الأرضية للتنقل"
+
+msgid "Réception"
+msgstr "الاستقبال"
+
+msgid "Consultation"
+msgstr "غرفة الاستشارة"
+
+msgid "Salle de Consultation"
+msgstr "غرفة الاستشارة"
+
+msgid "Salle de Bain"
+msgstr "الحمام"
+
+msgid "Kitchenette"
+msgstr "المطبخ الصغير"
+
+msgid "Vestiaire"
+msgstr "غرفة تغيير الملابس"
+

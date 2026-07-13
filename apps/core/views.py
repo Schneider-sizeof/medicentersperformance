@@ -1,6 +1,6 @@
 """Core views — Home and About pages."""
 from django.shortcuts import render
-from .models import Testimonial, Showroom
+from .models import Testimonial, Showroom, Partner
 
 
 def home(request):
@@ -91,6 +91,7 @@ def home(request):
         'featured_showroom': Showroom.objects.filter(
             is_featured=True, is_active=True
         ).first(),
+        'partners': Partner.objects.filter(is_active=True),
         'recent_posts': BlogPost.objects.filter(
             is_published=True
         ).order_by('-published_date')[:3],

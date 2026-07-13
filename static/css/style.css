@@ -4334,4 +4334,219 @@ a.footer-contact-value:hover { color: var(--mc-white); }
 }
 
 
+/* ==========================================================
+   NOS RÉFÉRENCES — Infinite Marquee Partner Carousel
+   ========================================================== */
+.refs-section {
+  padding: var(--sp-3xl) 0;
+  background: var(--mc-grey);
+  overflow: hidden;
+}
+.refs-track-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+.refs-track {
+  display: flex;
+  gap: var(--sp-xl);
+  width: max-content;
+  animation: refs-scroll 28s linear infinite;
+}
+.refs-track:hover {
+  animation-play-state: paused;
+}
+@keyframes refs-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ref-card {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  padding: var(--sp-lg) var(--sp-xl);
+  background: var(--mc-white);
+  border: 1px solid var(--mc-grey-warm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-normal) var(--ease-smooth);
+  cursor: default;
+}
+.ref-card:hover {
+  border-color: var(--mc-maroon);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+.ref-card-logo {
+  max-height: 48px;
+  max-width: 160px;
+  object-fit: contain;
+}
+.ref-card-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--mc-charcoal);
+  letter-spacing: var(--ls-wide);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   VIRTUAL TOUR — Premium Scene Picker + Pannellum Viewer
+   ========================================================== */
+.vtour-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--mc-charcoal);
+  border: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: var(--shadow-xl);
+}
+.vtour-viewer {
+  width: 100%;
+  height: 55vh;
+  min-height: 380px;
+  background: #000;
+}
+@media (min-width: 992px) {
+  .vtour-viewer { height: 65vh; }
+}
+
+/* ── Slider Navigation Arrows ── */
+.vtour-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, .25);
+  background: rgba(28, 26, 23, .55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--mc-white);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--dur-normal) var(--ease-smooth);
+}
+.vtour-nav:hover {
+  background: rgba(156, 37, 32, .7);
+  border-color: var(--mc-maroon-light);
+  transform: translateY(-50%) scale(1.08);
+}
+.vtour-nav-prev { left: 14px; }
+.vtour-nav-next { right: 14px; }
+.vtour-nav-disabled {
+  opacity: .25;
+  pointer-events: none;
+}
+
+/* ── Dot Indicators ── */
+.vtour-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(28, 26, 23, .55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+.vtour-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, .4);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--dur-fast) var(--ease-smooth);
+}
+.vtour-dot:hover {
+  background: rgba(255, 255, 255, .4);
+}
+.vtour-dot.active {
+  background: var(--mc-maroon);
+  border-color: var(--mc-maroon-light);
+  box-shadow: 0 0 8px var(--mc-maroon-glow);
+  transform: scale(1.25);
+}
+
+/* ── Scene Badge (top-right) ── */
+.vtour-scene-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(28, 26, 23, .7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  pointer-events: none;
+}
+.vtour-scene-badge i {
+  color: var(--mc-maroon-light);
+  font-size: 1rem;
+}
+.vtour-scene-badge span {
+  color: var(--mc-white);
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.vtour-scene-counter {
+  color: rgba(255, 255, 255, .5) !important;
+  font-weight: var(--fw-regular) !important;
+  font-family: var(--font-body) !important;
+  border-left: 1px solid rgba(255, 255, 255, .15);
+  padding-left: 8px;
+  margin-left: 2px;
+}
+
+/* ── Loading overlay ── */
+.vtour-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 26, 23, .85);
+  z-index: 10;
+  transition: opacity var(--dur-slow) var(--ease-smooth);
+  pointer-events: none;
+}
+.vtour-loading.hidden { opacity: 0; }
+.vtour-loading-text {
+  color: rgba(255, 255, 255, .6);
+  font-size: var(--fs-sm);
+  margin-top: var(--sp-md);
+  font-family: var(--font-body);
+}
+
+/* ── Cursor ── */
+.vtour-viewer canvas { cursor: grab; }
+.vtour-viewer canvas:active { cursor: grabbing; }
+
+
 

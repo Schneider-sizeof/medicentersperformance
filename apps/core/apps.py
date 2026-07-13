@@ -9,21 +9,42 @@ class CoreConfig(AppConfig):
     def ready(self):
         import sys
         if sys.version_info >= (3, 14):
-            try:
-                from django.template import Context, BaseContext
-                
-                def new_base_context_copy(self):
-                    dup = self.__class__()
-                    dup.dicts = [d.copy() for d in self.dicts]
-                    return dup
+            self._patch_template_context()
 
-                def new_context_copy(self):
-                    dup = self.__class__()
-                    dup.dicts = self.dicts[:]
-                    return dup
+    @staticmethod
+    def _patch_template_context():
+        """
+        Monkey-patch Django 5.1's BaseContext.__copy__ for Python 3.14+.
 
-                BaseContext.__copy__ = new_base_context_copy
-                Context.__copy__ = new_context_copy
-            except ImportError:
-                pass
+        Django's original does `copy(super())` which fails because Python 3.14
+        changed super() proxy objects to disallow __dict__ assignment.
+        We replace it with a version that manually constructs the copy.
+        """
+        try:
+            from django.template.context import BaseContext, Context, RenderContext
 
+            def _base_context_copy(self):
+                duplicate = self.__class__.__new__(self.__class__)
+                duplicate.dicts = self.dicts[:]
+                return duplicate
+
+            def _context_copy(self):
+                duplicate = self.__class__.__new__(self.__class__)
+                duplicate.dicts = self.dicts[:]
+                # Copy Context-specific attributes
+                for attr in (
+                    'autoescape', 'use_l10n', 'use_tz',
+                    'template_name', 'render_context',
+                    '_current_app', 'template',
+                ):
+                    if hasattr(self, attr):
+                        try:
+                            setattr(duplicate, attr, getattr(self, attr))
+                        except AttributeError:
+                            pass
+                return duplicate
+
+            BaseContext.__copy__ = _base_context_copy
+            Context.__copy__ = _context_copy
+        except ImportError:
+            pass

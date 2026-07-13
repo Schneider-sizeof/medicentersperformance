@@ -1,6 +1,7 @@
 """Admin configuration for core app."""
 from django.contrib import admin
-from .models import CompanyInfo, Testimonial, Showroom
+from django.utils.safestring import mark_safe
+from .models import CompanyInfo, Testimonial, Showroom, Partner
 
 # ---------------------------------------------------------------------------
 # Customize admin site branding
@@ -51,3 +52,17 @@ class ShowroomAdmin(admin.ModelAdmin):
     list_editable = ('is_featured', 'is_active', 'ordering')
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('is_featured', 'is_active')
+
+
+@admin.register(Partner)
+class PartnerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'logo_preview', 'website_url', 'is_active', 'ordering')
+    list_display_links = ('name',)
+    list_filter = ('is_active',)
+    search_fields = ('name',)
+
+    @admin.display(description='Logo')
+    def logo_preview(self, obj):
+        if obj.logo:
+            return mark_safe(f'<img src="{obj.logo.url}" style="max-height:30px;max-width:80px;object-fit:contain;" />')
+        return '—'
