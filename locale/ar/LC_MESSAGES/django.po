@@ -678,7 +678,7 @@ msgid "Des matériaux sélectionnés avec soin et une exécution irréprochable 
 msgstr "مواد مختارة بعناية وتنفيذ لا تشوبه شائبة لكل مشروع تصميم."
 
 
-msgid "5 types de clients"
+msgid "5 types de clientèles"
 msgstr "5 أنواع من العملاء"
 
 msgid "Basé à Tanger"

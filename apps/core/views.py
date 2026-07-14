@@ -63,18 +63,18 @@ def home(request):
             p_log.title, p_log.subtitle, 'bi-laptop', p_log.get_absolute_url()
         ))
 
-    # 7. Coaching et formation (Service)
-    s_coach = Service.objects.filter(slug='coaching-formation', is_active=True).first()
-    if s_coach:
-        curated_items.append(CuratedService(
-            s_coach.title, s_coach.short_description, s_coach.icon_class or 'bi-journal-check', s_coach.get_absolute_url()
-        ))
-
-    # 8. Aménagement PMR (Service)
+    # 7. Aménagement PMR (Service)
     s_pmr = Service.objects.filter(slug='amenagement-pmr', is_active=True).first()
     if s_pmr:
         curated_items.append(CuratedService(
             s_pmr.title, s_pmr.short_description, s_pmr.icon_class or 'bi-universal-access', s_pmr.get_absolute_url()
+        ))
+
+    # 8. Coaching et formation (Service)
+    s_coach = Service.objects.filter(slug='coaching-formation', is_active=True).first()
+    if s_coach:
+        curated_items.append(CuratedService(
+            s_coach.title, s_coach.short_description, s_coach.icon_class or 'bi-journal-check', s_coach.get_absolute_url()
         ))
 
     # 9. Création de sites web (Service)
