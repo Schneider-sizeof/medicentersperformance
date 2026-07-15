@@ -5,7 +5,7 @@ from .base import *  # noqa: F401, F403
 DEBUG = False
 ALLOWED_HOSTS = os.environ.get(
     'ALLOWED_HOSTS',
-    '.pythonanywhere.com,localhost,127.0.0.1'
+    '.pythonanywhere.com,.medicentersperformance.com,localhost,127.0.0.1'
 ).split(',')
 
 # PostgreSQL database with SQLite fallback for simple deployments
