@@ -3861,9 +3861,6 @@ a.footer-contact-value:hover { color: var(--mc-white); }
   #services .catalog-grid .catalog-card:nth-child(3n+1):nth-last-child(2) ~ .catalog-card {
     grid-column: span 3;
   }
-  #services .catalog-grid #service-coaching-formation {
-    grid-column: span 6;
-  }
 }
 
 .catalog-card {
@@ -3928,6 +3925,34 @@ a.footer-contact-value:hover { color: var(--mc-white); }
   color: var(--mc-charcoal-light);
   line-height: var(--lh-body);
   margin: 0;
+}
+.catalog-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: var(--sp-sm);
+  padding: 0.45rem 1rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--mc-maroon);
+  background: rgba(156, 37, 32, 0.06);
+  border: 1px solid rgba(156, 37, 32, 0.18);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--dur-normal) var(--ease-smooth);
+}
+.catalog-download-link:hover {
+  color: var(--mc-white);
+  background: var(--mc-maroon);
+  border-color: var(--mc-maroon);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(156, 37, 32, 0.25);
+}
+.catalog-download-link i {
+  font-size: 1rem;
 }
 
 /* ==========================================================
