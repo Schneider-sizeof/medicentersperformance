@@ -3861,6 +3861,24 @@ a.footer-contact-value:hover { color: var(--mc-white); }
   #services .catalog-grid .catalog-card:nth-child(3n+1):nth-last-child(2) ~ .catalog-card {
     grid-column: span 3;
   }
+  #services .catalog-grid #service-coaching-formation {
+    grid-column: span 6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #services .catalog-grid #service-coaching-formation .catalog-card-images {
+    width: 42%;
+    flex-shrink: 0;
+    padding: var(--sp-md) var(--sp-md) var(--sp-md) var(--sp-md);
+  }
+  #services .catalog-grid #service-coaching-formation .catalog-card-body {
+    width: 58%;
+    padding: var(--sp-xl) var(--sp-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .catalog-card {
