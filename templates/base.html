@@ -12,6 +12,10 @@
       gtag('config', '{{ company.google_analytics_id }}');
     </script>
     {% endif %}
+    {% if company.google_search_console_id %}
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="{{ company.google_search_console_id }}">
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>{% block title %}MEDICENTERS PERFORMANCE{% endblock %} — {% trans "Aménagement d'espaces médicaux à Tanger" %}</title>
 

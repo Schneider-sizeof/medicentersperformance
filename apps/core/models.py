@@ -41,6 +41,12 @@ class CompanyInfo(models.Model):
         blank=True,
         help_text=_('Ex : G-XXXXXXX. Laissez vide pour désactiver le suivi.'),
     )
+    google_search_console_id = models.CharField(
+        _('ID Google Search Console'),
+        max_length=100,
+        blank=True,
+        help_text=_('Code de vérification Google Search Console (le code dans le champ content="..."). Laissez vide pour désactiver.'),
+    )
 
     class Meta:
         verbose_name = _('Informations entreprise')

@@ -28,6 +28,9 @@ class CompanyInfoAdmin(admin.ModelAdmin):
         ('Carte', {
             'fields': ('google_maps_embed_url',),
         }),
+        ('Intégrations & SEO', {
+            'fields': ('google_analytics_id', 'google_search_console_id'),
+        }),
     )
 
     def has_add_permission(self, request):
