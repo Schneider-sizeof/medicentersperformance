@@ -3861,6 +3861,9 @@ a.footer-contact-value:hover { color: var(--mc-white); }
   #services .catalog-grid .catalog-card:nth-child(3n+1):nth-last-child(2) ~ .catalog-card {
     grid-column: span 3;
   }
+  #services .catalog-grid #service-coaching-formation {
+    grid-column: span 6;
+  }
 }
 
 .catalog-card {

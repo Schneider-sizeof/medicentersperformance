@@ -141,6 +141,13 @@
                 <div class="catalog-card-body">
                     <h3>{{ service.title }}</h3>
                     {% if service.subtitle %}<p>{{ service.subtitle }}</p>{% elif service.short_description %}<p>{{ service.short_description }}</p>{% endif %}
+                    {% if service.slug == 'coaching-formation' %}
+                    <div class="mt-3">
+                        <a href="/media/affiche%20ismail%20finale.pdf" class="btn btn-primary" download>
+                            <i class="bi bi-file-earmark-pdf me-2"></i>{% trans "Télécharger le programme" %}
+                        </a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% empty %}

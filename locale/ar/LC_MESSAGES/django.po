@@ -555,8 +555,8 @@ msgstr "المدينة"
 msgid "Visite virtuelle 3D bientôt disponible"
 msgstr "جولة افتراضية ثلاثية الأبعاد قريباً"
 
-msgid "Visitez nos réalisations en 3D"
-msgstr "زوروا إنجازاتنا بتقنية ثلاثية الأبعاد"
+msgid "Explorer nos Showroom"
+msgstr "استكشفوا معارضنا"
 
 msgid "Vivez et travaillez dans l'une des villes les plus dynamiques du Maroc."
 msgstr "عش واعمل في واحدة من أكثر المدن ديناميكية في المغرب."
@@ -690,8 +690,8 @@ msgstr "المساهمة في تحسين الفضاءات الصحية والح�
 msgid "Comment nous travaillons"
 msgstr "كيف نعمل"
 
-msgid "Visiter tous nos showrooms"
-msgstr "زيارة جميع معارضنا"
+msgid "visiter tous nos réalisation"
+msgstr "زيارة جميع إنجازاتنا"
 
 msgid "Lancer la visite"
 msgstr "بدء الجولة"

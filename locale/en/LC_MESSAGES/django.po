@@ -555,8 +555,8 @@ msgstr "City"
 msgid "Visite virtuelle 3D bientôt disponible"
 msgstr "3D Virtual Tour Coming Soon"
 
-msgid "Visitez nos réalisations en 3D"
-msgstr "Visit Our Projects in 3D"
+msgid "Explorer nos Showroom"
+msgstr "Explore Our Showrooms"
 
 msgid "Vivez et travaillez dans l'une des villes les plus dynamiques du Maroc."
 msgstr "Live and work in one of the most dynamic cities in Morocco."
@@ -690,8 +690,8 @@ msgstr "Contribute to improving healthcare spaces and the daily lives of medical
 msgid "Comment nous travaillons"
 msgstr "How We Work"
 
-msgid "Visiter tous nos showrooms"
-msgstr "Visit All Our Showrooms"
+msgid "visiter tous nos réalisation"
+msgstr "View All Our Projects"
 
 msgid "Lancer la visite"
 msgstr "Launch Tour"
