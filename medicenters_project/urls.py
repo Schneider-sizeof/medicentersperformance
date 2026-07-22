@@ -1,4 +1,5 @@
 """URL configuration for Medicenters Performance."""
+import os
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
@@ -8,6 +9,13 @@ from django.urls import path, include
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 
+# Enforce Two-Factor Authentication on the default Admin Site
+from django_otp.admin import OTPAdminSite
+from apps.core.forms import CaptchaAdminAuthenticationForm
+
+admin.site.__class__ = OTPAdminSite
+admin.site.login_form = CaptchaAdminAuthenticationForm
+
 from apps.core.sitemaps import StaticSitemap, BlogSitemap, JobSitemap
 
 sitemaps = {
@@ -16,7 +24,12 @@ sitemaps = {
     'jobs': JobSitemap,
 }
 
-# Non-i18n URL patterns (sitemap, robots, ckeditor, language switch)
+# Resolve the dynamic Admin URL path from environment variables
+ADMIN_URL = os.environ.get('DJANGO_ADMIN_URL', 'dashboard_medicenters/')
+if not ADMIN_URL.endswith('/'):
+    ADMIN_URL += '/'
+
+# Non-i18n URL patterns (sitemap, robots, ckeditor, captcha, language switch)
 urlpatterns = [
     path(
         'sitemap.xml',
@@ -30,12 +43,13 @@ urlpatterns = [
         name='robots_txt',
     ),
     path('ckeditor5/', include('django_ckeditor_5.urls')),
+    path('captcha/', include('captcha.urls')),  # Local CAPTCHA verification routing
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 # Internationalized URL patterns
 urlpatterns += i18n_patterns(
-    path('admin/', admin.site.urls),
+    path(ADMIN_URL, admin.site.urls),  # Dynamically resolved admin path
     path('', include('apps.core.urls')),
     path(_('services/'), include('apps.services.urls')),
     path(_('blog/'), include('apps.blog.urls')),
@@ -48,4 +62,5 @@ urlpatterns += i18n_patterns(
 # Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 

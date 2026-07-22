@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     # Third-party
     'django_ckeditor_5',
+    'django_otp',
+    'django_otp.plugins.otp_totp',
+    'axes',
+    'captcha',
     # Project apps
     'apps.core',
     'apps.services',
@@ -54,8 +58,12 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_otp.middleware.OTPMiddleware',  # Must be after AuthenticationMiddleware
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'apps.core.middleware.AdminIPAllowlistMiddleware',
+    'csp.middleware.CSPMiddleware',
+    'axes.middleware.AxesMiddleware',  # Should be near the end
 ]
 
 ROOT_URLCONF = 'medicenters_project.urls'
@@ -206,3 +214,112 @@ NOTIFICATION_EMAIL = os.environ.get('NOTIFICATION_EMAIL', 'contact@medicenters.m
 # ---------------------------------------------------------------------------
 FILE_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024  # 5 MB
 DATA_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024  # 5 MB
+
+# ---------------------------------------------------------------------------
+# Authentication Backends (Axes integration)
+# ---------------------------------------------------------------------------
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+# ---------------------------------------------------------------------------
+# Password Validation Hardening
+# ---------------------------------------------------------------------------
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 12,  # Enforced 12 chars minimum
+        }
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+
+# ---------------------------------------------------------------------------
+# Session & Cookie Security
+# ---------------------------------------------------------------------------
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 1800  # 30 minutes in seconds
+
+# ---------------------------------------------------------------------------
+# Two-Factor Authentication (OTP)
+# ---------------------------------------------------------------------------
+OTP_TOTP_ISSUER = 'MEDICENTERS PERFORMANCE'
+
+# ---------------------------------------------------------------------------
+# Brute-Force Rate Limiting (django-axes)
+# ---------------------------------------------------------------------------
+AXES_FAILURE_LIMIT = 5  # Lockout after 5 attempts
+AXES_COOLOFF_TIME = 1   # Cooloff time of 1 hour
+AXES_LOCKOUT_BY_COMBINATION = True  # Lockout by username and IP
+AXES_RESET_ON_SUCCESS = True
+
+# ---------------------------------------------------------------------------
+# Captcha Settings (django-simple-captcha)
+# ---------------------------------------------------------------------------
+CAPTCHA_IMAGE_SIZE = (150, 40)
+CAPTCHA_FONT_SIZE = 24
+CAPTCHA_LENGTH = 5
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
+
+# ---------------------------------------------------------------------------
+# Content Security Policy (django-csp)
+# ---------------------------------------------------------------------------
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_STYLE_SRC = ("'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com")
+CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'", "'unsafe-eval'", "https://cdn.jsdelivr.net", "https://www.googletagmanager.com", "https://www.google.com", "https://www.gstatic.com")
+CSP_FONT_SRC = ("'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net")
+CSP_IMG_SRC = ("'self'", "data:", "https://flagcdn.com")
+CSP_FRAME_SRC = ("'self'", "https://www.google.com")
+
+# ---------------------------------------------------------------------------
+# Security & Audit Logging
+# ---------------------------------------------------------------------------
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+        'security_file': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'security.log'),
+            'formatter': 'verbose',
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'loggers': {
+        'django.security': {
+            'handlers': ['security_file', 'console'],
+            'level': 'WARNING',
+            'propagate': True,
+        },
+        'axes': {
+            'handlers': ['security_file', 'console'],
+            'level': 'WARNING',
+            'propagate': True,
+        },
+    },
+}
+
