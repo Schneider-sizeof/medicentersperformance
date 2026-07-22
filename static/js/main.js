@@ -385,4 +385,154 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   })();
 
+  /* ============================================================
+     12. DRAGGABLE & INFINITE NOS RÉFÉRENCES MARQUEE
+     ============================================================ */
+  (function initPartnersCarousel() {
+    var wrap = document.querySelector('.refs-track-wrap');
+    var track = document.getElementById('refs-track');
+    if (!wrap || !track) return;
+
+    var isDown = false;
+    var startX;
+    var scrollLeft;
+    var scrollSpeed = 0.6; // Speed in pixels per frame
+    var isHovered = false;
+    var activeId = null;
+
+    // Automatic infinite scroll loop
+    function step() {
+      if (!isDown && !isHovered) {
+        wrap.scrollLeft += scrollSpeed;
+        
+        // Loop back to start when reaching halfway
+        var maxScroll = track.offsetWidth / 2;
+        if (wrap.scrollLeft >= maxScroll) {
+          wrap.scrollLeft -= maxScroll;
+        }
+      }
+      activeId = requestAnimationFrame(step);
+    }
+
+    // Start loop
+    activeId = requestAnimationFrame(step);
+
+    // Mouse events
+    wrap.addEventListener('mousedown', function (e) {
+      isDown = true;
+      wrap.classList.add('grabbing');
+      startX = e.pageX - wrap.offsetLeft;
+      scrollLeft = wrap.scrollLeft;
+    });
+
+    wrap.addEventListener('mouseleave', function () {
+      isDown = false;
+      isHovered = false;
+      wrap.classList.remove('grabbing');
+    });
+
+    wrap.addEventListener('mouseenter', function () {
+      isHovered = true;
+    });
+
+    wrap.addEventListener('mouseup', function () {
+      isDown = false;
+      wrap.classList.remove('grabbing');
+    });
+
+    wrap.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - wrap.offsetLeft;
+      var walk = (x - startX) * 1.5; // Drag speed multiplier
+      wrap.scrollLeft = scrollLeft - walk;
+
+      // Wrapping boundaries check while dragging
+      var maxScroll = track.offsetWidth / 2;
+      if (wrap.scrollLeft >= maxScroll) {
+        wrap.scrollLeft -= maxScroll;
+        startX = e.pageX - wrap.offsetLeft;
+        scrollLeft = wrap.scrollLeft;
+      } else if (wrap.scrollLeft <= 0) {
+        wrap.scrollLeft += maxScroll;
+        startX = e.pageX - wrap.offsetLeft;
+        scrollLeft = wrap.scrollLeft;
+      }
+    });
+
+    // Touch events for mobile swiping
+    wrap.addEventListener('touchstart', function (e) {
+      isDown = true;
+      isHovered = true;
+      startX = e.touches[0].pageX - wrap.offsetLeft;
+      scrollLeft = wrap.scrollLeft;
+    }, { passive: true });
+
+    wrap.addEventListener('touchend', function () {
+      isDown = false;
+      isHovered = false;
+    });
+
+    wrap.addEventListener('touchmove', function (e) {
+      if (!isDown) return;
+      var x = e.touches[0].pageX - wrap.offsetLeft;
+      var walk = (x - startX) * 1.5;
+      wrap.scrollLeft = scrollLeft - walk;
+
+      var maxScroll = track.offsetWidth / 2;
+      if (wrap.scrollLeft >= maxScroll) {
+        wrap.scrollLeft -= maxScroll;
+        startX = e.touches[0].pageX - wrap.offsetLeft;
+        scrollLeft = wrap.scrollLeft;
+      } else if (wrap.scrollLeft <= 0) {
+        wrap.scrollLeft += maxScroll;
+        startX = e.touches[0].pageX - wrap.offsetLeft;
+        scrollLeft = wrap.scrollLeft;
+      }
+    }, { passive: true });
+  })();
+
+  /* ============================================================
+     13. DEVTOOLS & CONSOLE BLOCKER
+     ============================================================ */
+  (function initDevToolsBlocker() {
+    // Disable Right-Click
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Disable keyboard shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+Shift+J, Ctrl+U, and Mac equivalents)
+    document.addEventListener('keydown', function (e) {
+      // F12
+      if (e.keyCode === 123) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+I / Cmd+Opt+I / Ctrl+Shift+J / Ctrl+Shift+C
+      if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+        e.preventDefault();
+        return false;
+      }
+      // Cmd+Opt+I / Cmd+Opt+J / Cmd+Opt+C (Mac)
+      if (e.metaKey && e.altKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+U / Cmd+U
+      if ((e.ctrlKey || e.metaKey) && e.keyCode === 85) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Debugger trap to freeze page execution if inspector menu is opened
+    setInterval(function() {
+      (function() {
+        return false;
+      }
+      ['constructor']('debugger')
+      ['call']());
+    }, 50);
+  })();
+
 });

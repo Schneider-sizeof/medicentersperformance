@@ -177,6 +177,93 @@
 </section>
 {% endif %}
 
+<!-- Showroom Photo Gallery Slider -->
+<section class="section" id="showroom-gallery">
+    <div class="container">
+        <div class="section-title fade-in-up text-center mb-5">
+            <h2>{% trans "Galerie de Réalisations" %}</h2>
+            <p>{% trans "Découvrez des clichés de nos espaces et mobilier médical haut de gamme" %}</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10 fade-in-up">
+                {% if gallery_images %}
+                <div id="showroomGalleryCarousel" class="carousel slide carousel-fade shadow-lg" data-bs-ride="carousel" style="border-radius: 12px; overflow: hidden;">
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        {% for img in gallery_images %}
+                        <button type="button" data-bs-target="#showroomGalleryCarousel" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="{% if forloop.first %}true{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Slides -->
+                    <div class="carousel-inner" style="height: 500px;">
+                        {% for img in gallery_images %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}" style="height: 100%;">
+                            <img src="{{ img.image.url }}" class="d-block w-100 h-100" alt="{{ img.alt_text|default:img.title }}" style="object-fit: cover;">
+                            {% if img.title %}
+                            <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(4px); border-radius: 8px; padding: 10px 20px; bottom: 40px; left: 50%; transform: translateX(-50%); width: fit-content; max-width: 80%;">
+                                <h5 class="mb-0 text-white">{{ img.title }}</h5>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#showroomGalleryCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">{% trans "Précédent" %}</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#showroomGalleryCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">{% trans "Suivant" %}</span>
+                    </button>
+                </div>
+                {% else %}
+                <!-- Fallback premium default slider with local assets -->
+                <div id="showroomGalleryCarousel" class="carousel slide carousel-fade shadow-lg" data-bs-ride="carousel" style="border-radius: 12px; overflow: hidden;">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#showroomGalleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#showroomGalleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#showroomGalleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner" style="height: 500px;">
+                        <div class="carousel-item active" style="height: 100%;">
+                            <img src="/media/showrooms/clinique-360.jpg" class="d-block w-100 h-100" alt="Showroom Image 1" style="object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(4px); border-radius: 8px; padding: 10px 20px; bottom: 40px; left: 50%; transform: translateX(-50%); width: fit-content;">
+                                <h5 class="mb-0 text-white">{% trans "Clinique moderne et haut de gamme" %}</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 100%;">
+                            <img src="/media/showrooms/kinedoc-360.jpg" class="d-block w-100 h-100" alt="Showroom Image 2" style="object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(4px); border-radius: 8px; padding: 10px 20px; bottom: 40px; left: 50%; transform: translateX(-50%); width: fit-content;">
+                                <h5 class="mb-0 text-white">{% trans "Espace KineDoc d'accueil et de rééducation" %}</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 100%;">
+                            <img src="/media/showrooms/pharmacie-360.jpg" class="d-block w-100 h-100" alt="Showroom Image 3" style="object-fit: cover;">
+                            <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(4px); border-radius: 8px; padding: 10px 20px; bottom: 40px; left: 50%; transform: translateX(-50%); width: fit-content;">
+                                <h5 class="mb-0 text-white">{% trans "Espace Pharmacie optimisé" %}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#showroomGalleryCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">{% trans "Précédent" %}</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#showroomGalleryCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">{% trans "Suivant" %}</span>
+                    </button>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- Final CTA -->
 <section class="cta-band">
     <div class="container text-center fade-in-up">

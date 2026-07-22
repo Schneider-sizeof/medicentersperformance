@@ -4392,23 +4392,26 @@ a.footer-contact-value:hover { color: var(--mc-white); }
 .refs-track-wrap {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE/Edge */
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
   mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
+.refs-track-wrap::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.refs-track-wrap.grabbing {
+  cursor: grabbing;
 }
 .refs-track {
   display: flex;
   gap: 5rem;
   width: max-content;
   align-items: center;
-  animation: refs-scroll 65s linear infinite;
-}
-.refs-track:hover {
-  animation-play-state: paused;
-}
-@keyframes refs-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 .ref-card {
   flex: 0 0 auto;

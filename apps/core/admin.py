@@ -1,7 +1,7 @@
 """Admin configuration for core app."""
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from .models import CompanyInfo, Testimonial, Showroom, Partner
+from .models import CompanyInfo, Testimonial, Showroom, Partner, ShowroomGalleryImage
 
 # ---------------------------------------------------------------------------
 # Customize admin site branding
@@ -69,3 +69,21 @@ class PartnerAdmin(admin.ModelAdmin):
         if obj.logo:
             return mark_safe(f'<img src="{obj.logo.url}" style="max-height:30px;max-width:80px;object-fit:contain;" />')
         return '—'
+
+
+@admin.register(ShowroomGalleryImage)
+class ShowroomGalleryImageAdmin(admin.ModelAdmin):
+    list_display = ('title_preview', 'image_preview', 'is_active', 'ordering')
+    list_editable = ('is_active', 'ordering')
+    list_filter = ('is_active',)
+
+    @admin.display(description='Image')
+    def image_preview(self, obj):
+        if obj.image:
+            return mark_safe(f'<img src="{obj.image.url}" style="max-height: 40px; border-radius: 4px;" />')
+        return '—'
+
+    @admin.display(description='Titre')
+    def title_preview(self, obj):
+        return obj.title or f"Image #{obj.id}"
+

@@ -150,3 +150,24 @@ class Partner(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ShowroomGalleryImage(models.Model):
+    """
+    Gallery image to be shown in a slider below showrooms on the services page.
+    Admin can upload pictures to this slider dynamically.
+    """
+    title = models.CharField(_('Titre (Optionnel)'), max_length=200, blank=True)
+    image = models.ImageField(_('Image'), upload_to='showroom_gallery/')
+    alt_text = models.CharField(_('Texte alternatif'), max_length=150, blank=True)
+    is_active = models.BooleanField(_('Actif'), default=True)
+    ordering = models.PositiveIntegerField(_('Ordre'), default=0)
+
+    class Meta:
+        ordering = ['ordering']
+        verbose_name = _('Image Galerie Showroom')
+        verbose_name_plural = _('Images Galerie Showroom')
+
+    def __str__(self):
+        return self.title or f"Image #{self.id}"
+
