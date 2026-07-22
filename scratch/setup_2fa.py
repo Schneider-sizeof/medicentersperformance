@@ -27,18 +27,24 @@ def setup_totp(username):
         device = TOTPDevice.objects.create(user=user, name='Default', confirmed=False)
         print(f"Created new TOTP device for user '{username}'.")
 
+    import base64
+    base32_key = base64.b32encode(device.bin_key).decode('utf-8').replace('=', '')
+
     # Generate provisioning URI for Google Authenticator/Authy
     print("\n" + "="*50)
     print(f"2FA Setup for user: {username}")
     print("="*50)
     print(f"Provisioning URI (for manual entry or scanning):")
     print(device.config_url)
-    print("\nSecret Key (Base32):", device.bin_key)
+    print("\nSecret Key (Base32) to enter manually:")
+    print(base32_key)
     print("="*50)
     print("\nINSTRUCTIONS:")
-    print("1. Scan the Provisioning URI above with your Authenticator App (Google Authenticator, Authy, Microsoft Authenticator, etc.) or manually enter the Secret Key.")
-    print("2. Once scanned, confirm the device by running the confirmation script:")
-    print(f"   python confirm_2fa.py {username} <6-digit-code-from-app>")
+    print("1. In your Authenticator App, add a new account manually.")
+    print("2. Enter the Secret Key shown above (just the letters/digits, no spaces or quotes).")
+    print("3. IMPORTANT: Make sure 'Type of key' is set to 'Time based' (NOT 'Counter based').")
+    print("4. Once added, confirm and activate the device by running:")
+    print(f"   python scratch/confirm_2fa.py {username} <6-digit-code-from-app>")
     print("="*50 + "\n")
 
 if __name__ == '__main__':
