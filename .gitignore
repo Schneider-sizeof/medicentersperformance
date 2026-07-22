@@ -34,3 +34,5 @@ Thumbs.db
 
 # User data files
 static/images/dataimages/
+db.sqlite3
+
