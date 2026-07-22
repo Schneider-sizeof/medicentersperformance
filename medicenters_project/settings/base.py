@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django_otp',
     'django_otp.plugins.otp_totp',
     'axes',
-    'captcha',
     # Project apps
     'apps.core',
     'apps.services',
@@ -267,14 +266,6 @@ AXES_FAILURE_LIMIT = 5  # Lockout after 5 attempts
 AXES_COOLOFF_TIME = 1   # Cooloff time of 1 hour
 AXES_LOCKOUT_BY_COMBINATION = True  # Lockout by username and IP
 AXES_RESET_ON_SUCCESS = True
-
-# ---------------------------------------------------------------------------
-# Captcha Settings (django-simple-captcha)
-# ---------------------------------------------------------------------------
-CAPTCHA_IMAGE_SIZE = (150, 40)
-CAPTCHA_FONT_SIZE = 24
-CAPTCHA_LENGTH = 5
-CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
 
 # ---------------------------------------------------------------------------
 # Content Security Policy (django-csp)

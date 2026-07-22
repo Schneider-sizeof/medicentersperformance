@@ -11,10 +11,8 @@ from django.views.generic import TemplateView
 
 # Enforce Two-Factor Authentication on the default Admin Site
 from django_otp.admin import OTPAdminSite
-from apps.core.forms import CaptchaAdminAuthenticationForm
 
 admin.site.__class__ = OTPAdminSite
-admin.site.login_form = CaptchaAdminAuthenticationForm
 
 from apps.core.sitemaps import StaticSitemap, BlogSitemap, JobSitemap
 
@@ -43,7 +41,6 @@ urlpatterns = [
         name='robots_txt',
     ),
     path('ckeditor5/', include('django_ckeditor_5.urls')),
-    path('captcha/', include('captcha.urls')),  # Local CAPTCHA verification routing
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
