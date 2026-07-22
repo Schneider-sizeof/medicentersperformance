@@ -174,7 +174,7 @@ msgstr "Specialized Medical Expertise"
 msgid "Explorez nos projets d'aménagement médical grâce à la visite virtuelle immersive"
 msgstr "Explore our medical design projects through immersive virtual tours"
 
-msgid "Explorez nos réalisations en visite virtuelle 3D immersive"
+msgid "Explorez nos réalisations en visites virtuelles 3D immersives"
 msgstr "Explore our achievements through immersive 3D virtual tours"
 
 msgid "Fiabilité"
@@ -468,8 +468,8 @@ msgstr "Medical Sector"
 msgid "Services spécialisés"
 msgstr "Specialized Services"
 
-msgid "Showroom Virtuel"
-msgstr "Virtual Showroom"
+msgid "Showrooms Virtuels"
+msgstr "Virtual Showrooms"
 
 msgid "Signalétique & Communication"
 msgstr "Signage & Communication"
@@ -690,7 +690,7 @@ msgstr "Contribute to improving healthcare spaces and the daily lives of medical
 msgid "Comment nous travaillons"
 msgstr "How We Work"
 
-msgid "visiter tous nos réalisation"
+msgid "visiter toutes nos réalisations"
 msgstr "View All Our Projects"
 
 msgid "Lancer la visite"
@@ -884,3 +884,18 @@ msgstr "Kitchenette"
 
 msgid "Vestiaire"
 msgstr "Changing Room"
+
+msgid "Galerie de Réalisations"
+msgstr "Achievements Gallery"
+
+msgid "Découvrez des clichés de nos espaces et mobilier médical haut de gamme"
+msgstr "Discover snapshots of our premium medical spaces and furniture"
+
+msgid "Clinique moderne et haut de gamme"
+msgstr "Modern and high-end clinic"
+
+msgid "Espace KineDoc d'accueil et de rééducation"
+msgstr "KineDoc reception and rehabilitation space"
+
+msgid "Espace Pharmacie optimisé"
+msgstr "Optimized Pharmacy space"

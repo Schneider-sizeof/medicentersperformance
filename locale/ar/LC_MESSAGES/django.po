@@ -174,7 +174,7 @@ msgstr "خبرة طبية متخصصة"
 msgid "Explorez nos projets d'aménagement médical grâce à la visite virtuelle immersive"
 msgstr "اكتشفوا مشاريعنا في التجهيز الطبي عبر جولات افتراضية"
 
-msgid "Explorez nos réalisations en visite virtuelle 3D immersive"
+msgid "Explorez nos réalisations en visites virtuelles 3D immersives"
 msgstr "اكتشفوا إنجازاتنا عبر جولات افتراضية ثلاثية الأبعاد"
 
 msgid "Fiabilité"
@@ -468,8 +468,8 @@ msgstr "القطاع الطبي"
 msgid "Services spécialisés"
 msgstr "خدمات متخصصة"
 
-msgid "Showroom Virtuel"
-msgstr "صالة العرض الافتراضية"
+msgid "Showrooms Virtuels"
+msgstr "صالات العرض الافتراضية"
 
 msgid "Signalétique & Communication"
 msgstr "اللافتات والتواصل"
@@ -690,7 +690,7 @@ msgstr "المساهمة في تحسين الفضاءات الصحية والح�
 msgid "Comment nous travaillons"
 msgstr "كيف نعمل"
 
-msgid "visiter tous nos réalisation"
+msgid "visiter toutes nos réalisations"
 msgstr "زيارة جميع إنجازاتنا"
 
 msgid "Lancer la visite"
@@ -885,3 +885,18 @@ msgstr "المطبخ الصغير"
 msgid "Vestiaire"
 msgstr "غرفة تغيير الملابس"
 
+
+msgid "Galerie de Réalisations"
+msgstr "معرض الإنجازات"
+
+msgid "Découvrez des clichés de nos espaces et mobilier médical haut de gamme"
+msgstr "اكتشفوا صوراً لفضاءاتنا وأثاثنا الطبي الراقي"
+
+msgid "Clinique moderne et haut de gamme"
+msgstr "عيادة حديثة وراقية"
+
+msgid "Espace KineDoc d'accueil et de rééducation"
+msgstr "فضاء استقبال وإعادة تأهيل كينيدوك"
+
+msgid "Espace Pharmacie optimisé"
+msgstr "فضاء صيدلية محسّن"
