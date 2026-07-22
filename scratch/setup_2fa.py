@@ -1,7 +1,6 @@
 import os
 import sys
 import django
-import qrcode
 from pathlib import Path
 
 # Setup Django environment
