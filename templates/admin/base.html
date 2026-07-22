@@ -1,0 +1,46 @@
+{% extends "admin/base.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+<script>
+  (function initDevToolsBlocker() {
+    // Disable Right-Click
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Disable keyboard shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+Shift+J, Ctrl+U, and Mac equivalents)
+    document.addEventListener('keydown', function (e) {
+      // F12
+      if (e.keyCode === 123) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+I / Cmd+Opt+I / Ctrl+Shift+J / Ctrl+Shift+C
+      if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+        e.preventDefault();
+        return false;
+      }
+      // Cmd+Opt+I / Cmd+Opt+J / Cmd+Opt+C (Mac)
+      if (e.metaKey && e.altKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+U / Cmd+U
+      if ((e.ctrlKey || e.metaKey) && e.keyCode === 85) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Debugger trap to freeze page execution if inspector menu is opened
+    setInterval(function() {
+      (function() {
+        return false;
+      }
+      ['constructor']('debugger')
+      ['call']());
+    }, 50);
+  })();
+</script>
+{% endblock %}
