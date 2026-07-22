@@ -900,3 +900,6 @@ msgstr "فضاء استقبال وإعادة تأهيل كينيدوك"
 
 msgid "Espace Pharmacie optimisé"
 msgstr "فضاء صيدلية محسّن"
+
+msgid "Télécharger le programme"
+msgstr "تحميل البرنامج"

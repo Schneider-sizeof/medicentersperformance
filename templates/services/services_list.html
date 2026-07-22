@@ -142,7 +142,7 @@
                     <h3>{{ service.title }}</h3>
                     {% if service.subtitle %}<p>{{ service.subtitle|linebreaksbr }}</p>{% elif service.short_description %}<p>{{ service.short_description|linebreaksbr }}</p>{% endif %}
                     {% if service.slug == 'coaching-formation' %}
-                    <a href="/media/downloads/affiche-ismail-finale.pdf" class="catalog-download-link" download>
+                    <a href="/media/downloads/affiche-ismail-finale.pdf" class="catalog-download-link" download="Programme.pdf">
                         <i class="bi bi-file-earmark-pdf-fill"></i> {% trans "Télécharger le programme" %}
                     </a>
                     {% endif %}

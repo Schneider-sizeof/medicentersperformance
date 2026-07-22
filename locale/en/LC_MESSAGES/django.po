@@ -899,3 +899,6 @@ msgstr "KineDoc reception and rehabilitation space"
 
 msgid "Espace Pharmacie optimisé"
 msgstr "Optimized Pharmacy space"
+
+msgid "Télécharger le programme"
+msgstr "Download the program"
