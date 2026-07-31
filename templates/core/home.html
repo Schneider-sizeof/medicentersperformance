@@ -439,7 +439,8 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@type": ["LocalBusiness", "ProfessionalService", "MedicalBusiness"],
+    "@id": "{{ request.scheme }}://{{ request.get_host }}/#medicalbusiness",
     "name": "MEDICENTERS PERFORMANCE",
     "description": "{% trans "Aménagement d'intérieur, agencement mobilier et consulting pour espaces médicaux professionnels à Tanger, Maroc." %}",
     "url": "{{ request.scheme }}://{{ request.get_host }}",
@@ -449,6 +450,7 @@
         "@type": "PostalAddress",
         "streetAddress": "Boulevard Mohammed V, Résidence Redouane Chirine 112 N°48",
         "addressLocality": "Tanger",
+        "postalCode": "90000",
         "addressCountry": "MA"
     },
     "geo": {
@@ -471,7 +473,31 @@
         }
     ],
     "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}",
-    "priceRange": "$$"
+    "priceRange": "$$$",
+    "areaServed": [
+        {
+            "@type": "AdministrativeArea",
+            "name": "Tanger-Tétouan-Al Hoceïma"
+        },
+        {
+            "@type": "Country",
+            "name": "Morocco"
+        }
+    ],
+    "knowsAbout": [
+        "Aménagement espaces médicaux",
+        "Agencement cabinet médical",
+        "Mobilier médical sur mesure",
+        "Design cabinet médical",
+        "Normes PMR cliniques",
+        "Agencement pharmacie",
+        "Aménagement laboratoire d'analyses"
+    ],
+    "sameAs": [
+        "https://www.linkedin.com/company/medicenters-performance",
+        "https://www.facebook.com/medicentersperformance",
+        "https://www.instagram.com/medicentersperformance"
+    ]
 }
 </script>
 {% endblock %}

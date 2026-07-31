@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /fr/dashboard_medicenters/
+Disallow: /ar/dashboard_medicenters/
+Disallow: /en/dashboard_medicenters/
 
-Sitemap: https://www.medicenters.ma/sitemap.xml
+Sitemap: https://medicentersperformance.com/sitemap.xml

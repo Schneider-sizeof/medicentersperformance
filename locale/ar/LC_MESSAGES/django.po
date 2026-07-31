@@ -903,3 +903,45 @@ msgstr "فضاء صيدلية محسّن"
 
 msgid "Télécharger le programme"
 msgstr "تحميل البرنامج"
+
+msgid "Aménagement & Agencement d'Espaces Médicaux à Tanger"
+msgstr "تصميم وتجهيز المساحات الطبية في طنجة"
+
+msgid "Spécialiste de l'aménagement de cabinets médicaux et cliniques à Tanger. Solutions clés en main, mobilier sur mesure et conformité réglementaire."
+msgstr "متخصصون في تصميم وتجهيز العيادات الطبية في طنجة. حلول متكاملة، أثاث حسب الطلب، والامتثال التنظيمي."
+
+msgid "Aménagement Médical à Tanger"
+msgstr "التجهيز الطبي في طنجة"
+
+msgid "Découvrez notre équipe d'architectes et d'ingénieurs experts en aménagement clé en main d'espaces professionnels de santé à Tanger et au Maroc."
+msgstr "تعرف على فريقنا من المهندسين المعماريين الخبراء في التجهيز المتكامل للفضاءات الصحية في طنجة والمغرب."
+
+msgid "Contactez Medicenters Performance"
+msgstr "تواصل مع ميديسنترز بيرفورمانس"
+
+msgid "Un projet d'aménagement médical à Tanger ou au Maroc ? Contactez notre équipe pour une étude personnalisée et un devis d'agencement gratuit."
+msgstr "مشروع تجهيز طبي في طنجة أو المغرب؟ تواصل مع فريقنا للحصول على دراسة مخصصة وعرض أسعار مجاني."
+
+msgid "Agencement Clé en Main pour Professionnels de Santé | Tanger"
+msgstr "تجهيز متكامل للمهنيين الصحيين | طنجة"
+
+msgid "Découvrez notre catalogue de mobilier médical sur mesure et nos prestations d'architecture d'intérieur pour centres de santé et cabinets au Maroc."
+msgstr "اكتشفوا كتالوج الأثاث الطبي المصمم حسب الطلب وخدمات التصميم الداخلي للمراكز الصحية والعيادات في المغرب."
+
+msgid "Recrutement & Carrières"
+msgstr "التوظيف والمسار المهني"
+
+msgid "Rejoignez l'équipe MEDICENTERS PERFORMANCE à Tanger. Découvrez nos offres d'emploi en architecture médicale, design d'intérieur et vente B2B."
+msgstr "انضم إلى فريق ميديسنترز بيرفورمانس في طنجة. اكتشف عروض العمل في الهندسة الطبية والتصميم الداخلي والمبيعات."
+
+msgid "Blog Aménagement Médical"
+msgstr "مدونة التجهيز الطبي"
+
+msgid "Conseils d'experts en aménagement et agencement de cabinets médicaux, cliniques et pharmacies au Maroc. Tendances design, normes PMR et mobilier."
+msgstr "نصائح الخبراء في تصميم وتجهيز العيادات الطبية والصيدليات في المغرب. اتجاهات التصميم ومعايير الولوجيات والأثاث."
+
+msgid "Revendeur / Partenaire / Investisseur"
+msgstr "موزع / شريك / مستثمر"
+
+msgid "Devenez revendeur agréé ou partenaire de MEDICENTERS PERFORMANCE. Opportunités de distribution de mobilier médical au Maroc."
+msgstr "كن موزعاً معتمداً أو شريكاً لميديسنترز بيرفورمانس. فرص توزيع الأثاث الطبي في المغرب."

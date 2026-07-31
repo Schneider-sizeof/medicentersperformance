@@ -902,3 +902,45 @@ msgstr "Optimized Pharmacy space"
 
 msgid "Télécharger le programme"
 msgstr "Download the program"
+
+msgid "Aménagement & Agencement d'Espaces Médicaux à Tanger"
+msgstr "Medical Space Design & Fit-Out in Tangier"
+
+msgid "Spécialiste de l'aménagement de cabinets médicaux et cliniques à Tanger. Solutions clés en main, mobilier sur mesure et conformité réglementaire."
+msgstr "Medical office and clinic design specialists in Tangier. Turnkey solutions, custom furniture, and regulatory compliance."
+
+msgid "Aménagement Médical à Tanger"
+msgstr "Medical Fit-Out in Tangier"
+
+msgid "Découvrez notre équipe d'architectes et d'ingénieurs experts en aménagement clé en main d'espaces professionnels de santé à Tanger et au Maroc."
+msgstr "Meet our team of architects and engineers specializing in turnkey healthcare space design in Tangier and across Morocco."
+
+msgid "Contactez Medicenters Performance"
+msgstr "Contact Medicenters Performance"
+
+msgid "Un projet d'aménagement médical à Tanger ou au Maroc ? Contactez notre équipe pour une étude personnalisée et un devis d'agencement gratuit."
+msgstr "Planning a medical fit-out in Tangier or Morocco? Contact our team for a personalized study and free design quote."
+
+msgid "Agencement Clé en Main pour Professionnels de Santé | Tanger"
+msgstr "Turnkey Fit-Out for Healthcare Professionals | Tangier"
+
+msgid "Découvrez notre catalogue de mobilier médical sur mesure et nos prestations d'architecture d'intérieur pour centres de santé et cabinets au Maroc."
+msgstr "Discover our custom medical furniture catalog and interior design services for healthcare centers and practices in Morocco."
+
+msgid "Recrutement & Carrières"
+msgstr "Recruitment & Careers"
+
+msgid "Rejoignez l'équipe MEDICENTERS PERFORMANCE à Tanger. Découvrez nos offres d'emploi en architecture médicale, design d'intérieur et vente B2B."
+msgstr "Join the MEDICENTERS PERFORMANCE team in Tangier. Discover our job openings in medical architecture, interior design, and B2B sales."
+
+msgid "Blog Aménagement Médical"
+msgstr "Medical Design Blog"
+
+msgid "Conseils d'experts en aménagement et agencement de cabinets médicaux, cliniques et pharmacies au Maroc. Tendances design, normes PMR et mobilier."
+msgstr "Expert tips on medical office, clinic, and pharmacy design in Morocco. Design trends, PMR standards, and furniture."
+
+msgid "Revendeur / Partenaire / Investisseur"
+msgstr "Reseller / Partner / Investor"
+
+msgid "Devenez revendeur agréé ou partenaire de MEDICENTERS PERFORMANCE. Opportunités de distribution de mobilier médical au Maroc."
+msgstr "Become an authorized reseller or partner of MEDICENTERS PERFORMANCE. Medical furniture distribution opportunities in Morocco."

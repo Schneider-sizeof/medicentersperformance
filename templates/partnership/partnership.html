@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static i18n %}
 
-{% block title %}{% if current_language == 'ar' %}موزع / شريك / مستثمر{% elif current_language == 'en' %}Reseller / Partner / Investor{% else %}Revendeur / Partenaire / Investisseur{% endif %}{% endblock %}
+{% block title %}{% trans "Revendeur / Partenaire / Investisseur" %} | MEDICENTERS PERFORMANCE{% endblock %}
+{% block meta_description %}{% trans "Devenez revendeur agréé ou partenaire de MEDICENTERS PERFORMANCE. Opportunités de distribution de mobilier médical au Maroc." %}{% endblock %}
 
 {% block content %}
 <!-- Page Header -->
