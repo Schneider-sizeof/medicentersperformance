@@ -43,8 +43,12 @@
     <!-- Custom CSS -->
     <link href="{% static 'css/style.css' %}?v=21.0" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="192x192" href="{% static 'images/favicon.png' %}">
+
 
     <!-- SEO Meta -->
     {% include 'includes/seo_meta.html' %}
