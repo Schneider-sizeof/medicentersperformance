@@ -435,6 +435,17 @@
 
 
 {% block extra_meta %}
+<!-- Schema.org WebSite -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MEDICENTERS PERFORMANCE",
+    "alternateName": ["Medicenters Performance", "Medicenters"],
+    "url": "{{ request.scheme }}://{{ request.get_host }}/"
+}
+</script>
+
 <!-- Schema.org LocalBusiness / ProfessionalService -->
 <script type="application/ld+json">
 {
