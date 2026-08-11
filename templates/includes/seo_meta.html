@@ -29,5 +29,3 @@
 <link rel="alternate" hreflang="{{ lang_code }}" href="{{ request.scheme }}://{{ request.get_host }}/{{ lang_code }}{{ request.path|slice:'3:' }}">
 {% endfor %}
 <link rel="alternate" hreflang="x-default" href="{{ request.scheme }}://{{ request.get_host }}/fr{{ request.path|slice:'3:' }}">
-
-{% block extra_meta %}{% endblock %}
