@@ -4,4 +4,4 @@ Disallow: /fr/dashboard_medicenters/
 Disallow: /ar/dashboard_medicenters/
 Disallow: /en/dashboard_medicenters/
 
-Sitemap: https://medicentersperformance.com/sitemap.xml
+Sitemap: https://www.medicentersperformance.com/sitemap.xml

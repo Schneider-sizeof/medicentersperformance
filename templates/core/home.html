@@ -49,19 +49,19 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-6 col-md-3 stats-item fade-in-up">
-                <div class="stats-number counter-number" data-target="150" data-suffix="+">0</div>
+                <div class="stats-number counter-number" data-target="150" data-suffix="+">150+</div>
                 <div class="stats-label">{% trans "Clients" %}</div>
             </div>
             <div class="col-6 col-md-3 stats-item fade-in-up">
-                <div class="stats-number counter-number" data-target="36">0</div>
+                <div class="stats-number counter-number" data-target="36">36</div>
                 <div class="stats-label">{% trans "Produits & Services" %}</div>
             </div>
             <div class="col-6 col-md-3 stats-item fade-in-up">
-                <div class="stats-number counter-number" data-target="6">0</div>
+                <div class="stats-number counter-number" data-target="6">6</div>
                 <div class="stats-label">{% trans "Années d'expérience" %}</div>
             </div>
             <div class="col-6 col-md-3 stats-item fade-in-up">
-                <div class="stats-number counter-number" data-target="129">0</div>
+                <div class="stats-number counter-number" data-target="129">129</div>
                 <div class="stats-label">{% trans "Clients satisfaits" %}</div>
             </div>
         </div>
@@ -508,7 +508,31 @@
         "https://www.linkedin.com/company/medicenters-performance",
         "https://www.facebook.com/medicentersperformance",
         "https://www.instagram.com/medicentersperformance"
+    ]{% if testimonials %},
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "ratingCount": "{{ testimonials|length }}"
+    },
+    "review": [
+        {% for t in testimonials %}
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "{{ t.client_name }}"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "reviewBody": "{{ t.content|truncatewords:50 }}"
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
     ]
+    {% endif %}
 }
 </script>
 {% endblock %}

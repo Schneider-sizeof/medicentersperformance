@@ -7,6 +7,7 @@ from apps.recruitment.models import JobPosting
 
 class StaticSitemap(Sitemap):
     """Sitemap for static pages (home, about, services, contact, recruitment)."""
+    protocol = 'https'
     priority = 0.8
     changefreq = 'monthly'
 
@@ -19,6 +20,7 @@ class StaticSitemap(Sitemap):
 
 class BlogSitemap(Sitemap):
     """Sitemap for published blog posts."""
+    protocol = 'https'
     priority = 0.7
     changefreq = 'weekly'
 
@@ -34,6 +36,7 @@ class BlogSitemap(Sitemap):
 
 class JobSitemap(Sitemap):
     """Sitemap for active job postings."""
+    protocol = 'https'
     priority = 0.6
     changefreq = 'weekly'
 
